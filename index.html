@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Jahrzehnt der Lunge | Startseite</title>
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
@@ -15,7 +16,7 @@
       --weiss:      #ffffff;
       --hell:       #f4f4f4;
       --text:       #333333;
-      --schrift:    'Segoe UI', sans-serif;
+      --schrift: 'Poppins', sans-serif;
     }
 
     html { scroll-behavior: smooth; }
@@ -101,72 +102,62 @@
 
     nav ul li.btn-nav a:hover { background: var(--tuerkis); color: var(--blau); }
 
-    /* ══ HERO SLIDER ══ */
+    /* ══ HERO BANNER ══ */
     .hero-banner {
       position: relative;
       background: var(--blau);
       overflow: hidden;
     }
 
+    /* Logo mittig oben */
     .hero-logo {
       position: absolute;
-      top: 1.5rem;
+      top: 50%;
       left: 50%;
-      transform: translateX(-50%);
+      transform: translate(-50%, -50%);
       z-index: 10;
       text-align: center;
     }
 
-    .hero-logo a {
-      font-size: 1.6rem;
-      font-weight: 800;
-      color: var(--weiss);
-      text-decoration: none;
-      letter-spacing: 0.05em;
-      background: rgba(7,39,71,0.7);
-      padding: 0.5rem 1.5rem;
-      border-radius: 4px;
+    .hero-logo img {
+      width: 280px;
+      max-width: 40vw;
     }
 
-    .slider-wrap {
-      display: flex;
-      overflow: hidden;
-      height: 480px;
-    }
-
-    .slider-wrap .slide {
-      min-width: 100%;
-      transition: transform 0.6s ease;
-    }
-
-    .slider-wrap .slide img {
-      width: 100%;
-      height: 480px;
-      object-fit: cover;
+    /* Oberer blauer Bereich */
+    .hero-banner::before {
+      content: '';
       display: block;
+      height: 220px;
+      background: var(--blau);
     }
 
-    /* Slider-Dots */
-    .slider-dots {
-      position: absolute;
-      bottom: 1rem;
-      left: 50%;
-      transform: translateX(-50%);
+    /* Laufende Bilder unten */
+    .hero-strip {
+      overflow: hidden;
+      height: 260px;
       display: flex;
-      gap: 0.5rem;
     }
 
-    .slider-dots button {
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      border: none;
-      background: rgba(255,255,255,0.5);
-      cursor: pointer;
-      transition: background 0.2s;
+    .hero-track {
+      display: flex;
+      gap: 6px;
+      animation: laufend 30s linear infinite;
+      will-change: transform;
     }
 
-    .slider-dots button.aktiv { background: var(--weiss); }
+    .hero-track img {
+      height: 260px;
+      width: auto;
+      flex-shrink: 0;
+      display: block;
+      object-fit: cover;
+    }
+
+    @keyframes laufend {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
 
     /* ══ INTRO TEXT + BILD ══ */
     .intro {
@@ -180,17 +171,18 @@
     }
 
     .intro-text h1 {
-      font-size: 1.6rem;
-      color: var(--blau);
-      line-height: 1.4;
+      font-size: 1.9rem;
+      color: #888888;
+      line-height: 1.35;
       margin-bottom: 1.5rem;
-      font-weight: 700;
+      font-weight: 400;
     }
 
     .intro-text p {
-      font-size: 1rem;
-      color: #555;
-      line-height: 1.8;
+      font-size: 0.9rem;
+      color: #717171;
+      line-height: 1.7;
+      font-weight: 400;
     }
 
     .intro-bild img {
@@ -201,8 +193,8 @@
 
     /* ══ POLITISCHER KOMPASS ══ */
     .kompass {
-      background: var(--blau);
-      padding: 4rem 2rem;
+      background: var(--gelb);
+      padding: 3rem 2rem 5rem;
     }
 
     .kompass-inner {
@@ -211,12 +203,11 @@
     }
 
     .kompass h2 {
-      color: var(--weiss);
-      font-size: 1.4rem;
-      margin-bottom: 2rem;
-      padding-bottom: 0.8rem;
-      border-bottom: 2px solid var(--tuerkis);
-      display: inline-block;
+      color: var(--blau);
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin-bottom: 2.5rem;
+      display: block;
     }
 
     .kompass-karten {
@@ -226,36 +217,62 @@
     }
 
     .kompass-karte {
-      background: rgba(255,255,255,0.08);
-      border: 2px solid var(--tuerkis);
-      border-radius: 4px;
+      background: #e8e8e8;
+      border-radius: 20px;
       padding: 2rem;
       text-decoration: none;
       display: block;
-      transition: background 0.2s;
+      transition: background 0.3s, color 0.3s;
       position: relative;
       overflow: hidden;
+      min-height: 320px;
     }
 
-    .kompass-karte:hover { background: rgba(104,210,223,0.15); }
+    /* SVG Ecke wird inline eingefügt */
+    .kompass-karte::before { display: none; }
 
+    .kompass-karte .ecke-svg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 121px;
+      height: 221px;
+      opacity: 0.5;
+    }
+
+    .kompass-karte:hover .ecke-svg path { fill: rgba(255,255,255,0.15); }
+
+    .kompass-karte:hover {
+      background: var(--blau);
+    }
+
+    .kompass-karte:hover h3,
+    .kompass-karte:hover p { color: var(--weiss); }
+
+    /* Pfeil oben rechts */
     .kompass-karte .pfeil {
-      color: var(--tuerkis);
-      font-size: 1.5rem;
-      margin-bottom: 1rem;
-      display: block;
+      position: absolute;
+      top: 1.2rem;
+      right: 1.5rem;
+      font-size: 1.3rem;
+      color: #aaa;
+      transform: rotate(0deg);
     }
+
+    .kompass-karte:hover .pfeil { color: rgba(255,255,255,0.6); }
 
     .kompass-karte h3 {
-      color: var(--weiss);
-      font-size: 1.1rem;
-      margin-bottom: 0.8rem;
+      color: #333;
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      margin-top: 3rem;
     }
 
     .kompass-karte p {
-      color: rgba(255,255,255,0.75);
+      color: #555;
       font-size: 0.9rem;
-      line-height: 1.6;
+      line-height: 1.7;
     }
 
     /* ══ VORSTAND ══ */
@@ -266,40 +283,42 @@
     }
 
     .vorstand h2 {
-      font-size: 1.4rem;
+      font-size: 1.6rem;
       color: var(--blau);
+      font-weight: 700;
       margin-bottom: 2rem;
-      padding-bottom: 0.8rem;
-      border-bottom: 3px solid var(--tuerkis);
+      padding-bottom: 0.6rem;
+      border-bottom: 3px solid var(--blau);
       display: inline-block;
     }
 
     .vorstand-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2rem;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2.5rem;
     }
 
     .vorstand-person img {
       width: 100%;
-      aspect-ratio: 1;
+      aspect-ratio: 4/3;
       object-fit: cover;
-      object-position: top;
+      object-position: top center;
       border-radius: 4px;
       display: block;
     }
 
     .vorstand-person h3 {
-      font-size: 1rem;
-      color: var(--blau);
-      margin: 0.8rem 0 0.4rem;
-      font-weight: 700;
+      font-size: 1.4rem;
+      color: #666;
+      margin: 1rem 0 0.5rem;
+      font-weight: 400;
+      line-height: 1.3;
     }
 
     .vorstand-person p {
-      font-size: 0.85rem;
-      color: #666;
-      line-height: 1.5;
+      font-size: 0.9rem;
+      color: #555;
+      line-height: 1.6;
     }
 
     /* ══ NEWS ══ */
@@ -611,18 +630,36 @@
   </header>
 
 
-  <!-- ══ HERO SLIDER ══ -->
+  <!-- ══ HERO BANNER ══ -->
   <section class="hero-banner">
+    <!-- Logo mittig oben -->
     <div class="hero-logo">
-      <a href="#">Jahrzehnt der Lunge</a>
+      <a href="#"><img src="Logo.jpg" alt="Jahrzehnt der Lunge" /></a>
     </div>
-    <div class="slider-wrap" id="slider">
-      <!-- Platzhalter-Slides mit Farben – ersetze src mit deinen Headerbildern -->
-      <div class="slide"><div style="width:100%;height:480px;background:linear-gradient(135deg,#1054a8,#1565c0);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.15);font-size:5rem;">🫁</div></div>
-      <div class="slide"><div style="width:100%;height:480px;background:linear-gradient(135deg,#2471a3,#68d2df);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.15);font-size:5rem;">🫁</div></div>
-      <div class="slide"><div style="width:100%;height:480px;background:linear-gradient(135deg,#1054a8,#1a6e8a);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.15);font-size:5rem;">🫁</div></div>
+    <!-- Laufende Bilder -->
+    <div class="hero-strip">
+      <div class="hero-track" id="heroTrack">
+        <img src="header_lunge_01.png" alt="" />
+        <img src="header_lunge_02.png" alt="" />
+        <img src="header_lunge_03.png" alt="" />
+        <img src="header_lunge_05.png" alt="" />
+        <img src="header_lunge_06.png" alt="" />
+        <img src="header_lunge_07.png" alt="" />
+        <img src="header_lunge_08.png" alt="" />
+        <img src="header_lunge_09.png" alt="" />
+        <img src="header_lunge_10.png" alt="" />
+        <!-- Duplikat für nahtloses Endlos-Scrolling -->
+        <img src="header_lunge_01.png" alt="" />
+        <img src="header_lunge_02.png" alt="" />
+        <img src="header_lunge_03.png" alt="" />
+        <img src="header_lunge_05.png" alt="" />
+        <img src="header_lunge_06.png" alt="" />
+        <img src="header_lunge_07.png" alt="" />
+        <img src="header_lunge_08.png" alt="" />
+        <img src="header_lunge_09.png" alt="" />
+        <img src="header_lunge_10.png" alt="" />
+      </div>
     </div>
-    <div class="slider-dots" id="dots"></div>
   </section>
 
 
@@ -665,19 +702,19 @@
 
       <div class="vorstand-person">
         <img src="Rabe_D0A3424_2.jpg" alt="Prof. Dr. Klaus Rabe" />
-        <h3>Prof. Dr. Klaus Rabe</h3>
+        <h3>Prof. Dr.<br>Klaus Rabe</h3>
         <p>Seniorprofessor, Medizinische Fakultät – Christian-Albrechts-Universität zu Kiel. Stellvertretender Vorsitzender, Deutsches Zentrum für Lungenforschung.</p>
       </div>
 
       <div class="vorstand-person">
         <img src="Koper_D0A3417_2.jpg" alt="Dr. Iris Koper" />
-        <h3>Dr. Iris Koper</h3>
+        <h3>Dr.<br>Iris Koper</h3>
         <p>Chefärztin Innere Medizin / Pneumologie, Schlafmedizin, Intensivmedizin, Allergologie und Umweltmedizin, Ameos Klinik Oldenburg.</p>
       </div>
 
       <div class="vorstand-person">
         <img src="profile_trinkmann_2000px.jpg" alt="Prof. Frederik Trinkmann" />
-        <h3>Prof. Frederik Trinkmann</h3>
+        <h3>Prof.<br>Frederik Trinkmann</h3>
         <p>Geschäftsführender Oberarzt für Pneumologie und Beatmungsmedizin, Thoraxklinik Heidelberg.</p>
       </div>
 
@@ -689,7 +726,7 @@
 
       <div class="vorstand-person">
         <img src="Schattling_D0A3369_1.jpg" alt="Dr. Stefanie Schattling" />
-        <h3>Dr. Stefanie Schattling</h3>
+        <h3>Dr.<br>Stefanie Schattling</h3>
         <p>Head of Corporate Affairs Biopharma, AstraZeneca.</p>
       </div>
 
@@ -854,33 +891,6 @@
 
   <!-- ══ JAVASCRIPT ══ -->
   <script>
-    // ── Slider ──
-    const slider = document.getElementById('slider');
-    const slides = slider.querySelectorAll('.slide');
-    const dotsContainer = document.getElementById('dots');
-    let aktuellerSlide = 0;
-
-    // Dots erstellen
-    slides.forEach((_, i) => {
-      const btn = document.createElement('button');
-      if (i === 0) btn.classList.add('aktiv');
-      btn.onclick = () => zeigeSlide(i);
-      dotsContainer.appendChild(btn);
-    });
-
-    function zeigeSlide(n) {
-      slides.forEach(s => s.style.transform = `translateX(-${n * 100}%)`);
-      dotsContainer.querySelectorAll('button').forEach((b, i) => {
-        b.classList.toggle('aktiv', i === n);
-      });
-      aktuellerSlide = n;
-    }
-
-    // Auto-play
-    setInterval(() => {
-      zeigeSlide((aktuellerSlide + 1) % slides.length);
-    }, 4000);
-
     // ── News-Filter ──
     function filterNews(kategorie, btn) {
       document.querySelectorAll('.news-filter button').forEach(b => b.classList.remove('aktiv'));
@@ -897,3 +907,4 @@
 
 </body>
 </html>
+<!-- version-1779718330 -->
