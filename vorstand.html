@@ -43,89 +43,18 @@
     .footer-bottom p, .footer-bottom a { color: rgba(255,255,255,0.5); font-size: 0.85rem; text-decoration: none; }
     .footer-bottom a:hover { color: var(--weiss); }
     @media (max-width: 768px) { .footer-inner { grid-template-columns: 1fr; } nav ul { flex-wrap: wrap; justify-content: center; } }
-
-
-    /* ══ PERSONEN GRID ══ */
-    .personen-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2.5rem;
-      margin-top: 2rem;
-    }
-
-    .person-card img {
-      width: 100%;
-      aspect-ratio: 3/2;
-      object-fit: cover;
-      object-position: top center;
-      border-radius: 4px;
-      display: block;
-    }
-
-    .person-card h3 {
-      font-size: 1.3rem;
-      color: #666;
-      margin: 0.8rem 0 0.3rem;
-      font-weight: 400;
-      line-height: 1.3;
-    }
-
-    .person-card p {
-      font-size: 0.85rem;
-      color: #555;
-      line-height: 1.6;
-    }
-
-    /* ══ SECTION BLOCKS ══ */
-    .gremium-section {
-      margin-bottom: 4rem;
-    }
-
-    .gremium-section h2 {
-      font-size: 1.6rem;
-      color: #1a1a1a;
-      font-weight: 400;
-      margin-bottom: 2rem;
-      padding-bottom: 0.6rem;
-      border-bottom: 3px solid var(--blau);
-      display: inline-block;
-    }
-
-    /* ══ LOGOS GRID ══ */
-    .logos-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 2rem;
-      margin-top: 2rem;
-      align-items: center;
-    }
-
-    .logo-karte {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 1rem;
-      background: var(--hell);
-      border-radius: 8px;
-      transition: box-shadow 0.2s;
-    }
-
+    .personen-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.5rem; margin-top: 2rem; }
+    .person-card img { width: 100%; aspect-ratio: 3/2; object-fit: cover; object-position: top center; border-radius: 4px; display: block; }
+    .person-card h3 { font-size: 1.3rem; color: #666; margin: 0.8rem 0 0.3rem; font-weight: 400; line-height: 1.3; }
+    .person-card p { font-size: 0.85rem; color: #555; line-height: 1.6; }
+    .gremium-section { margin-bottom: 4rem; }
+    .gremium-section h2 { font-size: 1.6rem; color: #1a1a1a; font-weight: 400; margin-bottom: 2rem; padding-bottom: 0.6rem; border-bottom: 3px solid var(--blau); display: inline-block; }
+    .logos-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; margin-top: 2rem; align-items: center; }
+    .logo-karte { display: flex; align-items: center; justify-content: center; padding: 1rem; background: var(--hell); border-radius: 8px; transition: box-shadow 0.2s; }
     .logo-karte:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
-
-    .logo-karte img {
-      width: 100%;
-      max-height: 80px;
-      object-fit: contain;
-    }
-
-    @media (max-width: 900px) {
-      .personen-grid { grid-template-columns: repeat(2, 1fr); }
-      .logos-grid { grid-template-columns: repeat(2, 1fr); }
-    }
-    @media (max-width: 600px) {
-      .personen-grid { grid-template-columns: 1fr; }
-      .logos-grid { grid-template-columns: repeat(2, 1fr); }
-    }
+    .logo-karte img { width: 100%; max-height: 80px; object-fit: contain; }
+    @media (max-width: 900px) { .personen-grid { grid-template-columns: repeat(2, 1fr); } .logos-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 600px) { .personen-grid { grid-template-columns: 1fr; } .logos-grid { grid-template-columns: repeat(2, 1fr); } }
   </style>
 </head>
 <body>
@@ -172,37 +101,36 @@
     <div class="gremium-section">
       <h2>Vorstand</h2>
       <div class="personen-grid">
-
-          <div class="person-card">
-        <img src="Rabe.jpg" alt="Prof. Dr.<br>Klaus Rabe" />
-        <h3>Prof. Dr.<br>Klaus Rabe</h3>
-        <p>Seniorprofessor, Medizinische Fakultät – Christian-Albrechts-Universität zu Kiel. Stellvertretender Vorsitzender, Deutsches Zentrum für Lungenforschung Airway Research Center North (ARCN)</p>
-      </div>
-          <div class="person-card">
-        <img src="Koper.jpg" alt="Dr.<br>Iris Koper" />
-        <h3>Dr.<br>Iris Koper</h3>
-        <p>Chefärztin Innere Medizin/ Pneumologie, Schlafmedizin, Intensivmedizin, Allergologie und Umweltmedizin Ameos Klinik Oldenburg</p>
-      </div>
-          <div class="person-card">
-        <img src="profile_trinkmann_2000px.jpg" alt="Prof.<br>Frederik Trinkmann" />
-        <h3>Prof.<br>Frederik Trinkmann</h3>
-        <p>Geschäftsführender Oberarzt für Pneumologie und Beatmungsmedizin Thoraxklinik Heidelberg</p>
-      </div>
-          <div class="person-card">
-        <img src="Lorena_Krueger.jpeg" alt="Lorena Krüger" />
-        <h3>Lorena Krüger</h3>
-        <p>Vertretung der Patient:innen</p>
-      </div>
-          <div class="person-card">
-        <img src="Schattling_D0A3369_1.jpg" alt="Dr.<br>Stefanie Schattling" />
-        <h3>Dr.<br>Stefanie Schattling</h3>
-        <p>Head of Corporate Affairs Biopharma, AstraZeneca</p>
-      </div>
-          <div class="person-card">
-        <img src="Dorothee_Wellmann.jpeg" alt="Dorothee Wellmann" />
-        <h3>Dorothee Wellmann</h3>
-        <p>Head of Public Affairs Immunology, Sanofi</p>
-      </div>
+        <div class="person-card">
+          <img src="Rabe.jpg" alt="Prof. Dr. Klaus Rabe" />
+          <h3>Prof. Dr.<br>Klaus Rabe</h3>
+          <p>Seniorprofessor, Medizinische Fakultät – Christian-Albrechts-Universität zu Kiel. Stellvertretender Vorsitzender, Deutsches Zentrum für Lungenforschung Airway Research Center North (ARCN)</p>
+        </div>
+        <div class="person-card">
+          <img src="Koper.jpg" alt="Dr. Iris Koper" />
+          <h3>Dr.<br>Iris Koper</h3>
+          <p>Chefärztin Innere Medizin/ Pneumologie, Schlafmedizin, Intensivmedizin, Allergologie und Umweltmedizin Ameos Klinik Oldenburg</p>
+        </div>
+        <div class="person-card">
+          <img src="profile_trinkmann_2000px.jpg" alt="Prof. Frederik Trinkmann" />
+          <h3>Prof.<br>Frederik Trinkmann</h3>
+          <p>Geschäftsführender Oberarzt für Pneumologie und Beatmungsmedizin Thoraxklinik Heidelberg</p>
+        </div>
+        <div class="person-card">
+          <img src="Lorena_Krueger.jpeg" alt="Lorena Krüger" />
+          <h3>Lorena Krüger</h3>
+          <p>Vertretung der Patient:innen</p>
+        </div>
+        <div class="person-card">
+          <img src="Schattling_D0A3369_1.jpg" alt="Dr. Stefanie Schattling" />
+          <h3>Dr.<br>Stefanie Schattling</h3>
+          <p>Head of Corporate Affairs Biopharma, AstraZeneca</p>
+        </div>
+        <div class="person-card">
+          <img src="Dorothee_Wellmann.jpeg" alt="Dorothee Wellmann" />
+          <h3>Dorothee Wellmann</h3>
+          <p>Head of Public Affairs Immunology, Sanofi</p>
+        </div>
       </div>
     </div>
 
@@ -210,62 +138,61 @@
     <div class="gremium-section">
       <h2>Wissenschaftlicher Beirat</h2>
       <div class="personen-grid">
-
-          <div class="person-card">
-        <img src="Becker.jpg" alt="Dr.<br>Jens C. Becker" />
-        <h3>Dr.<br>Jens C. Becker</h3>
-        <p>Ressortleiter PR und Öffentlichkeitsarbeit des Bundesverbandes der Pneumologen Hamburg/Schleswig-Holstein, Pneumologie Zentrum Lübeck</p>
-      </div>
-          <div class="person-card">
-        <img src="Kahnert.png" alt="Prof. Dr. med.<br>Kathrin Kahnert" />
-        <h3>Prof. Dr. med.<br>Kathrin Kahnert</h3>
-        <p>Fachärztin für Innere Medizin und Pneumologie, außerplanmäßige Professorin an der Ludwig-Maximilians-Universität München, Gesellschafterin einer interdisziplinären Gemeinschaftspraxis und Gründerin des medizinischen Informationskanals PneumoPearls.</p>
-      </div>
-          <div class="person-card">
-        <img src="Kardos.jpg" alt="Dr.<br>Peter Kardos" />
-        <h3>Dr.<br>Peter Kardos</h3>
-        <p>Gemeinschaftspraxis und Zentrum Pneumologie Allergologie und Schlafmedizin in der Klinik Maingau vom Roten Kreuz</p>
-      </div>
-          <div class="person-card">
-        <img src="Pfeifer.jpg" alt="Prof. Dr.<br>Michael Pfeifer" />
-        <h3>Prof. Dr.<br>Michael Pfeifer</h3>
-        <p>Ratspräsident der Deutschen Gesellschaft für Pneumologie und Beatmungsmedizin e. V.</p>
-      </div>
-          <div class="person-card">
-        <img src="Probst.png" alt="Dr.<br>Beatrice Probst" />
-        <h3>Dr.<br>Beatrice Probst</h3>
-        <p>Fachärztin für Innere Medizin und Pneumologie, Allergologie, Arbeitsmedizin, Notfallmedizin sowie Fachkunde im Strahlenschutz am PNEUMOLOGICUM HAMBURG</p>
-      </div>
-          <div class="person-card">
-        <img src="Vogelberg.jpeg" alt="Prof. Dr.<br>Christian Vogelberg" />
-        <h3>Prof. Dr.<br>Christian Vogelberg</h3>
-        <p>Facharzt für Kinder- und Jugendmedizin, Kinderpneumologie, Allergologie, Leiter im Bereich Kinderpneumologie/Allergologie; Leiter Universitäts AllergieCentrum (UAC) Dresden</p>
-      </div>
-          <div class="person-card">
-        <img src="Vogelmeier.jpg" alt="Prof. Dr.<br>Claus Franz Vogelmeier" />
-        <h3>Prof. Dr.<br>Claus Franz Vogelmeier</h3>
-        <p>Klinik für Innere Medizin, Pneumologie, Intensiv- und Schlafmedizin, UKGM Marburg; Vorsitzender der Deutschen Lungenstiftung (DLS)</p>
-      </div>
-          <div class="person-card">
-        <img src="Worth.jpg" alt="Prof. Dr.<br>Heinrich Worth" />
-        <h3>Prof. Dr.<br>Heinrich Worth</h3>
-        <p>Vorsitzender der AG Lungensport in Deutschland e. V.; Stellvertretender Vorsitzender der Atemwegsliga</p>
-      </div>
-          <div class="person-card">
-        <img src="Yildirim.jpg" alt="Prof. Dr.<br>Ali Önder Yildirim" />
-        <h3>Prof. Dr.<br>Ali Önder Yildirim</h3>
-        <p>Direktor des Instituts für Lungengesundheit und Immunität (LHI) am Helmholtz Zentrum München</p>
-      </div>
-          <div class="person-card">
-        <img src="Waschki.jpg" alt="Dr.<br>Benjamin Waschki" />
-        <h3>Dr.<br>Benjamin Waschki</h3>
-        <p>Chefarzt der LungenClinic Grosshansdorf, Facharzt für Innere Medizin, Pneumologie und Kardiologie</p>
-      </div>
-          <div class="person-card">
-        <img src="Andreas.jpg" alt="Prof. Dr.<br>Stefan Andreas" />
-        <h3>Prof. Dr.<br>Stefan Andreas</h3>
-        <p>Chefarzt Lungenfachklinik Immenhausen, Leiter Bereich Pneumologie, Universitätsmedizin Göttingen</p>
-      </div>
+        <div class="person-card">
+          <img src="Becker.jpg" alt="Dr. Jens C. Becker" />
+          <h3>Dr.<br>Jens C. Becker</h3>
+          <p>Ressortleiter PR und Öffentlichkeitsarbeit des Bundesverbandes der Pneumologen Hamburg/Schleswig-Holstein, Pneumologie Zentrum Lübeck</p>
+        </div>
+        <div class="person-card">
+          <img src="Kahnert.png" alt="Prof. Dr. med. Kathrin Kahnert" />
+          <h3>Prof. Dr. med.<br>Kathrin Kahnert</h3>
+          <p>Fachärztin für Innere Medizin und Pneumologie, außerplanmäßige Professorin an der Ludwig-Maximilians-Universität München, Gesellschafterin einer interdisziplinären Gemeinschaftspraxis und Gründerin des medizinischen Informationskanals PneumoPearls.</p>
+        </div>
+        <div class="person-card">
+          <img src="Kardos.jpg" alt="Dr. Peter Kardos" />
+          <h3>Dr.<br>Peter Kardos</h3>
+          <p>Gemeinschaftspraxis und Zentrum Pneumologie Allergologie und Schlafmedizin in der Klinik Maingau vom Roten Kreuz</p>
+        </div>
+        <div class="person-card">
+          <img src="Pfeifer.jpg" alt="Prof. Dr. Michael Pfeifer" />
+          <h3>Prof. Dr.<br>Michael Pfeifer</h3>
+          <p>Ratspräsident der Deutschen Gesellschaft für Pneumologie und Beatmungsmedizin e. V.</p>
+        </div>
+        <div class="person-card">
+          <img src="Probst.png" alt="Dr. Beatrice Probst" />
+          <h3>Dr.<br>Beatrice Probst</h3>
+          <p>Fachärztin für Innere Medizin und Pneumologie, Allergologie, Arbeitsmedizin, Notfallmedizin sowie Fachkunde im Strahlenschutz am PNEUMOLOGICUM HAMBURG</p>
+        </div>
+        <div class="person-card">
+          <img src="Vogelberg.jpeg" alt="Prof. Dr. Christian Vogelberg" />
+          <h3>Prof. Dr.<br>Christian Vogelberg</h3>
+          <p>Facharzt für Kinder- und Jugendmedizin, Kinderpneumologie, Allergologie, Leiter im Bereich Kinderpneumologie/Allergologie; Leiter Universitäts AllergieCentrum (UAC) Dresden</p>
+        </div>
+        <div class="person-card">
+          <img src="Vogelmeier.jpg" alt="Prof. Dr. Claus Franz Vogelmeier" />
+          <h3>Prof. Dr.<br>Claus Franz Vogelmeier</h3>
+          <p>Klinik für Innere Medizin, Pneumologie, Intensiv- und Schlafmedizin, UKGM Marburg; Vorsitzender der Deutschen Lungenstiftung (DLS)</p>
+        </div>
+        <div class="person-card">
+          <img src="Worth.jpg" alt="Prof. Dr. Heinrich Worth" />
+          <h3>Prof. Dr.<br>Heinrich Worth</h3>
+          <p>Vorsitzender der AG Lungensport in Deutschland e. V.; Stellvertretender Vorsitzender der Atemwegsliga</p>
+        </div>
+        <div class="person-card">
+          <img src="Yildirim.jpg" alt="Prof. Dr. Ali Önder Yildirim" />
+          <h3>Prof. Dr.<br>Ali Önder Yildirim</h3>
+          <p>Direktor des Instituts für Lungengesundheit und Immunität (LHI) am Helmholtz Zentrum München</p>
+        </div>
+        <div class="person-card">
+          <img src="Waschki.jpg" alt="Dr. Benjamin Waschki" />
+          <h3>Dr.<br>Benjamin Waschki</h3>
+          <p>Chefarzt der LungenClinic Grosshansdorf, Facharzt für Innere Medizin, Pneumologie und Kardiologie</p>
+        </div>
+        <div class="person-card">
+          <img src="Andreas.jpg" alt="Prof. Dr. Stefan Andreas" />
+          <h3>Prof. Dr.<br>Stefan Andreas</h3>
+          <p>Chefarzt Lungenfachklinik Immenhausen, Leiter Bereich Pneumologie, Universitätsmedizin Göttingen</p>
+        </div>
       </div>
     </div>
 
@@ -273,32 +200,44 @@
     <div class="gremium-section">
       <h2>Patient:innengremium</h2>
       <div class="personen-grid">
+        <div class="person-card">
+          <img src="Hennemann.jpeg" alt="Frank Hennemann" />
+          <h3>Frank Hennemann</h3>
+          <p>Vorstandsvorsitzender Bronchiektasen e. V. und Betroffener</p>
+        </div>
+        <div class="person-card">
+          <img src="Lorena_Krueger.jpeg" alt="Lorena Krüger" />
+          <h3>Lorena Krüger</h3>
+          <p>Betroffene</p>
+        </div>
+        <div class="person-card">
+          <img src="Bode.jpg" alt="Hans-Jürgen Bode" />
+          <h3>Hans-Jürgen Bode</h3>
+          <p>Betroffener</p>
+        </div>
+        <div class="person-card">
+          <img src="Wilkens.jpg" alt="Marion Wilkens" />
+          <h3>Marion Wilkens</h3>
+          <p>Vorstandsvorsitzende Alpha 1 e. V. und Betroffene</p>
+        </div>
+        <div class="person-card">
+          <img src="Gleichauf.jpg" alt="Lena Gleichauf" />
+          <h3>Lena Gleichauf</h3>
+          <p>Betroffene</p>
+        </div>
+      </div>
 
-          <div class="person-card">
-        <img src="Hennemann.jpeg" alt="Frank Hennemann" />
-        <h3>Frank Hennemann</h3>
-        <p>Vorstandsvorsitzender Bronchiektasen e. V. und Betroffener</p>
-      </div>
-          <div class="person-card">
-        <img src="Lorena_Krueger.jpeg" alt="Lorena Krüger" />
-        <h3>Lorena Krüger</h3>
-        <p>Betroffene</p>
-      </div>
-          <div class="person-card">
-        <img src="Bode.jpg" alt="Hans-Jürgen Bode" />
-        <h3>Hans-Jürgen Bode</h3>
-        <p>Betroffener</p>
-      </div>
-          <div class="person-card">
-        <img src="Wilkens.jpg" alt="Marion Wilkens" />
-        <h3>Marion Wilkens</h3>
-        <p>Vorstandsvorsitzende Alpha 1 e. V. und Betroffene</p>
-      </div>
-          <div class="person-card">
-        <img src="Gleichauf.jpg" alt="Lena Gleichauf" />
-        <h3>Lena Gleichauf</h3>
-        <p>Betroffene</p>
-      </div>
+      <!-- Organisationen -->
+      <h3 style="font-size:1rem;font-weight:600;color:#888;margin-top:2.5rem;margin-bottom:1rem;letter-spacing:0.05em;text-transform:uppercase;">Organisationen</h3>
+      <div style="display:flex;gap:1.5rem;flex-wrap:wrap;">
+        <a href="https://alpha1-deutschland.org/" target="_blank" style="display:flex;align-items:center;gap:0.8rem;background:var(--hell);border-radius:8px;padding:0.8rem 1.5rem;text-decoration:none;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='0 4px 12px rgba(0,0,0,0.1)'" onmouseout="this.style.boxShadow='none'">
+          <img src="Alpha1.jpg" alt="Alpha 1 Deutschland" style="height:40px;width:auto;object-fit:contain;" />
+          <span style="font-size:0.85rem;font-weight:600;color:var(--blau);">alpha1-deutschland.org</span>
+        </a>
+        <a href="https://bronchiektasen.org/" target="_blank" style="display:flex;align-items:center;gap:0.8rem;background:var(--hell);border-radius:8px;padding:0.8rem 1.5rem;text-decoration:none;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='0 4px 12px rgba(0,0,0,0.1)'" onmouseout="this.style.boxShadow='none'">
+          <img src="bronchiktasenb.jpg" alt="Bronchiektasen" style="height:40px;width:auto;object-fit:contain;" />
+          <span style="font-size:0.85rem;font-weight:600;color:var(--blau);">bronchiektasen.org</span>
+        </a>
       </div>
     </div>
 
@@ -306,27 +245,26 @@
     <div class="gremium-section">
       <h2>Industriepartner</h2>
       <div class="logos-grid">
-
-          <a href="https://www.sanofi.de/de" target="_blank" class="logo-karte">
-        <img src="sanofi.jpg" alt="Sanofi" />
-      </a>
-          <a href="https://www.astrazeneca.de/" target="_blank" class="logo-karte">
-        <img src="AZ.jpg" alt="AstraZeneca" />
-      </a>
-          <a href="https://www.chiesi.de/" target="_blank" class="logo-karte">
-        <img src="Chiesi.png" alt="Chiesi" />
-      </a>
-          <a href="https://de.gsk.com/de-de/" target="_blank" class="logo-karte">
-        <img src="GSK.png" alt="GSK" />
-      </a>
-          <a href="https://insmed.com/" target="_blank" class="logo-karte">
-        <img src="Insmed.jpg" alt="Insmed" />
-      </a>
-          <a href="https://pulmonx.com/de/" target="_blank" class="logo-karte">
-        <img src="Pulmonx.jpg" alt="Pulmonx" />
-      </a>
-      <div></div>
-      <div></div>
+        <a href="https://www.sanofi.de/de" target="_blank" class="logo-karte">
+          <img src="sanofi.jpg" alt="Sanofi" />
+        </a>
+        <a href="https://www.astrazeneca.de/" target="_blank" class="logo-karte">
+          <img src="AZ.jpg" alt="AstraZeneca" />
+        </a>
+        <a href="https://www.chiesi.de/" target="_blank" class="logo-karte">
+          <img src="Chiesi.png" alt="Chiesi" />
+        </a>
+        <a href="https://de.gsk.com/de-de/" target="_blank" class="logo-karte">
+          <img src="GSK.png" alt="GSK" />
+        </a>
+        <a href="https://insmed.com/" target="_blank" class="logo-karte">
+          <img src="Insmed.jpg" alt="Insmed" />
+        </a>
+        <a href="https://pulmonx.com/de/" target="_blank" class="logo-karte">
+          <img src="Pulmonx.jpg" alt="Pulmonx" />
+        </a>
+        <div></div>
+        <div></div>
       </div>
     </div>
 
