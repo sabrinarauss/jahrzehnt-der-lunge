@@ -9,666 +9,166 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --blau:       #1535a8;
-      --tuerkis:    #68d2df;
-      --gelb:       #f7af10;
-      --gruen:      #5a9e6f;
-      --weiss:      #ffffff;
-      --hell:       #f4f4f4;
-      --text:       #333333;
+      --blau:    #1535a8;
+      --tuerkis: #68d2df;
+      --gelb:    #f7af10;
+      --gruen:   #5a9e6f;
+      --weiss:   #ffffff;
+      --hell:    #f4f4f4;
+      --text:    #333333;
       --schrift: 'Poppins', sans-serif;
     }
 
     html { scroll-behavior: smooth; }
+    body { font-family: var(--schrift); color: var(--text); background: var(--weiss); overflow-x: hidden; }
 
-    body {
-      font-family: var(--schrift);
-      color: var(--text);
-      background: var(--weiss);
-      overflow-x: hidden;
-    }
-
-    /* ══ NAV ══ */
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 200;
-      background: var(--blau);
-      box-shadow: none;
-    }
-
-    .nav-inner {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 2rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 0;
-      align-items: center;
-    }
-    
-    nav ul li + li {
-      margin-left: 0.3rem;
-    }
-    
-    nav ul li.sep {
-      color: rgba(255,255,255,0.4);
-      padding: 0 0.2rem;
-      pointer-events: none;
-    }
-
-    nav ul li {
-      position: relative;
-    }
-
-    nav ul li a {
-      display: block;
-      padding: 1.2rem 1rem;
-      text-decoration: none;
-      color: var(--weiss);
-      font-weight: 500;
-      font-size: 0.8rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      transition: color 0.2s;
-      white-space: nowrap;
-    }
-
+    /* NAV */
+    header { position: sticky; top: 0; z-index: 200; background: var(--blau); }
+    .nav-inner { max-width: 1200px; margin: 0 auto; padding: 0 2rem; display: flex; align-items: center; justify-content: center; }
+    nav ul { list-style: none; display: flex; gap: 0; align-items: center; }
+    nav ul li + li { margin-left: 0.3rem; }
+    nav ul li.sep { color: rgba(255,255,255,0.4); padding: 0 0.2rem; pointer-events: none; }
+    nav ul li { position: relative; }
+    nav ul li a { display: block; padding: 1.2rem 1rem; text-decoration: none; color: var(--weiss); font-weight: 500; font-size: 0.8rem; letter-spacing: 0.12em; text-transform: uppercase; transition: color 0.2s; white-space: nowrap; }
     nav ul li a:hover { color: var(--tuerkis); }
-
-    /* Dropdown */
-    nav ul li .dropdown {
-      display: none;
-      position: absolute;
-      top: 100%;
-      left: 0;
-      background: var(--blau);
-      box-shadow: 0 6px 20px rgba(0,0,0,0.3);
-      min-width: 220px;
-      z-index: 300;
-    }
-
+    nav ul li .dropdown { display: none; position: absolute; top: 100%; left: 0; background: var(--blau); box-shadow: 0 6px 20px rgba(0,0,0,0.3); min-width: 220px; z-index: 300; }
     nav ul li:hover .dropdown { display: block; }
+    nav ul li .dropdown a { padding: 0.7rem 1.2rem; font-weight: 400; font-size: 0.85rem; border-bottom: 1px solid rgba(255,255,255,0.1); color: var(--weiss); text-transform: none; letter-spacing: 0; }
 
-    nav ul li .dropdown a {
-      padding: 0.7rem 1.2rem;
-      font-weight: 400;
-      font-size: 0.85rem;
-      border-bottom: 1px solid rgba(255,255,255,0.1);
-      color: var(--weiss);
-      text-transform: none;
-      letter-spacing: 0;
-    }
+    /* HERO */
+    .hero-banner { position: relative; background: var(--blau); overflow: hidden; }
+    .hero-oben { height: 340px; background: var(--blau); position: relative; }
+    .hero-logo { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -25%); z-index: 20; text-align: center; }
+    .hero-logo img { width: 320px; max-width: 35vw; }
+    .hero-strip { overflow: hidden; height: 320px; display: flex; position: relative; background: var(--blau); }
+    .hero-track { display: flex; gap: 30px; animation: laufend 45s linear infinite; will-change: transform; padding: 0 15px; }
+    .hero-track img { height: 320px; width: auto; flex-shrink: 0; display: block; object-fit: cover; }
+    .hero-unter { height: 80px; background: var(--blau); }
+    @keyframes laufend { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
 
-    /* Mitglied-Button */
-    nav ul li.btn-nav a {
-      background: transparent;
-      color: var(--weiss);
-      margin: 0;
-      padding: 1.2rem 1rem;
-      border-radius: 0;
-      border: none;
-    }
+    /* INTRO */
+    .intro { max-width: 1200px; margin: 4rem auto; padding: 0 2rem; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+    .intro-text h1 { font-size: 1.9rem; color: #888888; line-height: 1.35; margin-bottom: 1.5rem; font-weight: 400; }
+    .intro-text p { font-size: 0.9rem; color: #717171; line-height: 1.7; font-weight: 400; }
+    .intro-bild img { width: 100%; border-radius: 4px; display: block; }
 
-    nav ul li.btn-nav a:hover { color: var(--tuerkis); background: transparent; }
-
-
-
-    /* ══ HERO BANNER ══ */
-    .hero-banner {
-      position: relative;
-      background: var(--blau);
-      overflow: hidden;
-    }
-
-    /* Blauer Bereich oben */
-    .hero-oben {
-      height: 340px;
-      background: var(--blau);
-      position: relative;
-    }
-
-    /* Logo mittig – "DER" auf Grenze blau/bilder */
-    .hero-logo {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -25%);
-      z-index: 20;
-      text-align: center;
-    }
-
-    .hero-logo img {
-      width: 320px;
-      max-width: 35vw;
-      filter: none;
-    }
-
-    /* Laufende Bilder */
-    .hero-strip {
-      overflow: hidden;
-      height: 320px;
-      display: flex;
-      position: relative;
-      background: var(--blau);
-    }
-
-    .hero-track {
-      display: flex;
-      gap: 30px;
-      animation: laufend 45s linear infinite;
-      will-change: transform;
-      padding: 0 15px;
-    }
-
-    .hero-track img {
-      height: 320px;
-      width: auto;
-      flex-shrink: 0;
-      display: block;
-      object-fit: cover;
-    }
-
-    /* Blauer Streifen unter Bildern */
-    .hero-unter {
-      height: 80px;
-      background: var(--blau);
-    }
-
-    @keyframes laufend {
-      0%   { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
-    }
-
-    /* ══ INTRO TEXT + BILD ══ */
-    .intro {
-      max-width: 1200px;
-      margin: 4rem auto;
-      padding: 0 2rem;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 4rem;
-      align-items: center;
-    }
-
-    .intro-text h1 {
-      font-size: 1.9rem;
-      color: #888888;
-      line-height: 1.35;
-      margin-bottom: 1.5rem;
-      font-weight: 400;
-    }
-
-    .intro-text p {
-      font-size: 0.9rem;
-      color: #717171;
-      line-height: 1.7;
-      font-weight: 400;
-    }
-
-    .intro-bild img {
-      width: 100%;
-      border-radius: 4px;
-      display: block;
-    }
-
-    /* ══ POLITISCHER KOMPASS ══ */
-    .kompass {
-      background: var(--gelb);
-      padding: 3rem 2rem 5rem;
-    }
-
-    .kompass-inner {
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    .kompass h2 {
-      color: #1a1a1a;
-      font-size: 2.8rem;
-      font-weight: 300;
-      margin-bottom: 2.5rem;
-      display: block;
-    }
-
-    .kompass-karten {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.5rem;
-    }
-
-    .kompass-karte {
-      background: #e8e8e8;
-      border-radius: 20px;
-      padding: 2rem;
-      text-decoration: none;
-      display: block;
-      transition: background 0.3s, color 0.3s;
-      position: relative;
-      overflow: hidden;
-      min-height: 420px;
-    }
-
-    /* SVG Ecke wird inline eingefügt */
-    .kompass-karte::before { display: none; }
-
-    .kompass-karte .ecke-svg {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 110px;
-      height: 200px;
-      opacity: 1;
-    }
-
-    /* Normal: ecke grau */
-    .kompass-karte .ecke-svg path {
-      fill: #c8c8c8;
-    }
-
-    /* Hover: ecke türkis */
-    .kompass-karte:hover .ecke-svg path {
-      fill: #68d2df;
-    }
-
-    .kompass-karte:hover .ecke-svg path { fill: rgba(255,255,255,0.15); }
-
-    .kompass-karte:hover {
-      background: var(--blau);
-    }
-
-    .kompass-karte h3 { color: #333; }
-    .kompass-karte p { color: #555; }
-
+    /* KOMPASS */
+    .kompass { background: var(--gelb); padding: 3rem 2rem 5rem; }
+    .kompass-inner { max-width: 1200px; margin: 0 auto; }
+    .kompass h2 { color: #1a1a1a; font-size: 2.8rem; font-weight: 300; margin-bottom: 2.5rem; display: block; }
+    .kompass-karten { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+    .kompass-karte { background: #e8e8e8; border-radius: 20px; padding: 2rem; text-decoration: none; display: block; transition: background 0.3s; position: relative; overflow: hidden; min-height: 420px; }
+    .kompass-karte .ecke-svg { position: absolute; top: 0; left: 0; width: 110px; height: 200px; }
+    .kompass-karte .ecke-svg path { fill: #c8c8c8; }
+    .kompass-karte:hover .ecke-svg path { fill: #68d2df; }
+    .kompass-karte:hover { background: var(--blau); }
+    .kompass-karte h3 { color: #333; font-size: 1rem; font-weight: 400; margin-bottom: 0.8rem; margin-top: 0.5rem; line-height: 1.4; }
+    .kompass-karte p { color: #555; font-size: 1.05rem; line-height: 2; }
     .kompass-karte:hover h3 { color: var(--weiss); }
     .kompass-karte:hover p { color: rgba(255,255,255,0.9); }
-    
-    .kompass-karte:hover .ecke-svg path { fill: #68d2df; }
 
-    /* Pfeil oben rechts */
-    .kompass-karte .pfeil {
-      position: absolute;
-      top: 1.2rem;
-      right: 1.5rem;
-      font-size: 1.3rem;
-      color: #aaa;
-      transform: rotate(0deg);
-    }
+    /* VORSTAND */
+    .vorstand { max-width: 1200px; margin: 4rem auto; padding: 0 2rem; }
+    .vorstand h2 { font-size: 1.6rem; color: #1a1a1a; font-weight: 400; margin-bottom: 2rem; padding-bottom: 0.6rem; border-bottom: 3px solid var(--blau); display: inline-block; }
+    .vorstand-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.5rem; }
+    .vorstand-person img { width: 100%; aspect-ratio: 4/3; object-fit: cover; object-position: top center; border-radius: 4px; display: block; }
+    .vorstand-person h3 { font-size: 1.4rem; color: #666; margin: 1rem 0 0.5rem; font-weight: 400; line-height: 1.3; }
+    .vorstand-person p { font-size: 0.9rem; color: #555; line-height: 1.6; }
 
-    .kompass-karte:hover .pfeil { color: rgba(255,255,255,0.6); }
+    /* NEWS SECTION */
+    .news-section { background: var(--hell); padding: 4rem 0; }
+    .news-inner { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+    .news-inner h2 { font-size: 1.4rem; color: var(--blau); margin-bottom: 2rem; text-align: center; }
+    .news-inner h2 span { font-size: 0.8rem; color: #999; letter-spacing: 0.15em; text-transform: uppercase; margin-left: 0.8rem; }
 
-    .kompass-karte h3 {
-      font-size: 1rem;
-      font-weight: 400;
-      margin-bottom: 0.8rem;
-      margin-top: 0.5rem;
-      line-height: 1.4;
-    }
+    /* Filter */
+    .news-filter { display: flex; gap: 0.5rem; margin-bottom: 2rem; flex-wrap: wrap; }
+    .news-filter button { padding: 0.4rem 1rem; border: 2px solid #ccc; background: none; border-radius: 20px; cursor: pointer; font-size: 0.85rem; font-weight: 600; transition: all 0.2s; color: #555; font-family: var(--schrift); }
+    .news-filter button.aktiv, .news-filter button:hover { border-color: var(--blau); color: var(--blau); }
 
-    .kompass-karte p {
-      font-size: 1.05rem;
-      line-height: 2;
-    }
-
-    /* ══ VORSTAND ══ */
-    .vorstand {
-      max-width: 1200px;
-      margin: 4rem auto;
-      padding: 0 2rem;
-    }
-
-    .vorstand h2 {
-      font-size: 1.6rem;
-      color: #1a1a1a;
-      font-weight: 400;
-      margin-bottom: 2rem;
-      padding-bottom: 0.6rem;
-      border-bottom: 3px solid var(--blau);
-      display: inline-block;
-    }
-
-    .vorstand-grid {
+    /* News-Karten – Grid mit Bild */
+    .news-liste {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 2.5rem;
-    }
-
-    .vorstand-person img {
-      width: 100%;
-      aspect-ratio: 4/3;
-      object-fit: cover;
-      object-position: top center;
-      border-radius: 4px;
-      display: block;
-    }
-
-    .vorstand-person h3 {
-      font-size: 1.4rem;
-      color: #666;
-      margin: 1rem 0 0.5rem;
-      font-weight: 400;
-      line-height: 1.3;
-    }
-
-    .vorstand-person p {
-      font-size: 0.9rem;
-      color: #555;
-      line-height: 1.6;
-    }
-
-    /* ══ NEWS ══ */
-    .news-section {
-      background: var(--hell);
-      padding: 4rem 0;
-    }
-
-    .news-inner {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 2rem;
-    }
-
-    .news-inner h2 {
-      font-size: 1.4rem;
-      color: var(--blau);
-      margin-bottom: 2rem;
-      text-align: center;
-    }
-
-    .news-inner h2 span {
-      font-size: 0.8rem;
-      color: #999;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      margin-left: 0.8rem;
-    }
-
-    /* Filter-Tabs */
-    .news-filter {
-      display: flex;
-      gap: 0.5rem;
-      margin-bottom: 2rem;
-      flex-wrap: wrap;
-    }
-
-    .news-filter button {
-      padding: 0.4rem 1rem;
-      border: 2px solid #ccc;
-      background: none;
-      border-radius: 20px;
-      cursor: pointer;
-      font-size: 0.85rem;
-      font-weight: 600;
-      transition: all 0.2s;
-      color: #555;
-    }
-
-    .news-filter button.aktiv,
-    .news-filter button:hover { border-color: var(--blau); color: var(--blau); }
-
-    /* News-Karten */
-    .news-liste {
-      display: flex;
-      flex-direction: column;
       gap: 1.5rem;
     }
-
     .news-karte {
-      display: grid;
-      grid-template-columns: 1fr 2fr;
       background: var(--weiss);
-      border-left: 4px solid var(--tuerkis);
-      border-radius: 4px;
+      border-radius: 8px;
       overflow: hidden;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
       text-decoration: none;
-      transition: box-shadow 0.2s;
-    }
-
-    .news-karte:hover { box-shadow: 0 6px 20px rgba(0,0,0,0.12); }
-
-    .news-karte.veranstaltung { border-color: var(--blau); }
-    .news-karte.fakten { border-color: var(--gelb); }
-    .news-karte.wegweiser { border-color: #5a9e6f; }
-
-    .news-bild {
-      background: var(--tuerkis);
       display: flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 140px;
-      font-size: 3rem;
+      flex-direction: column;
+      transition: box-shadow 0.2s, transform 0.2s;
+      border-top: 4px solid var(--tuerkis);
     }
+    .news-karte:hover { box-shadow: 0 8px 24px rgba(0,0,0,0.15); transform: translateY(-3px); }
+    .news-karte.veranstaltung { border-top-color: var(--blau); }
+    .news-karte.fakten { border-top-color: var(--gelb); }
+    .news-karte.wegweiser { border-top-color: var(--gruen); }
 
-    .news-karte.veranstaltung .news-bild { background: var(--blau); }
-    .news-karte.fakten .news-bild { background: var(--gelb); }
-    .news-karte.wegweiser .news-bild { background: #5a9e6f; }
-
-    .news-inhalt {
-      padding: 1.2rem 1.5rem;
+    .news-karte-img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      display: block;
     }
-
-    .news-kategorie {
-      font-size: 0.75rem;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--tuerkis);
-      margin-bottom: 0.5rem;
-    }
-
+    .news-inhalt { padding: 1.2rem 1.5rem 1.5rem; display: flex; flex-direction: column; flex: 1; }
+    .news-kategorie { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--tuerkis); margin-bottom: 0.2rem; display: block; }
     .news-karte.veranstaltung .news-kategorie { color: var(--blau); }
     .news-karte.fakten .news-kategorie { color: var(--gelb); }
-    .news-karte.wegweiser .news-kategorie { color: #5a9e6f; }
+    .news-karte.wegweiser .news-kategorie { color: var(--gruen); }
+    .news-datum { font-size: 0.8rem; color: #aaa; display: block; margin-bottom: 0.5rem; }
+    .news-inhalt h3 { font-size: 0.95rem; color: #1a1a1a; margin-bottom: 0.5rem; line-height: 1.4; font-weight: 600; }
+    .news-inhalt p { font-size: 0.85rem; color: #666; line-height: 1.6; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; flex: 1; }
+    .news-mehr { display: inline-block; margin-top: 0.8rem; font-size: 0.85rem; font-weight: 600; color: var(--blau); }
 
-    .news-inhalt h3 {
-      font-size: 1rem;
-      color: var(--blau);
-      margin-bottom: 0.5rem;
-      line-height: 1.4;
-    }
+    .news-karte.versteckt { display: none; }
 
-    .news-inhalt p {
-      font-size: 0.85rem;
-      color: #666;
-      line-height: 1.6;
-      display: -webkit-box;
-      -webkit-line-clamp: 2;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
-    }
-
-    .news-mehr {
-      display: inline-block;
-      margin-top: 0.8rem;
-      font-size: 0.85rem;
-      font-weight: 600;
-      color: var(--tuerkis);
-    }
-
-    .news-karte.veranstaltung .news-mehr { color: var(--blau); }
-    .news-karte.fakten .news-mehr { color: var(--gelb); }
-
-    /* ══ KONTAKTFORMULAR ══ */
-    #kontakt {
-      background: var(--blau);
-      padding: 4rem 2rem;
-    }
-
-    .kontakt-inner {
-      max-width: 700px;
-      margin: 0 auto;
-    }
-
-    #kontakt h2 {
-      color: var(--weiss);
-      font-size: 1.4rem;
-      margin-bottom: 2rem;
-      text-align: center;
-    }
-
-    .form-zeile {
-      margin-bottom: 1.2rem;
-      position: relative;
-    }
-
-    .form-zeile input,
-    .form-zeile textarea {
-      width: 100%;
-      background: transparent;
-      border: none;
-      border-bottom: 2px solid rgba(255,255,255,0.4);
-      color: var(--weiss);
-      padding: 0.8rem 0;
-      font-size: 1rem;
-      font-family: var(--schrift);
-      outline: none;
-      transition: border-color 0.2s;
-    }
-
-    .form-zeile input:focus,
-    .form-zeile textarea:focus { border-color: var(--tuerkis); }
-
-    .form-zeile input::placeholder,
-    .form-zeile textarea::placeholder { color: rgba(255,255,255,0.5); }
-
-    .form-zeile textarea { min-height: 120px; resize: vertical; }
-
-    .btn-senden {
-      background: var(--tuerkis);
-      color: var(--blau);
-      border: none;
-      padding: 0.8rem 2.5rem;
-      font-size: 1rem;
-      font-weight: 700;
-      border-radius: 3px;
-      cursor: pointer;
-      transition: background 0.2s;
-    }
-
-    .btn-senden:hover { background: var(--weiss); }
-
-    /* ══ KONTAKT BUTTON ══ */
-    .btn-kontakt {
-      background: var(--tuerkis);
-      color: var(--blau);
-      border: none;
-      padding: 0.7rem 2rem;
-      font-size: 0.95rem;
-      font-weight: 600;
-      border-radius: 30px;
-      cursor: pointer;
-      transition: background 0.2s, color 0.2s;
-      font-family: var(--schrift);
-    }
-
-    .btn-kontakt:hover {
-      background: var(--weiss);
-      color: var(--blau);
-    }
-
-    .kontakt-form-box {
-      max-width: 700px;
-      margin: 2rem auto;
-      padding: 0 2rem;
-    }
-
-    /* ══ FOOTER ══ */
-    footer {
-      background: var(--blau);
-      border-top: 1px solid rgba(255,255,255,0.1);
-      padding: 2rem;
-    }
-
-    .footer-inner {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: 1fr 2fr;
-      gap: 3rem;
-      margin-bottom: 2rem;
-    }
-
+    /* FOOTER */
+    footer { background: var(--blau); border-top: 1px solid rgba(255,255,255,0.1); padding: 2rem; }
+    .footer-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 2fr; gap: 3rem; margin-bottom: 2rem; }
     .footer-nav ul { list-style: none; }
-
-    .footer-nav ul li a {
-      color: var(--weiss);
-      text-decoration: underline;
-      font-size: 0.95rem;
-      font-weight: 600;
-      display: block;
-      padding: 0.4rem 0;
-      transition: color 0.2s;
-    }
-
+    .footer-nav ul li a { color: var(--weiss); text-decoration: underline; font-size: 0.95rem; font-weight: 600; display: block; padding: 0.4rem 0; transition: color 0.2s; }
     .footer-nav ul li a:hover { color: var(--tuerkis); }
-
-    .footer-kontakt h3 {
-      color: var(--weiss);
-      margin-bottom: 1rem;
-    }
-
-    .footer-kontakt a {
-      display: inline-block;
-      color: var(--blau);
-      background: var(--weiss);
-      padding: 0.5rem 1.5rem;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 0.9rem;
-      border-radius: 3px;
-      transition: background 0.2s;
-    }
-
-    .footer-kontakt a:hover { background: var(--tuerkis); }
-
-    .footer-bottom {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding-top: 1.5rem;
-      border-top: 1px solid rgba(255,255,255,0.1);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .footer-bottom p, .footer-bottom a {
-      color: rgba(255,255,255,0.5);
-      font-size: 0.85rem;
-      text-decoration: none;
-    }
-
+    .footer-kontakt h3 { color: var(--weiss); margin-bottom: 1rem; }
+    .btn-kontakt { background: var(--tuerkis); color: var(--blau); border: none; padding: 0.7rem 2rem; font-size: 0.95rem; font-weight: 600; border-radius: 30px; cursor: pointer; font-family: var(--schrift); transition: background 0.2s; }
+    .btn-kontakt:hover { background: var(--weiss); }
+    .footer-bottom { max-width: 1200px; margin: 0 auto; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.1); display: flex; justify-content: space-between; align-items: center; }
+    .footer-bottom p, .footer-bottom a { color: rgba(255,255,255,0.5); font-size: 0.85rem; text-decoration: none; }
     .footer-bottom a:hover { color: var(--weiss); }
 
-    /* ══ RESPONSIVE ══ */
+    /* Kontaktformular im Footer */
+    .kontakt-form-box { max-width: 700px; margin: 2rem auto; padding: 0 2rem; }
+    .kontakt-inner { }
+    .form-zeile { margin-bottom: 1.2rem; }
+    .form-zeile input, .form-zeile textarea { width: 100%; background: transparent; border: none; border-bottom: 2px solid rgba(255,255,255,0.4); color: var(--weiss); padding: 0.8rem 0; font-size: 1rem; font-family: var(--schrift); outline: none; transition: border-color 0.2s; }
+    .form-zeile input:focus, .form-zeile textarea:focus { border-color: var(--tuerkis); }
+    .form-zeile input::placeholder, .form-zeile textarea::placeholder { color: rgba(255,255,255,0.5); }
+    .form-zeile textarea { min-height: 120px; resize: vertical; }
+    .btn-senden { background: var(--tuerkis); color: var(--blau); border: none; padding: 0.8rem 2.5rem; font-size: 1rem; font-weight: 700; border-radius: 3px; cursor: pointer; font-family: var(--schrift); }
+    .btn-senden:hover { background: var(--weiss); }
+
+    /* RESPONSIVE */
     @media (max-width: 900px) {
       .intro { grid-template-columns: 1fr; gap: 2rem; }
       .intro-bild { order: -1; }
       .vorstand-grid { grid-template-columns: repeat(2, 1fr); }
       .footer-inner { grid-template-columns: 1fr; }
+      .news-liste { grid-template-columns: repeat(2, 1fr); }
     }
-
     @media (max-width: 600px) {
       .vorstand-grid { grid-template-columns: 1fr; }
-      .news-karte { grid-template-columns: 1fr; }
-      .news-bild { min-height: 80px; }
+      .news-liste { grid-template-columns: 1fr; }
       nav ul { flex-wrap: wrap; justify-content: center; }
       nav ul li a { padding: 0.8rem 0.7rem; font-size: 0.8rem; }
     }
-
-    /* Versteckte News für Filter */
-    .news-karte.versteckt { display: none; }
   </style>
 </head>
 <body>
 
-  <!-- ══ HEADER / NAV ══ -->
+  <!-- NAV -->
   <header>
     <div class="nav-inner">
       <nav>
@@ -700,8 +200,7 @@
     </div>
   </header>
 
-
-  <!-- ══ HERO BANNER ══ -->
+  <!-- HERO -->
   <section class="hero-banner">
     <div class="hero-oben">
       <div class="hero-logo">
@@ -733,8 +232,7 @@
     <div class="hero-unter"></div>
   </section>
 
-
-  <!-- ══ INTRO TEXT + BILD ══ -->
+  <!-- INTRO -->
   <section class="intro">
     <div class="intro-text">
       <h1>Wir setzen uns für eine bessere Prävention, Früherkennung und Versorgung von Patient:innen mit chronischen Lungen- und Atemwegserkrankungen ein.</h1>
@@ -745,49 +243,44 @@
     </div>
   </section>
 
-
-  <!-- ══ POLITISCHER KOMPASS ══ -->
-    <section class="kompass">
+  <!-- POLITISCHER KOMPASS -->
+  <section class="kompass">
     <div class="kompass-inner">
       <h2>Politischer Kompass</h2>
       <div class="kompass-karten">
-
         <a class="kompass-karte" href="politischer-kompass.html">
-          <svg class="ecke-svg" viewBox="0 0 121 221" xmlns="http://www.w3.org/2000/svg"><path fill="#68d2df" d="M87.4,5.8 L91.4,20.8 L93.9,29.9 L98.1,45.7 L101.2,57.1 L102.9,63.9 L104.5,69.7 L106,75.8 L107.6,81.8 L109.1,87.7 L110.1,91.6 L111.5,97.2 L112.7,101.8 L113.8,106.3 L114.8,110.6 L115.8,114.7 L116.5,117.6 L116.9,119.5 L117.6,122.3 L118.1,125.1 L118.4,126.4 L118.7,127.8 L119,129.7 L119.3,131.7 L119.7,134.2 L119.9,136.7 L120,137.9 C121.1,150 119.5,160 114.2,168.3 C106,181.1 96.3,194.4 85,206.9 C71.5,221.7 59.2,221.9 47.4,218.3 L43.9,217.1 L39,215.2 L33.9,213 L29.8,211.2 C18.7,206.4 8.4,201.4 0,195.2 L0,20.1 C0,9 9,0 20.1,0 L85.4,0 Z"/></svg>
+          <svg class="ecke-svg" viewBox="0 0 121 221" xmlns="http://www.w3.org/2000/svg"><path d="M87.4,5.8 L91.4,20.8 L93.9,29.9 L98.1,45.7 L101.2,57.1 L102.9,63.9 L104.5,69.7 L106,75.8 L107.6,81.8 L109.1,87.7 L110.1,91.6 L111.5,97.2 L112.7,101.8 L113.8,106.3 L114.8,110.6 L115.8,114.7 L116.5,117.6 L116.9,119.5 L117.6,122.3 L118.1,125.1 L118.4,126.4 L118.7,127.8 L119,129.7 L119.3,131.7 L119.7,134.2 L119.9,136.7 L120,137.9 C121.1,150 119.5,160 114.2,168.3 C106,181.1 96.3,194.4 85,206.9 C71.5,221.7 59.2,221.9 47.4,218.3 L43.9,217.1 L39,215.2 L33.9,213 L29.8,211.2 C18.7,206.4 8.4,201.4 0,195.2 L0,20.1 C0,9 9,0 20.1,0 L85.4,0 Z"/></svg>
           <svg style="position:absolute;top:1.5rem;right:1.5rem;width:44px;height:44px;" viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg"><g stroke="rgba(255,255,255,0.9)" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><line x1="6" y1="38" x2="38" y2="6"/><line x1="38" y1="6" x2="38" y2="20"/><line x1="38" y1="6" x2="24" y2="6"/></g></svg>
           <div style="margin-top:1.5rem;position:relative;z-index:1;">
             <h3>Prävention und Früherkennung</h3>
             <p>Der erste Teil unseres „Politischen Kompasses" liefert politische Impulse und Lösungsvorschläge zu den Themen Prävention und Früherkennung.</p>
           </div>
         </a>
-
         <a class="kompass-karte" href="politischer-kompass.html">
-          <svg class="ecke-svg" viewBox="0 0 121 221" xmlns="http://www.w3.org/2000/svg"><path fill="#68d2df" d="M87.4,5.8 L91.4,20.8 L93.9,29.9 L98.1,45.7 L101.2,57.1 L102.9,63.9 L104.5,69.7 L106,75.8 L107.6,81.8 L109.1,87.7 L110.1,91.6 L111.5,97.2 L112.7,101.8 L113.8,106.3 L114.8,110.6 L115.8,114.7 L116.5,117.6 L116.9,119.5 L117.6,122.3 L118.1,125.1 L118.4,126.4 L118.7,127.8 L119,129.7 L119.3,131.7 L119.7,134.2 L119.9,136.7 L120,137.9 C121.1,150 119.5,160 114.2,168.3 C106,181.1 96.3,194.4 85,206.9 C71.5,221.7 59.2,221.9 47.4,218.3 L43.9,217.1 L39,215.2 L33.9,213 L29.8,211.2 C18.7,206.4 8.4,201.4 0,195.2 L0,20.1 C0,9 9,0 20.1,0 L85.4,0 Z"/></svg>
+          <svg class="ecke-svg" viewBox="0 0 121 221" xmlns="http://www.w3.org/2000/svg"><path d="M87.4,5.8 L91.4,20.8 L93.9,29.9 L98.1,45.7 L101.2,57.1 L102.9,63.9 L104.5,69.7 L106,75.8 L107.6,81.8 L109.1,87.7 L110.1,91.6 L111.5,97.2 L112.7,101.8 L113.8,106.3 L114.8,110.6 L115.8,114.7 L116.5,117.6 L116.9,119.5 L117.6,122.3 L118.1,125.1 L118.4,126.4 L118.7,127.8 L119,129.7 L119.3,131.7 L119.7,134.2 L119.9,136.7 L120,137.9 C121.1,150 119.5,160 114.2,168.3 C106,181.1 96.3,194.4 85,206.9 C71.5,221.7 59.2,221.9 47.4,218.3 L43.9,217.1 L39,215.2 L33.9,213 L29.8,211.2 C18.7,206.4 8.4,201.4 0,195.2 L0,20.1 C0,9 9,0 20.1,0 L85.4,0 Z"/></svg>
           <svg style="position:absolute;top:1.5rem;right:1.5rem;width:44px;height:44px;" viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg"><g stroke="rgba(255,255,255,0.9)" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><line x1="6" y1="38" x2="38" y2="6"/><line x1="38" y1="6" x2="38" y2="20"/><line x1="38" y1="6" x2="24" y2="6"/></g></svg>
           <div style="margin-top:1.5rem;position:relative;z-index:1;">
             <h3>Strukturierte Versorgung</h3>
-            <p>Der zweite Teil des „Politischen Kompass" fokussiert sich auf den Bereich der effektiven und strukturierten Versorgung und zeigt konkrete politische Handlungsoptionen und Lösungswege auf.</p>
+            <p>Der zweite Teil des „Politischen Kompass" fokussiert sich auf den Bereich der effektiven und strukturierten Versorgung und zeigt konkrete politische Handlungsoptionen auf.</p>
           </div>
         </a>
-
       </div>
     </div>
   </section>
 
-
-  <!-- ══ VORSTAND ══ -->
+  <!-- VORSTAND -->
   <section class="vorstand">
     <h2>Vorstand</h2>
     <div class="vorstand-grid">
 
       <div class="vorstand-person">
-        <img src="Rabe_D0A3424_2.jpg" alt="Prof. Dr. Klaus Rabe" />
+        <img src="Rabe.jpg" alt="Prof. Dr. Klaus Rabe" />
         <h3>Prof. Dr.<br>Klaus Rabe</h3>
-        <p>Seniorprofessor, Medizinische Fakultät – Christian-Albrechts-Universität zu Kiel Stellvertretender Vorsitzender, Deutsches Zentrum für Lungenforschung Airway Research Center North (ARCN)</p>
+        <p>Seniorprofessor, Medizinische Fakultät – Christian-Albrechts-Universität zu Kiel. Stellvertretender Vorsitzender, Deutsches Zentrum für Lungenforschung Airway Research Center North (ARCN).</p>
       </div>
 
       <div class="vorstand-person">
-        <img src="Koper_D0A3417_2.jpg" alt="Dr. Iris Koper" />
+        <img src="Koper.jpg" alt="Dr. Iris Koper" />
         <h3>Dr.<br>Iris Koper</h3>
         <p>Chefärztin Innere Medizin / Pneumologie, Schlafmedizin, Intensivmedizin, Allergologie und Umweltmedizin, Ameos Klinik Oldenburg.</p>
       </div>
@@ -811,7 +304,7 @@
       </div>
 
       <div class="vorstand-person">
-<img src="Dorothee_Wellmann.jpeg" alt="Dorothee Wellmann" />
+        <img src="Dorothee_Wellmann.jpeg" alt="Dorothee Wellmann" />
         <h3>Dorothee Wellmann</h3>
         <p>Head of Public Affairs Immunology, Sanofi.</p>
       </div>
@@ -819,13 +312,11 @@
     </div>
   </section>
 
-
-  <!-- ══ NEWS / FAKTEN ══ -->
+  <!-- NEWS / FAKTEN -->
   <section class="news-section">
     <div class="news-inner">
       <h2>Fakten &amp; Neuigkeiten <span>ENTDECKEN SIE MEHR</span></h2>
 
-      <!-- Filter -->
       <div class="news-filter">
         <button class="aktiv" onclick="filterNews('alle', this)">Alle</button>
         <button onclick="filterNews('neuigkeiten', this)">Neuigkeiten</button>
@@ -836,92 +327,103 @@
 
       <div class="news-liste" id="newsliste">
 
-        <a class="news-karte neuigkeiten" href="#">
-          <div class="news-bild">📰</div>
+        <a class="news-karte neuigkeiten" href="news-vereinsgruendung.html">
+          <img class="news-karte-img" src="JdL_Gruendung.jpg" alt="Vereinsgründung" />
           <div class="news-inhalt">
-            <div class="news-kategorie">Neuigkeiten</div>
+            <span class="news-kategorie">Neuigkeiten</span>
+            <span class="news-datum">10.04.2025</span>
             <h3>Initiative geht nächsten Schritt: „Jahrzehnt der Lunge" wird Verein</h3>
             <p>Aus der Initiative, die sich im Herbst 2021 formierte, geht nun der Verein „Jahrzehnt der Lunge e.V." hervor. Das gemeinsame Ziel ist es, den über 14 Millionen Menschen in Deutschland mehr politische Präsenz zu verleihen.</p>
             <span class="news-mehr">Mehr erfahren →</span>
           </div>
         </a>
 
-        <a class="news-karte neuigkeiten" href="#">
-          <div class="news-bild">🎙</div>
+        <a class="news-karte neuigkeiten" href="news-vogelberg.html">
+          <img class="news-karte-img" src="Vogelberg.jpeg" alt="Prof. Dr. Christian Vogelberg" />
           <div class="news-inhalt">
-            <div class="news-kategorie">Neuigkeiten</div>
-            <h3>5 Fragen an Dr. med. Christian Vogelberg</h3>
+            <span class="news-kategorie">Neuigkeiten</span>
+            <span class="news-datum">23.01.2025</span>
+            <h3>5 Fragen an Prof. Dr. Christian Vogelberg</h3>
             <p>Facharzt für Kinder- und Jugendmedizin, Kinderpneumologie, Allergologie. Leiter Universitäts AllergieCentrum (UAC) Dresden.</p>
             <span class="news-mehr">Mehr erfahren →</span>
           </div>
         </a>
 
-        <a class="news-karte veranstaltung" href="#">
-          <div class="news-bild">🎤</div>
+        <a class="news-karte veranstaltung" href="news-parl-abend.html">
+          <img class="news-karte-img" src="parl_Abend.jpg" alt="Parlamentarischer Abend" />
           <div class="news-inhalt">
-            <div class="news-kategorie">Veranstaltungen</div>
+            <span class="news-kategorie">Veranstaltungen</span>
+            <span class="news-datum">04.12.2024</span>
             <h3>Parlamentarischer Abend: „Bundestagswahl 2025 – Eine Chance für die vergessenen Volkskrankheiten der Lunge"</h3>
-            <p>Am 3. Dezember 2024 trafen sich in Berlin politische Entscheidungsträger, Expert:innen und Patient:innenvertreter:innen.</p>
+            <p>Am 3. Dezember 2024 trafen sich in Berlin politische Entscheidungsträger, Expert:innen und Patient:innenvertreter:innen beim Parlamentarischen Abend des Jahrzehnts der Lunge.</p>
             <span class="news-mehr">Mehr erfahren →</span>
           </div>
         </a>
 
-        <a class="news-karte fakten" href="#">
-          <div class="news-bild">📊</div>
+        <a class="news-karte fakten" href="news-copd-index.html">
+          <img class="news-karte-img" src="copd_index.jpg" alt="COPD-Index" />
           <div class="news-inhalt">
-            <div class="news-kategorie">Fakten</div>
+            <span class="news-kategorie">Fakten</span>
+            <span class="news-datum">20.11.2024</span>
             <h3>COPD-Index: Ein Weckruf zum Welt-COPD-Tag</h3>
             <p>Der COPD-Index untersucht die Situation in 34 Ländern. Das Ergebnis für Deutschland ist alarmierend: Mit Platz 28 liegt Deutschland weit zurück.</p>
             <span class="news-mehr">Mehr erfahren →</span>
           </div>
         </a>
 
-        <a class="news-karte fakten" href="#">
-          <div class="news-bild">📋</div>
+        <a class="news-karte fakten" href="news-factsheet.html">
+          <img class="news-karte-img" src="JdL_Factsheet_Cover.jpg" alt="Fact Sheet" />
           <div class="news-inhalt">
-            <div class="news-kategorie">Fakten</div>
+            <span class="news-kategorie">Fakten</span>
+            <span class="news-datum">25.09.2024</span>
             <h3>Chronische Lungen- und Atemwegserkrankungen: Ein unterschätztes Problem</h3>
-            <p>Die Zahl der Betroffenen von chronischen Lungen- und Atemwegserkrankungen sind zuletzt drastisch gestiegen. Mittlerweile sind in Deutschland über 14 Millionen betroffen.</p>
+            <p>Die Zahl der Betroffenen von chronischen Lungen- und Atemwegserkrankungen sind zuletzt drastisch gestiegen. Mittlerweile sind in Deutschland über 14 Millionen Menschen betroffen.</p>
             <span class="news-mehr">Mehr erfahren →</span>
           </div>
         </a>
 
-        <a class="news-karte wegweiser" href="#">
-          <div class="news-bild">🧭</div>
+        <a class="news-karte neuigkeiten" href="news-kardos.html">
+          <img class="news-karte-img" src="Kardos.jpg" alt="Dr. med. Peter Kardos" />
           <div class="news-inhalt">
-            <div class="news-kategorie">Wegweiser</div>
-            <h3>Bundeskabinett beschließt Gesetzesentwurf zur Stärkung der Herzgesundheit</h3>
-            <p>Das Jahrzehnt der Lunge begrüßt das „Gesetz zur Stärkung der Herzgesundheit". Die vorgeschlagenen Maßnahmen zur Früherkennung sind zielführend.</p>
+            <span class="news-kategorie">Neuigkeiten</span>
+            <span class="news-datum">13.09.2024</span>
+            <h3>5 Fragen an Dr. med. Peter Kardos</h3>
+            <p>Facharzt für Innere Medizin, Allergologie und Schlafmedizin am Lungenzentrum Maingau, Mitglied des geschäftsführenden Vorstandes der Deutschen Atemwegsliga e.V.</p>
             <span class="news-mehr">Mehr erfahren →</span>
           </div>
         </a>
 
-        <a class="news-karte veranstaltung" href="#">
-          <div class="news-bild">🎤</div>
+        <a class="news-karte neuigkeiten" href="news-gappa.html">
+          <img class="news-karte-img" src="Gappa.jpg" alt="Prof. Dr. Monika Gappa" />
           <div class="news-inhalt">
-            <div class="news-kategorie">Veranstaltungen</div>
-            <h3>Tagesspiegel Expertenrunde „Chronisch krank"</h3>
-            <p>Schwerpunkt Lunge – Wie steht es um die Versorgung in Deutschland?</p>
+            <span class="news-kategorie">Neuigkeiten</span>
+            <span class="news-datum">13.03.2024</span>
+            <h3>5 Fragen an Prof. Dr. Monika Gappa</h3>
+            <p>Chefärztin der Klinik für Kinder- und Jugendmedizin am Evangelischen Krankenhaus Düsseldorf, Präsidentin der European Respiratory Society.</p>
             <span class="news-mehr">Mehr erfahren →</span>
           </div>
         </a>
 
-        <a class="news-karte fakten" href="#">
-          <div class="news-bild">📊</div>
+        <a class="news-karte wegweiser" href="news-luftreinhaltung.html">
+          <img class="news-karte-img" src="Luftverschmutzung.jpg" alt="Luftreinhaltung" />
           <div class="news-inhalt">
-            <div class="news-kategorie">Fakten</div>
-            <h3>Pneumologische Erkrankungen in Deutschland</h3>
-            <p>Anzahl Betroffener steigt massiv: Weißbuch Lunge liefert neueste Zahlen.</p>
+            <span class="news-kategorie">Wegweiser</span>
+            <span class="news-datum">01.11.2023</span>
+            <h3>Bundesregierung plant neues Luftreinhalteprogramm</h3>
+            <p>Das Jahrzehnt der Lunge begrüßt den geplanten Entwurf der Bundesregierung für ein Nationales Luftreinhalteprogramm – fordert aber strengere WHO-konforme Grenzwerte.</p>
             <span class="news-mehr">Mehr erfahren →</span>
           </div>
         </a>
 
       </div>
+
+      <div style="text-align:center;margin-top:2.5rem;">
+        <a href="news.html" style="display:inline-block;background:var(--blau);color:#fff;padding:0.8rem 2.5rem;border-radius:30px;text-decoration:none;font-weight:600;font-size:0.95rem;transition:background 0.2s;" onmouseover="this.style.background='#0f2580'" onmouseout="this.style.background='var(--blau)'">Alle Neuigkeiten ansehen →</a>
+      </div>
     </div>
   </section>
 
-
-  <!-- ══ FOOTER MIT KONTAKT ══ -->
+  <!-- FOOTER -->
   <footer>
     <div class="footer-inner">
       <nav class="footer-nav">
@@ -940,7 +442,6 @@
       </div>
     </div>
 
-    <!-- Kontaktformular mit Formspree -->
     <div class="kontakt-form-box" id="kontaktBox" style="display:none;">
       <div class="kontakt-inner">
         <form action="https://formspree.io/f/mdajrjzl" method="POST">
@@ -961,16 +462,11 @@
     </div>
   </footer>
 
-
-  <!-- ══ JAVASCRIPT ══ -->
   <script>
-    // ── Kontakt Toggle ──
     function toggleKontakt() {
       const box = document.getElementById('kontaktBox');
       box.style.display = box.style.display === 'none' ? 'block' : 'none';
     }
-
-    // ── News-Filter ──
     function filterNews(kategorie, btn) {
       document.querySelectorAll('.news-filter button').forEach(b => b.classList.remove('aktiv'));
       btn.classList.add('aktiv');
@@ -986,4 +482,3 @@
 
 </body>
 </html>
-<!-- version-1779718330 -->
