@@ -7,7 +7,7 @@
   <style>    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
-      --blau: #1535a8; --tuerkis: #68d2df; --gelb: #f7af10;
+      --blau: #1535a8; --tuerkis: #68d2df; --gelb: #f7af10; --gruen: #5a9e6f;
       --weiss: #ffffff; --hell: #f4f4f4; --text: #333333;
       --schrift: 'Poppins', sans-serif;
     }
@@ -28,8 +28,6 @@
     .seiten-hero h1 { font-size: 2.5rem; color: var(--weiss); font-weight: 300; margin-bottom: 1rem; }
     .seiten-hero p { color: rgba(255,255,255,0.8); max-width: 650px; margin: 0 auto; font-size: 1rem; line-height: 1.7; }
     main { max-width: 1100px; margin: 4rem auto; padding: 0 2rem; }
-    h2 { font-size: 1.6rem; color: #1a1a1a; font-weight: 400; margin-bottom: 1.5rem; padding-bottom: 0.6rem; border-bottom: 3px solid var(--blau); display: inline-block; }
-    p { font-size: 0.95rem; color: #555; line-height: 1.8; margin-bottom: 1rem; }
     footer { background: var(--blau); border-top: 1px solid rgba(255,255,255,0.1); padding: 2rem; margin-top: 4rem; }
     .footer-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 2fr; gap: 3rem; margin-bottom: 2rem; }
     .footer-nav ul { list-style: none; }
@@ -42,22 +40,8 @@
     .footer-bottom p, .footer-bottom a { color: rgba(255,255,255,0.5); font-size: 0.85rem; text-decoration: none; }
     .footer-bottom a:hover { color: var(--weiss); }
     @media (max-width: 768px) { .footer-inner { grid-template-columns: 1fr; } nav ul { flex-wrap: wrap; justify-content: center; } }
-
-    .news-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2rem;
-      margin-top: 2rem;
-    }
-    .news-karte-neu {
-      background: #fff;
-      border-radius: 8px;
-      overflow: hidden;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
-      text-decoration: none;
-      display: block;
-      transition: box-shadow 0.2s, transform 0.2s;
-    }
+    .news-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-top: 2rem; }
+    .news-karte-neu { background: #fff; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 12px rgba(0,0,0,0.08); text-decoration: none; display: block; transition: box-shadow 0.2s, transform 0.2s; }
     .news-karte-neu:hover { box-shadow: 0 8px 24px rgba(0,0,0,0.15); transform: translateY(-3px); }
     .news-karte-inhalt { padding: 1.2rem 1.5rem 1.5rem; }
     .news-kat { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; display: block; margin-bottom: 0.2rem; }
@@ -71,16 +55,7 @@
     @media (max-width: 900px) { .news-grid { grid-template-columns: repeat(2,1fr); } }
     @media (max-width: 600px) { .news-grid { grid-template-columns: 1fr; } }
     .news-karte-neu.versteckt { display: none; }
-    .artikel-header img { width: 100%; max-height: 400px; object-fit: cover; border-radius: 8px; margin-bottom: 1.5rem; }
-    .artikel-meta { display: flex; gap: 1rem; align-items: center; margin-bottom: 1rem; }
-    .artikel-kat { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.3rem 0.8rem; border-radius: 20px; color: #fff; }
-    .artikel-datum { font-size: 0.85rem; color: #aaa; }
-    .artikel-titel { font-size: 2rem; color: #1a1a1a; font-weight: 600; line-height: 1.3; margin-bottom: 1.5rem; }
-    .artikel-body p { font-size: 0.95rem; color: #444; line-height: 1.9; margin-bottom: 1rem; }
-    .artikel-body h3 { font-size: 1.2rem; color: var(--blau); font-weight: 600; margin: 2rem 0 0.8rem; }
-    .zurueck { display: inline-block; margin-bottom: 2rem; color: var(--blau); text-decoration: none; font-size: 0.9rem; font-weight: 600; }
-    .zurueck:hover { text-decoration: underline; }
-</style>
+  </style>
 </head>
 <body>
   <header>
@@ -113,10 +88,12 @@
       </nav>
     </div>
   </header>
+
   <section class="seiten-hero">
     <h1>Fakten &amp; Neuigkeiten</h1>
     <p>Aktuelle Meldungen, Fakten und Veranstaltungen rund um Lungengesundheit.</p>
   </section>
+
   <main>
     <div class="filter-leiste">
       <button class="filter-btn aktiv" onclick="filterNews('alle', this)">Alle</button>
@@ -125,130 +102,204 @@
       <button class="filter-btn" onclick="filterNews('veranstaltungen', this)">Veranstaltungen</button>
       <button class="filter-btn" onclick="filterNews('wegweiser', this)">Wegweiser</button>
     </div>
+
     <div class="news-grid" id="newsGrid">
 
-        <a href="news-vereinsgruendung.html" class="news-karte-neu neuigkeiten">
-          <img src="JdL_Gruendung.jpg" alt="Initiative geht n&#228;chsten Schritt: &#8222;Jahrzehnt der Lunge&#8220; wird Verein" style="width:100%;height:200px;object-fit:cover;display:block;" />
-          <div class="news-karte-inhalt">
-            <span class="news-kat" style="color:var(--tuerkis);">Neuigkeiten</span>
-            <span class="news-datum">10.04.2025</span>
-            <h3>Initiative geht n&#228;chsten Schritt: &#8222;Jahrzehnt der Lunge&#8220; wird Verein</h3>
-            <p>Aus der Initiative, die sich im Herbst 2021 formierte, geht nun der Verein &#8222;Jahrzehnt der Lunge e.V.&#8220; hervor. Das gemeinsame Ziel ist es, den &#252;ber 14 Millionen Menschen in Deutschland mit chronischen Lungen- und Atemwegserkrankungen mehr politische Pr&#228;senz zu verleihen.</p>
-            <span class="mehr-link">Mehr erfahren &#8594;</span>
-          </div>
-        </a>
-        <a href="news-vogelberg.html" class="news-karte-neu neuigkeiten">
-          <img src="Vogelberg.jpeg" alt="5 Fragen an Prof. Dr. Christian Vogelberg" style="width:100%;height:200px;object-fit:cover;display:block;" />
-          <div class="news-karte-inhalt">
-            <span class="news-kat" style="color:var(--tuerkis);">Neuigkeiten</span>
-            <span class="news-datum">23.01.2025</span>
-            <h3>5 Fragen an Prof. Dr. Christian Vogelberg</h3>
-            <p>Facharzt f&#252;r Kinder- und Jugendmedizin, Kinderpneumologie, Allergologie, Leiter Bereich Kinderpneumologie/Allergologie, Leiter Universit&#228;ts AllergieCentrum (UAC) Dresden.</p>
-            <span class="mehr-link">Mehr erfahren &#8594;</span>
-          </div>
-        </a>
-        <a href="news-parl-abend.html" class="news-karte-neu veranstaltungen">
-          <img src="parl_Abend.jpg" alt="Parlamentarischer Abend: &#8222;Bundestagswahl 2025 &#8211; Eine Chance f&#252;r die vergessenen Volkskrankheiten der Lunge&#8220;" style="width:100%;height:200px;object-fit:cover;display:block;" />
-          <div class="news-karte-inhalt">
-            <span class="news-kat" style="color:var(--blau);">Veranstaltungen</span>
-            <span class="news-datum">04.12.2024</span>
-            <h3>Parlamentarischer Abend: &#8222;Bundestagswahl 2025 &#8211; Eine Chance f&#252;r die vergessenen Volkskrankheiten der Lunge&#8220;</h3>
-            <p>Am 3. Dezember 2024 trafen sich in Berlin politische Entscheidungstr&#228;ger, Expert:innen und Patient:innenvertreter:innen beim Parlamentarischen Abend des Jahrzehnts der Lunge.</p>
-            <span class="mehr-link">Mehr erfahren &#8594;</span>
-          </div>
-        </a>
-        <a href="news-copd-index.html" class="news-karte-neu fakten">
-          <img src="copd_index.jpg" alt="COPD-Index: Ein Weckruf zum Welt-COPD-Tag" style="width:100%;height:200px;object-fit:cover;display:block;" />
-          <div class="news-karte-inhalt">
-            <span class="news-kat" style="color:var(--gelb);">Fakten</span>
-            <span class="news-datum">20.11.2024</span>
-            <h3>COPD-Index: Ein Weckruf zum Welt-COPD-Tag</h3>
-            <p>Der COPD-Index untersucht die Situation in 34 L&#228;ndern. Das Ergebnis f&#252;r Deutschland ist alarmierend: Mit Platz 28 liegt Deutschland weit zur&#252;ck.</p>
-            <span class="mehr-link">Mehr erfahren &#8594;</span>
-          </div>
-        </a>
-        <a href="news-factsheet.html" class="news-karte-neu fakten">
-          <img src="JdL_Factsheet_Cover.jpg" alt="Fact Sheet" style="width:100%;height:200px;object-fit:cover;display:block;" />
-          <div class="news-karte-inhalt">
-            <span class="news-kat" style="color:var(--gelb);">Fakten</span>
-            <span class="news-datum">25.09.2024</span>
-            <h3>Chronische Lungen- und Atemwegserkrankungen: Ein untersch&#228;tztes Problem</h3>
-            <p>Die Zahl der Betroffenen von chronischen Lungen- und Atemwegserkrankungen sind zuletzt drastisch gestiegen. Mittlerweile sind in Deutschland &#252;ber 14 Millionen Menschen betroffen.</p>
-            <span class="mehr-link">Mehr erfahren &#8594;</span>
-          </div>
-        </a>
-        <a href="news-kardos.html" class="news-karte-neu neuigkeiten">
-          <img src="Kardos.jpg" alt="5 Fragen an Dr. med. Peter Kardos" style="width:100%;height:200px;object-fit:cover;display:block;" />
-          <div class="news-karte-inhalt">
-            <span class="news-kat" style="color:var(--tuerkis);">Neuigkeiten</span>
-            <span class="news-datum">13.09.2024</span>
-            <h3>5 Fragen an Dr. med. Peter Kardos</h3>
-            <p>Facharzt f&#252;r Innere Medizin, Allergologie und Schlafmedizin am Lungenzentrum Maingau, Mitglied des gesch&#228;ftsf&#252;hrenden Vorstandes der Deutschen Atemwegsliga e.V.</p>
-            <span class="mehr-link">Mehr erfahren &#8594;</span>
-          </div>
-        </a>
-        <a href="news-gappa.html" class="news-karte-neu neuigkeiten">
-          <img src="Gappa.jpg" alt="5 Fragen an Prof. Dr. Monika Gappa" style="width:100%;height:200px;object-fit:cover;display:block;" />
-          <div class="news-karte-inhalt">
-            <span class="news-kat" style="color:var(--tuerkis);">Neuigkeiten</span>
-            <span class="news-datum">13.03.2024</span>
-            <h3>5 Fragen an Prof. Dr. Monika Gappa</h3>
-            <p>Chef&#228;rztin der Klinik f&#252;r Kinder- und Jugendmedizin am Evangelischen Krankenhaus D&#252;sseldorf, Pr&#228;sidentin der European Respiratory Society.</p>
-            <span class="mehr-link">Mehr erfahren &#8594;</span>
-          </div>
-        </a>
-        <a href="news-luftreinhaltung.html" class="news-karte-neu wegweiser">
-          <img src="Luftverschmutzung.jpg" alt="Luftverschmutzung" style="width:100%;height:200px;object-fit:cover;display:block;" />
-          <div class="news-karte-inhalt">
-            <span class="news-kat" style="color:#5a9e6f;">Wegweiser</span>
-            <span class="news-datum">01.11.2023</span>
-            <h3>Bundesregierung plant neues Luftreinhalteprogramm</h3>
-            <p>Das Jahrzehnt der Lunge begr&#252;&#223;t den geplanten Entwurf der Bundesregierung f&#252;r ein Nationales Luftreinhalteprogramm &#8211; fordert aber strengere WHO-konforme Grenzwerte.</p>
-            <span class="mehr-link">Mehr erfahren &#8594;</span>
-          </div>
-        </a>
-        <a href="news-tagesspiegel.html" class="news-karte-neu veranstaltungen">
-          <img src="tagesspiegel.jpg" alt="Tagesspiegel Expertenrunde &#8222;Chronisch Krank&#8220;" style="width:100%;height:200px;object-fit:cover;display:block;" />
-          <div class="news-karte-inhalt">
-            <span class="news-kat" style="color:var(--blau);">Veranstaltungen</span>
-            <span class="news-datum">11.10.2023</span>
-            <h3>Tagesspiegel Expertenrunde &#8222;Chronisch Krank&#8220;</h3>
-            <p>Schwerpunkt Lunge &#8211; Wie steht es um die Versorgung in Deutschland? Unter diesem Titel fand am 11. Oktober 2023 ein impulsgebendes Fachgespr&#228;ch des Tagesspiegels statt.</p>
-            <span class="mehr-link">Mehr erfahren &#8594;</span>
-          </div>
-        </a>
-        <a href="news-kompass-versorgung.html" class="news-karte-neu neuigkeiten">
-          <img src="kompass.jpg" alt="Politischer Kompass" style="width:100%;height:200px;object-fit:cover;display:block;" />
-          <div class="news-karte-inhalt">
-            <span class="news-kat" style="color:var(--tuerkis);">Neuigkeiten</span>
-            <span class="news-datum">11.10.2023</span>
-            <h3>Expert:innenkreis stellt zweiten Kompass zur &#8222;Strukturierten Versorgung&#8220; vor</h3>
-            <p>Das Jahrzehnt der Lunge hat seinen zweiten Politischen Kompass ver&#246;ffentlicht. Diese Ausgabe widmet sich der strukturierten Versorgung von Lungen- und Atemwegserkrankungen.</p>
-            <span class="mehr-link">Mehr erfahren &#8594;</span>
-          </div>
-        </a>
-        <a href="news-alsdorf.html" class="news-karte-neu neuigkeiten">
-          <img src="Alsdorf.jpg" alt="Elke Alsdorf" style="width:100%;height:200px;object-fit:cover;display:block;" />
-          <div class="news-karte-inhalt">
-            <span class="news-kat" style="color:var(--tuerkis);">Neuigkeiten</span>
-            <span class="news-datum">28.08.2023</span>
-            <h3>5 Fragen an Elke Alsdorf</h3>
-            <p>Patientenvertreterin beim Deutschen Allergie- und Asthmabund e.V. (DAAB) und Expertin des Jahrzehnts der Lunge &#252;ber Schulungen, Aufkl&#228;rung und die Bed&#252;rfnisse von Patient:innen.</p>
-            <span class="mehr-link">Mehr erfahren &#8594;</span>
-          </div>
-        </a>
-        <a href="news-tabakentwoehnung.html" class="news-karte-neu wegweiser">
-          <img src="tabakentwoehnung.png" alt="Tabakentwöhnung" style="width:100%;height:200px;object-fit:cover;display:block;" />
-          <div class="news-karte-inhalt">
-            <span class="news-kat" style="color:#5a9e6f;">Wegweiser</span>
-            <span class="news-datum">11.08.2023</span>
-            <h3>Positionspapier der DGP zur Tabakentw&#246;hnung</h3>
-            <p>In Zusammenarbeit mit zahlreichen Fachgesellschaften hat die DGP ein Positionspapier zur Tabakentw&#246;hnung bei hospitalisierten Patient:innen ver&#246;ffentlicht.</p>
-            <span class="mehr-link">Mehr erfahren &#8594;</span>
-          </div>
-        </a>
+      <!-- 10.04.2025 -->
+      <a href="news-vereinsgruendung.html" class="news-karte-neu neuigkeiten">
+        <img src="JdL_Gruendung.jpg" alt="Vereinsgründung" style="width:100%;height:200px;object-fit:cover;display:block;" />
+        <div class="news-karte-inhalt">
+          <span class="news-kat" style="color:var(--tuerkis);">Neuigkeiten</span>
+          <span class="news-datum">10.04.2025</span>
+          <h3>Initiative geht nächsten Schritt: „Jahrzehnt der Lunge" wird Verein</h3>
+          <p>Aus der Initiative, die sich im Herbst 2021 formierte, geht nun der Verein „Jahrzehnt der Lunge e.V." hervor. Das gemeinsame Ziel ist es, den über 14 Millionen Menschen in Deutschland mit chronischen Lungen- und Atemwegserkrankungen mehr politische Präsenz zu verleihen.</p>
+          <span class="mehr-link">Mehr erfahren →</span>
+        </div>
+      </a>
+
+      <!-- 23.01.2025 -->
+      <a href="news-vogelberg.html" class="news-karte-neu neuigkeiten">
+        <img src="Vogelberg.jpeg" alt="Prof. Dr. Christian Vogelberg" style="width:100%;height:200px;object-fit:cover;display:block;" />
+        <div class="news-karte-inhalt">
+          <span class="news-kat" style="color:var(--tuerkis);">Neuigkeiten</span>
+          <span class="news-datum">23.01.2025</span>
+          <h3>5 Fragen an Prof. Dr. Christian Vogelberg</h3>
+          <p>Facharzt für Kinder- und Jugendmedizin, Kinderpneumologie, Allergologie, Leiter Bereich Kinderpneumologie/Allergologie, Leiter Universitäts AllergieCentrum (UAC) Dresden.</p>
+          <span class="mehr-link">Mehr erfahren →</span>
+        </div>
+      </a>
+
+      <!-- 04.12.2024 -->
+      <a href="news-parl-abend.html" class="news-karte-neu veranstaltungen">
+        <img src="parl_Abend.jpg" alt="Parlamentarischer Abend" style="width:100%;height:200px;object-fit:cover;display:block;" />
+        <div class="news-karte-inhalt">
+          <span class="news-kat" style="color:var(--blau);">Veranstaltungen</span>
+          <span class="news-datum">04.12.2024</span>
+          <h3>Parlamentarischer Abend: „Bundestagswahl 2025 – Eine Chance für die vergessenen Volkskrankheiten der Lunge"</h3>
+          <p>Am 3. Dezember 2024 trafen sich in Berlin politische Entscheidungsträger, Expert:innen und Patient:innenvertreter:innen beim Parlamentarischen Abend des Jahrzehnts der Lunge.</p>
+          <span class="mehr-link">Mehr erfahren →</span>
+        </div>
+      </a>
+
+      <!-- 20.11.2024 -->
+      <a href="news-copd-index.html" class="news-karte-neu fakten">
+        <img src="copd_index.jpg" alt="COPD-Index" style="width:100%;height:200px;object-fit:cover;display:block;" />
+        <div class="news-karte-inhalt">
+          <span class="news-kat" style="color:var(--gelb);">Fakten</span>
+          <span class="news-datum">20.11.2024</span>
+          <h3>COPD-Index: Ein Weckruf zum Welt-COPD-Tag</h3>
+          <p>Der COPD-Index untersucht die Situation in 34 Ländern. Das Ergebnis für Deutschland ist alarmierend: Mit Platz 28 liegt Deutschland weit zurück.</p>
+          <span class="mehr-link">Mehr erfahren →</span>
+        </div>
+      </a>
+
+      <!-- 25.09.2024 -->
+      <a href="news-factsheet.html" class="news-karte-neu fakten">
+        <img src="JdL_Factsheet_Cover.jpg" alt="Fact Sheet" style="width:100%;height:200px;object-fit:cover;display:block;" />
+        <div class="news-karte-inhalt">
+          <span class="news-kat" style="color:var(--gelb);">Fakten</span>
+          <span class="news-datum">25.09.2024</span>
+          <h3>Chronische Lungen- und Atemwegserkrankungen: Ein unterschätztes Problem</h3>
+          <p>Die Zahl der Betroffenen von chronischen Lungen- und Atemwegserkrankungen sind zuletzt drastisch gestiegen. Mittlerweile sind in Deutschland über 14 Millionen Menschen betroffen.</p>
+          <span class="mehr-link">Mehr erfahren →</span>
+        </div>
+      </a>
+
+      <!-- 13.09.2024 -->
+      <a href="news-kardos.html" class="news-karte-neu neuigkeiten">
+        <img src="Kardos.jpg" alt="Dr. med. Peter Kardos" style="width:100%;height:200px;object-fit:cover;display:block;" />
+        <div class="news-karte-inhalt">
+          <span class="news-kat" style="color:var(--tuerkis);">Neuigkeiten</span>
+          <span class="news-datum">13.09.2024</span>
+          <h3>5 Fragen an Dr. med. Peter Kardos</h3>
+          <p>Facharzt für Innere Medizin, Allergologie und Schlafmedizin am Lungenzentrum Maingau, Mitglied des geschäftsführenden Vorstandes der Deutschen Atemwegsliga e.V.</p>
+          <span class="mehr-link">Mehr erfahren →</span>
+        </div>
+      </a>
+
+      <!-- 13.03.2024 -->
+      <a href="news-gappa.html" class="news-karte-neu neuigkeiten">
+        <img src="Gappa.jpg" alt="Prof. Dr. Monika Gappa" style="width:100%;height:200px;object-fit:cover;display:block;" />
+        <div class="news-karte-inhalt">
+          <span class="news-kat" style="color:var(--tuerkis);">Neuigkeiten</span>
+          <span class="news-datum">13.03.2024</span>
+          <h3>5 Fragen an Prof. Dr. Monika Gappa</h3>
+          <p>Chefärztin der Klinik für Kinder- und Jugendmedizin am Evangelischen Krankenhaus Düsseldorf, Präsidentin der European Respiratory Society.</p>
+          <span class="mehr-link">Mehr erfahren →</span>
+        </div>
+      </a>
+
+      <!-- 01.11.2023 -->
+      <a href="news-luftreinhaltung.html" class="news-karte-neu wegweiser">
+        <img src="Luftverschmutzung.jpg" alt="Luftverschmutzung" style="width:100%;height:200px;object-fit:cover;display:block;" />
+        <div class="news-karte-inhalt">
+          <span class="news-kat" style="color:var(--gruen);">Wegweiser</span>
+          <span class="news-datum">01.11.2023</span>
+          <h3>Bundesregierung plant neues Luftreinhalteprogramm</h3>
+          <p>Das Jahrzehnt der Lunge begrüßt den geplanten Entwurf der Bundesregierung für ein Nationales Luftreinhalteprogramm – fordert aber strengere WHO-konforme Grenzwerte.</p>
+          <span class="mehr-link">Mehr erfahren →</span>
+        </div>
+      </a>
+
+      <!-- 11.10.2023 -->
+      <a href="news-tagesspiegel.html" class="news-karte-neu veranstaltungen">
+        <img src="tagesspiegel.jpg" alt="Tagesspiegel Expertenrunde" style="width:100%;height:200px;object-fit:cover;display:block;" />
+        <div class="news-karte-inhalt">
+          <span class="news-kat" style="color:var(--blau);">Veranstaltungen</span>
+          <span class="news-datum">11.10.2023</span>
+          <h3>Tagesspiegel Expertenrunde „Chronisch Krank"</h3>
+          <p>Schwerpunkt Lunge – Wie steht es um die Versorgung in Deutschland? Unter diesem Titel fand am 11. Oktober 2023 ein impulsgebendes Fachgespräch des Tagesspiegels statt.</p>
+          <span class="mehr-link">Mehr erfahren →</span>
+        </div>
+      </a>
+
+      <!-- 11.10.2023 -->
+      <a href="news-kompass-versorgung.html" class="news-karte-neu neuigkeiten">
+        <img src="kompass.jpg" alt="Politischer Kompass" style="width:100%;height:200px;object-fit:cover;display:block;" />
+        <div class="news-karte-inhalt">
+          <span class="news-kat" style="color:var(--tuerkis);">Neuigkeiten</span>
+          <span class="news-datum">11.10.2023</span>
+          <h3>Expert:innenkreis stellt zweiten Kompass zur „Strukturierten Versorgung" vor</h3>
+          <p>Das Jahrzehnt der Lunge hat seinen zweiten Politischen Kompass veröffentlicht. Diese Ausgabe widmet sich der strukturierten Versorgung von Lungen- und Atemwegserkrankungen.</p>
+          <span class="mehr-link">Mehr erfahren →</span>
+        </div>
+      </a>
+
+      <!-- 28.08.2023 -->
+      <a href="news-alsdorf.html" class="news-karte-neu neuigkeiten">
+        <img src="Alsdorf.jpg" alt="Elke Alsdorf" style="width:100%;height:200px;object-fit:cover;display:block;" />
+        <div class="news-karte-inhalt">
+          <span class="news-kat" style="color:var(--tuerkis);">Neuigkeiten</span>
+          <span class="news-datum">28.08.2023</span>
+          <h3>5 Fragen an Elke Alsdorf</h3>
+          <p>Patientenvertreterin beim Deutschen Allergie- und Asthmabund e.V. (DAAB) und Expertin des Jahrzehnts der Lunge über Schulungen, Aufklärung und die Bedürfnisse von Patient:innen.</p>
+          <span class="mehr-link">Mehr erfahren →</span>
+        </div>
+      </a>
+
+      <!-- 28.07.2023 – NEU -->
+      <a href="news-manifest.html" class="news-karte-neu neuigkeiten">
+        <img src="Manifesto.png" alt="IRC Manifest" style="width:100%;height:200px;object-fit:cover;display:block;" />
+        <div class="news-karte-inhalt">
+          <span class="news-kat" style="color:var(--tuerkis);">Neuigkeiten</span>
+          <span class="news-datum">28.07.2023</span>
+          <h3>Neues Manifest der International Respiratory Coalition (IRC)</h3>
+          <p>Die IRC hat anlässlich ihres zweiten Gipfeltreffens ein neues Manifest veröffentlicht. Darin fordert sie eine politische Priorisierung von Atemwegserkrankungen und ruft Regierungen zur Entwicklung von Präventionsstrategien auf.</p>
+          <span class="mehr-link">Mehr erfahren →</span>
+        </div>
+      </a>
+
+      <!-- 11.08.2023 -->
+      <a href="news-tabakentwoehnung.html" class="news-karte-neu wegweiser">
+        <img src="tabakentwoehnung.png" alt="Tabakentwöhnung" style="width:100%;height:200px;object-fit:cover;display:block;" />
+        <div class="news-karte-inhalt">
+          <span class="news-kat" style="color:var(--gruen);">Wegweiser</span>
+          <span class="news-datum">11.08.2023</span>
+          <h3>Positionspapier der DGP zur Tabakentwöhnung</h3>
+          <p>In Zusammenarbeit mit zahlreichen Fachgesellschaften hat die DGP ein Positionspapier zur Tabakentwöhnung bei hospitalisierten Patient:innen veröffentlicht.</p>
+          <span class="mehr-link">Mehr erfahren →</span>
+        </div>
+      </a>
+
+      <!-- 06.07.2023 – NEU -->
+      <a href="news-lauterbach.html" class="news-karte-neu neuigkeiten">
+        <img src="Lauterbach.png" alt="Offener Brief Lauterbach" style="width:100%;height:200px;object-fit:cover;display:block;" />
+        <div class="news-karte-inhalt">
+          <span class="news-kat" style="color:var(--tuerkis);">Neuigkeiten</span>
+          <span class="news-datum">06.07.2023</span>
+          <h3>Offener Brief an Gesundheitsminister Karl Lauterbach</h3>
+          <p>Das Jahrzehnt der Lunge appelliert gemeinsam mit der DGP und der Deutschen Lungenstiftung: Chronische Atemwegserkrankungen müssen im Nationalen Präventionsplan berücksichtigt werden.</p>
+          <span class="mehr-link">Mehr erfahren →</span>
+        </div>
+      </a>
+
+      <!-- 28.06.2023 – NEU -->
+      <a href="news-asthma-index.html" class="news-karte-neu neuigkeiten">
+        <img src="Asthma-Index.png" alt="Severe Asthma Index" style="width:100%;height:200px;object-fit:cover;display:block;" />
+        <div class="news-karte-inhalt">
+          <span class="news-kat" style="color:var(--tuerkis);">Neuigkeiten</span>
+          <span class="news-datum">28.06.2023</span>
+          <h3>Der Severe-Asthma-Index</h3>
+          <p>Neue Erkenntnisse zur Versorgung von Asthmapatient:innen im internationalen Vergleich. Deutschland belegt Platz 21 von 29 OECD-Ländern.</p>
+          <span class="mehr-link">Mehr erfahren →</span>
+        </div>
+      </a>
+
+      <!-- 15.05.2023 – NEU -->
+      <a href="news-weissbuch.html" class="news-karte-neu fakten">
+        <img src="Grafik_Weißbuch.jpg" alt="Weißbuch Lunge" style="width:100%;height:200px;object-fit:cover;display:block;" />
+        <div class="news-karte-inhalt">
+          <span class="news-kat" style="color:var(--gelb);">Fakten</span>
+          <span class="news-datum">15.05.2023</span>
+          <h3>Pneumologische Erkrankungen – Anzahl Betroffener steigt massiv: Weißbuch Lunge liefert neueste Zahlen</h3>
+          <p>Im Jahr 2019 waren rund 14 Millionen Menschen von Lungen- und Atemwegserkrankungen betroffen. COPD und Asthma stiegen in zehn Jahren um 17 % bzw. 8 % an.</p>
+          <span class="mehr-link">Mehr erfahren →</span>
+        </div>
+      </a>
+
     </div>
   </main>
+
   <footer>
     <div class="footer-inner">
       <nav class="footer-nav">
@@ -284,6 +335,7 @@
       <a href="impressum.html">Impressum</a>
     </div>
   </footer>
+
   <script>
     function filterNews(kat, btn) {
       document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('aktiv'));
