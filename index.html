@@ -36,10 +36,17 @@
     nav ul li .dropdown a { padding: 0.7rem 1.2rem; font-weight: 400; font-size: 0.85rem; border-bottom: 1px solid rgba(255,255,255,0.1); color: var(--weiss); text-transform: none; letter-spacing: 0; }
 
     /* HERO */
-    .hero-banner { position: relative; background: var(--blau); overflow: hidden; }
-    .hero-oben { height: 340px; background: var(--blau); position: relative; }
-    .hero-logo { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -25%); z-index: 20; text-align: center; }
-    .hero-logo img { width: 320px; max-width: 35vw; }
+    .hero-banner { position: relative; background: var(--blau); }
+    .hero-oben { height: 280px; background: var(--blau); position: relative; overflow: visible; }
+    .hero-logo {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      top: 50%;
+      z-index: 20;
+      text-align: center;
+    }
+    .hero-logo img { width: 280px; max-width: 30vw; }
     .hero-strip { overflow: hidden; height: 320px; display: flex; position: relative; background: var(--blau); }
     .hero-track { display: flex; gap: 30px; animation: laufend 45s linear infinite; will-change: transform; padding: 0 15px; }
     .hero-track img { height: 320px; width: auto; flex-shrink: 0; display: block; object-fit: cover; }
@@ -202,12 +209,12 @@
 
   <!-- HERO -->
   <section class="hero-banner">
-    <div class="hero-oben">
-      <div class="hero-logo">
-        <a href="index.html"><img src="Logo.png" alt="Jahrzehnt der Lunge" /></a>
+    <div class="hero-oben"></div>
+    <div class="hero-strip" style="position:relative;">
+      <!-- Logo schwebt mittig über den Bildern -->
+      <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:20;text-align:center;">
+        <a href="index.html"><img src="Logo.png" alt="Jahrzehnt der Lunge" style="width:280px;max-width:30vw;" /></a>
       </div>
-    </div>
-    <div class="hero-strip">
       <div class="hero-track">
         <img src="header_lunge_01.png" alt="" />
         <img src="header_lunge_02.png" alt="" />
