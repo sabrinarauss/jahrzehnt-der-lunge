@@ -25,13 +25,7 @@
     nav ul li .dropdown { display: none; position: absolute; top: 100%; left: 0; background: var(--blau); box-shadow: 0 6px 20px rgba(0,0,0,0.3); min-width: 220px; z-index: 300; }
     nav ul li:hover .dropdown { display: block; }
     nav ul li .dropdown a { padding: 0.7rem 1.2rem; font-weight: 400; font-size: 0.85rem; border-bottom: 1px solid rgba(255,255,255,0.1); color: var(--weiss); text-transform: none; letter-spacing: 0; }
-    .seiten-hero { background: var(--blau); padding: 4rem 2rem 3rem; text-align: center; }
-    .seiten-hero h1 { font-size: 2.5rem; color: var(--weiss); font-weight: 300; margin-bottom: 1rem; }
-    .seiten-hero p { color: rgba(255,255,255,0.8); max-width: 650px; margin: 0 auto; font-size: 1rem; line-height: 1.7; }
-    main { max-width: 1100px; margin: 4rem auto; padding: 0 2rem; }
-    h2 { font-size: 1.6rem; color: #1a1a1a; font-weight: 400; margin-bottom: 1.5rem; padding-bottom: 0.6rem; border-bottom: 3px solid var(--blau); display: inline-block; }
-    p { font-size: 0.95rem; color: #555; line-height: 1.8; margin-bottom: 1rem; }
-    footer { background: var(--blau); border-top: 1px solid rgba(255,255,255,0.1); padding: 2rem; margin-top: 4rem; }
+    footer { background: var(--blau); border-top: 1px solid rgba(255,255,255,0.1); padding: 2rem; }
     .footer-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 2fr; gap: 3rem; margin-bottom: 2rem; }
     .footer-nav ul { list-style: none; }
     .footer-nav ul li a { color: var(--weiss); text-decoration: underline; font-size: 0.95rem; font-weight: 600; display: block; padding: 0.4rem 0; }
@@ -44,6 +38,85 @@
     .footer-bottom a:hover { color: var(--weiss); }
     @media (max-width: 768px) { .footer-inner { grid-template-columns: 1fr; } nav ul { flex-wrap: wrap; justify-content: center; } }
 
+    /* HERO */
+    .seiten-hero {
+      background: var(--blau);
+      padding: 3rem 4rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 200px;
+    }
+    .seiten-hero-text .strich { display: block; width: 2rem; height: 2px; background: var(--weiss); margin-bottom: 1rem; }
+    .seiten-hero-text h1 { font-size: 3rem; font-weight: 300; color: var(--weiss); line-height: 1.1; }
+    .seiten-hero-logo img { height: 140px; width: auto; }
+
+    /* MAIN LAYOUT */
+    .presse-main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 5rem 2rem 6rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: start;
+    }
+
+    /* LOGO LINKS */
+    .presse-logo-bereich {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .presse-logo-bereich img {
+      width: 100%;
+      max-width: 360px;
+    }
+
+    /* KONTAKT RECHTS */
+    .presse-kontakt h2 {
+      font-size: 1.6rem;
+      font-weight: 600;
+      color: #111;
+      margin-bottom: 0.6rem;
+      border: none;
+      padding: 0;
+      display: block;
+    }
+
+    .kontakt-block {
+      margin-bottom: 2rem;
+    }
+
+    .kontakt-block h2 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: #111;
+      margin-bottom: 0.8rem;
+      border: none;
+      padding: 0;
+      display: block;
+    }
+
+    .kontakt-block p {
+      font-size: 0.92rem;
+      color: #777;
+      line-height: 1.9;
+      margin: 0;
+    }
+
+    .kontakt-block a {
+      color: var(--blau);
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .kontakt-block a:hover { text-decoration: underline; }
+
+    @media (max-width: 800px) {
+      .presse-main { grid-template-columns: 1fr; gap: 2rem; }
+      .seiten-hero { padding: 2rem; flex-direction: column; gap: 1.5rem; }
+      .seiten-hero-text h1 { font-size: 2rem; }
+    }
   </style>
 </head>
 <body>
@@ -79,43 +152,43 @@
     </div>
   </header>
 
+  <!-- HERO -->
   <section class="seiten-hero">
-    <h1>Presse und Kontakt</h1>
-    <p>Kontaktieren Sie uns für Presseanfragen oder allgemeine Informationen.</p>
+    <div class="seiten-hero-text">
+      <span class="strich"></span>
+      <h1>Presse und Kontakt</h1>
+    </div>
+    <div class="seiten-hero-logo">
+      <img src="Logo.png" alt="Jahrzehnt der Lunge" />
+    </div>
   </section>
 
-  <main>
-    <h2>Presse und Kontakt</h2>
-    <p>Für Presseanfragen und allgemeine Kontaktaufnahme stehen wir Ihnen gerne zur Verfügung.</p>
+  <!-- MAIN -->
+  <div class="presse-main">
 
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-top:2rem;">
-      <div style="background:var(--hell);padding:2rem;border-radius:8px;">
-        <h3 style="color:var(--blau);margin-bottom:1rem;font-size:1.1rem;">Pressekontakt</h3>
-        <p style="font-size:0.9rem;">Für Medienanfragen wenden Sie sich bitte direkt an uns.</p>
-        <p style="font-size:0.9rem;margin-top:0.5rem;"><strong>E-Mail:</strong> presse@jahrzehntderlunge.de</p>
-      </div>
-      <div style="background:var(--hell);padding:2rem;border-radius:8px;">
-        <h3 style="color:var(--blau);margin-bottom:1rem;font-size:1.1rem;">Allgemeiner Kontakt</h3>
-        <p style="font-size:0.9rem;">Fragen, Anregungen oder Kooperationsanfragen:</p>
-        <p style="font-size:0.9rem;margin-top:0.5rem;"><strong>E-Mail:</strong> info@jahrzehntderlunge.de</p>
-      </div>
+    <!-- Links: großes blaues Logo -->
+    <div class="presse-logo-bereich">
+      <img src="Blue_0.png" alt="Jahrzehnt der Lunge" />
     </div>
 
-    <div style="margin-top:3rem;background:var(--blau);padding:2rem;border-radius:8px;">
-      <h3 style="color:var(--weiss);margin-bottom:1.5rem;font-size:1.1rem;">Kontaktformular</h3>
-      <form action="https://formspree.io/f/mdajrjzl" method="POST">
-        <input type="hidden" name="_subject" value="Presseanfrage über jahrzehnt-der-lunge.de" />
-        <div style="display:flex;flex-direction:column;gap:1rem;">
-          <input type="text" name="name" placeholder="Name *" required style="background:transparent;border:none;border-bottom:2px solid rgba(255,255,255,0.4);color:#fff;padding:0.8rem 0;font-size:1rem;outline:none;width:100%;font-family:inherit;" />
-          <input type="email" name="email" placeholder="Email-Adresse *" required style="background:transparent;border:none;border-bottom:2px solid rgba(255,255,255,0.4);color:#fff;padding:0.8rem 0;font-size:1rem;outline:none;width:100%;font-family:inherit;" />
-          <input type="text" name="betreff" placeholder="Betreff" style="background:transparent;border:none;border-bottom:2px solid rgba(255,255,255,0.4);color:#fff;padding:0.8rem 0;font-size:1rem;outline:none;width:100%;font-family:inherit;" />
-          <textarea name="nachricht" placeholder="Nachricht *" required style="background:transparent;border:none;border-bottom:2px solid rgba(255,255,255,0.4);color:#fff;padding:0.8rem 0;font-size:1rem;outline:none;min-height:120px;resize:vertical;width:100%;font-family:inherit;"></textarea>
-          <button type="submit" style="background:var(--tuerkis);color:var(--blau);border:none;padding:0.8rem 2.5rem;font-size:1rem;font-weight:700;border-radius:3px;cursor:pointer;width:fit-content;font-family:inherit;">Senden</button>
-          <p style="color:rgba(255,255,255,0.4);font-size:0.8rem;">(*) PFLICHTANGABE</p>
-        </div>
-      </form>
+    <!-- Rechts: Adresse + E-Mail -->
+    <div class="presse-kontakt">
+
+      <div class="kontakt-block">
+        <h2>Adresse</h2>
+        <p>Jahrzeht der Lunge e.V.</p>
+        <p>c/o APCO Worldwide</p>
+        <p>JFK Haus – Rahel-Hirsch-Straße 10</p>
+        <p>10557 Berlin</p>
+      </div>
+
+      <div class="kontakt-block">
+        <h2>E-Mail</h2>
+        <p><a href="mailto:jdl@apcoworldwide.com">jdl@apcoworldwide.com</a></p>
+      </div>
+
     </div>
-  </main>
+  </div>
 
   <footer>
     <div class="footer-inner">
@@ -135,18 +208,21 @@
       </div>
     </div>
     <div class="kontakt-form-box" style="display:none;max-width:700px;margin:2rem auto;padding:0 2rem;">
-      <div style="display:flex;flex-direction:column;gap:1rem;">
-        <input type="text" placeholder="Name *" style="background:transparent;border:none;border-bottom:2px solid rgba(255,255,255,0.4);color:#fff;padding:0.8rem 0;font-size:1rem;outline:none;" />
-        <input type="email" placeholder="Email-Adresse *" style="background:transparent;border:none;border-bottom:2px solid rgba(255,255,255,0.4);color:#fff;padding:0.8rem 0;font-size:1rem;outline:none;" />
-        <input type="text" placeholder="Betreff" style="background:transparent;border:none;border-bottom:2px solid rgba(255,255,255,0.4);color:#fff;padding:0.8rem 0;font-size:1rem;outline:none;" />
-        <textarea placeholder="Nachricht *" style="background:transparent;border:none;border-bottom:2px solid rgba(255,255,255,0.4);color:#fff;padding:0.8rem 0;font-size:1rem;outline:none;min-height:100px;resize:vertical;"></textarea>
-        <button style="background:var(--tuerkis);color:var(--blau);border:none;padding:0.8rem 2.5rem;font-size:1rem;font-weight:700;border-radius:3px;cursor:pointer;width:fit-content;">Senden</button>
-        <p style="color:rgba(255,255,255,0.4);font-size:0.8rem;">(*) PFLICHTANGABE</p>
-      </div>
+      <form action="https://formspree.io/f/mdajrjzl" method="POST">
+        <input type="hidden" name="_subject" value="Kontaktanfrage über jahrzehnt-der-lunge.de" />
+        <div style="display:flex;flex-direction:column;gap:1rem;">
+          <input type="text" name="name" placeholder="Name *" required style="background:transparent;border:none;border-bottom:2px solid rgba(255,255,255,0.4);color:#fff;padding:0.8rem 0;font-size:1rem;outline:none;font-family:inherit;" />
+          <input type="email" name="email" placeholder="Email-Adresse *" required style="background:transparent;border:none;border-bottom:2px solid rgba(255,255,255,0.4);color:#fff;padding:0.8rem 0;font-size:1rem;outline:none;font-family:inherit;" />
+          <input type="text" name="betreff" placeholder="Betreff" style="background:transparent;border:none;border-bottom:2px solid rgba(255,255,255,0.4);color:#fff;padding:0.8rem 0;font-size:1rem;outline:none;font-family:inherit;" />
+          <textarea name="nachricht" placeholder="Nachricht *" required style="background:transparent;border:none;border-bottom:2px solid rgba(255,255,255,0.4);color:#fff;padding:0.8rem 0;font-size:1rem;outline:none;min-height:100px;resize:vertical;font-family:inherit;"></textarea>
+          <button type="submit" style="background:var(--tuerkis);color:var(--blau);border:none;padding:0.8rem 2.5rem;font-size:1rem;font-weight:700;border-radius:3px;cursor:pointer;width:fit-content;font-family:inherit;">Senden</button>
+          <p style="color:rgba(255,255,255,0.4);font-size:0.8rem;">(*) PFLICHTANGABE</p>
+        </div>
+      </form>
     </div>
     <div class="footer-bottom">
       <p>2026 © Jahrzehnt der Lunge</p>
-      <a href="#">Impressum</a>
+      <a href="impressum.html">Impressum</a>
     </div>
   </footer>
 
