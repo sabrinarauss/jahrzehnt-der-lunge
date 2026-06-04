@@ -25,13 +25,7 @@
     nav ul li .dropdown { display: none; position: absolute; top: 100%; left: 0; background: var(--blau); box-shadow: 0 6px 20px rgba(0,0,0,0.3); min-width: 220px; z-index: 300; }
     nav ul li:hover .dropdown { display: block; }
     nav ul li .dropdown a { padding: 0.7rem 1.2rem; font-weight: 400; font-size: 0.85rem; border-bottom: 1px solid rgba(255,255,255,0.1); color: var(--weiss); text-transform: none; letter-spacing: 0; }
-    .seiten-hero { background: var(--blau); padding: 4rem 2rem 3rem; text-align: center; }
-    .seiten-hero h1 { font-size: 2.5rem; color: var(--weiss); font-weight: 300; margin-bottom: 1rem; }
-    .seiten-hero p { color: rgba(255,255,255,0.8); max-width: 650px; margin: 0 auto; font-size: 1rem; line-height: 1.7; }
-    main { max-width: 1100px; margin: 4rem auto; padding: 0 2rem; }
-    h2 { font-size: 1.6rem; color: #1a1a1a; font-weight: 400; margin-bottom: 1.5rem; padding-bottom: 0.6rem; border-bottom: 3px solid var(--blau); display: inline-block; }
-    p { font-size: 0.95rem; color: #555; line-height: 1.8; margin-bottom: 1rem; }
-    footer { background: var(--blau); border-top: 1px solid rgba(255,255,255,0.1); padding: 2rem; margin-top: 4rem; }
+    footer { background: var(--blau); border-top: 1px solid rgba(255,255,255,0.1); padding: 2rem; }
     .footer-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 2fr; gap: 3rem; margin-bottom: 2rem; }
     .footer-nav ul { list-style: none; }
     .footer-nav ul li a { color: var(--weiss); text-decoration: underline; font-size: 0.95rem; font-weight: 600; display: block; padding: 0.4rem 0; }
@@ -44,6 +38,126 @@
     .footer-bottom a:hover { color: var(--weiss); }
     @media (max-width: 768px) { .footer-inner { grid-template-columns: 1fr; } nav ul { flex-wrap: wrap; justify-content: center; } }
 
+    /* HERO */
+    .seiten-hero {
+      background: var(--blau);
+      padding: 3rem 4rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 220px;
+    }
+    .seiten-hero-text .strich { display: block; width: 2rem; height: 2px; background: var(--weiss); margin-bottom: 1rem; }
+    .seiten-hero-text h1 { font-size: 3rem; font-weight: 300; color: var(--weiss); line-height: 1.1; }
+    .seiten-hero-logo img { height: 140px; width: auto; }
+
+    /* KOMPASS EINTRÄGE */
+    .kompass-liste { max-width: 1100px; margin: 0 auto; padding: 0 4rem; }
+
+    .kompass-eintrag {
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: 4rem;
+      align-items: start;
+      padding: 5rem 0;
+      border-bottom: 1px solid #e5e5e5;
+    }
+    .kompass-eintrag:last-child { border-bottom: none; }
+
+    /* Cover Bild */
+    .kompass-cover {
+      position: relative;
+    }
+    .kompass-cover img {
+      width: 100%;
+      max-width: 300px;
+      border-radius: 4px;
+      display: block;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+    }
+
+    /* Text rechts */
+    .kompass-text h2 {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: #1a1a1a;
+      line-height: 1.3;
+      margin-bottom: 1.2rem;
+      letter-spacing: 0.02em;
+      border: none;
+      padding: 0;
+      display: block;
+    }
+    .kompass-text p {
+      font-size: 0.95rem;
+      color: #444;
+      line-height: 1.85;
+      margin-bottom: 1rem;
+    }
+    .kompass-text .datum {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #aaa;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+      display: block;
+    }
+    .kompass-text .download-label {
+      font-size: 0.85rem;
+      color: #888;
+      margin-bottom: 0.6rem;
+      display: block;
+    }
+
+    /* PDF Button */
+    .pdf-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 1rem;
+      border: 1.5px solid #ccc;
+      border-radius: 30px;
+      padding: 0.5rem 1.2rem 0.5rem 1.5rem;
+      text-decoration: none;
+      color: #333;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .pdf-btn:hover { border-color: var(--blau); color: var(--blau); }
+    .pdf-btn .pfeil {
+      width: 24px;
+      height: 24px;
+      border: 1.5px solid #ccc;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9rem;
+      transition: border-color 0.2s;
+    }
+    .pdf-btn:hover .pfeil { border-color: var(--blau); }
+
+    /* Fussnoten */
+    .fussnoten {
+      margin-top: 2rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid #e5e5e5;
+    }
+    .fussnoten p {
+      font-size: 0.78rem;
+      color: #aaa;
+      line-height: 1.6;
+      margin-bottom: 0.3rem;
+    }
+    .fussnoten a { color: #aaa; word-break: break-all; }
+
+    @media (max-width: 900px) {
+      .kompass-eintrag { grid-template-columns: 1fr; gap: 2rem; }
+      .seiten-hero { padding: 2rem; flex-direction: column; gap: 1.5rem; }
+      .seiten-hero-text h1 { font-size: 2rem; }
+      .kompass-liste { padding: 0 2rem; }
+    }
   </style>
 </head>
 <body>
@@ -64,7 +178,7 @@
           <li>
             <a href="positionen.html">Positionen</a>
             <div class="dropdown">
-              <a href="politischer-kompass.html">Politische Kompasse</a>
+              <a href="politischer-kompass.html" class="aktiv">Politische Kompasse</a>
               <a href="wegweiser.html">Wegweiser</a>
             </div>
           </li>
@@ -79,43 +193,77 @@
     </div>
   </header>
 
+  <!-- HERO -->
   <section class="seiten-hero">
-    <h1>Politische Kompasse</h1>
-    <p>Politische Impulse für bessere Lungengesundheit in Deutschland.</p>
+    <div class="seiten-hero-text">
+      <span class="strich"></span>
+      <h1>Politische Kompasse</h1>
+    </div>
+    <div class="seiten-hero-logo">
+      <img src="Logo.png" alt="Jahrzehnt der Lunge" />
+    </div>
   </section>
 
-  <main>
-    <h2>Politische Kompasse</h2>
-    <p>Der Politische Kompass liefert politische Impulse und Lösungsvorschläge zu zentralen Themen der Lungengesundheit.</p>
+  <div class="kompass-liste">
 
-    <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem;margin-top:2rem;">
-
-      <div style="background:#e8e8e8;border-radius:20px;padding:2.5rem;position:relative;overflow:hidden;">
-        <div style="position:absolute;top:0;left:0;width:80px;height:150px;background:var(--tuerkis);clip-path:polygon(0 0,100% 0,0 100%);opacity:0.4;"></div>
-        <h3 style="color:var(--blau);font-size:1.3rem;margin-bottom:1rem;font-weight:600;">Prävention und Früherkennung</h3>
-        <p>Der erste Teil unseres „Politischen Kompasses" liefert politische Impulse und Lösungsvorschläge zu den Themen Prävention und Früherkennung chronischer Lungenerkrankungen.</p>
-        <ul style="margin-top:1rem;padding-left:1.2rem;color:#555;font-size:0.9rem;line-height:2;">
-          <li>Stärkung der Vorsorgeuntersuchungen</li>
-          <li>Ausbau von Früherkennungsprogrammen</li>
-          <li>Förderung von Aufklärungskampagnen</li>
-          <li>Verbesserung der Screeninginfrastruktur</li>
-        </ul>
+    <!-- EINTRAG 1: Positionspapier 21. Legislaturperiode -->
+    <div class="kompass-eintrag">
+      <div class="kompass-cover">
+        <img src="JdL_Positionspapier_digital.pdf" alt="Impulse für die Bundesregierung – 21. Legislaturperiode"
+             onerror="this.style.background='var(--blau)';this.style.height='300px';this.removeAttribute('src');" />
       </div>
-
-      <div style="background:#e8e8e8;border-radius:20px;padding:2.5rem;position:relative;overflow:hidden;">
-        <div style="position:absolute;top:0;left:0;width:80px;height:150px;background:var(--tuerkis);clip-path:polygon(0 0,100% 0,0 100%);opacity:0.4;"></div>
-        <h3 style="color:var(--blau);font-size:1.3rem;margin-bottom:1rem;font-weight:600;">Strukturierte Versorgung</h3>
-        <p>Der zweite Teil fokussiert sich auf den Bereich der effektiven und strukturierten Versorgung und zeigt konkrete politische Handlungsoptionen und Lösungswege auf.</p>
-        <ul style="margin-top:1rem;padding-left:1.2rem;color:#555;font-size:0.9rem;line-height:2;">
-          <li>Verbesserung der Versorgungsstrukturen</li>
-          <li>Stärkung der ambulanten Pneumologie</li>
-          <li>Förderung interdisziplinärer Behandlung</li>
-          <li>Digitalisierung der Patientenversorgung</li>
-        </ul>
+      <div class="kompass-text">
+        <h2>IMPULSE FÜR DIE BUNDESREGIERUNG — 21. LEGISLATURPERIODE</h2>
+        <p>Die Bundesregierung kann das Gesundheitssystem in Deutschland mit gezielten Impulsen wieder zukunftsfähig aufstellen, krisenfest machen und zugleich die Gesundheitsversorgung nachhaltig verbessern. Prävention, Früherkennung und eine dem spezifischen Krankheitsbild angepasste Versorgung, basierend auf effizienter Patient:innensteuerung, spielen bei chronischen Lungen- und Atemwegserkrankungen eine zentrale Rolle. Sie reduzieren Kosten, entlasten das Gesundheitssystem und stärken die Lebensqualität und Teilhabe von Millionen Menschen.</p>
+        <span class="download-label">Positionspapier herunterladen</span>
+        <a href="JdL_Positionspapier_digital.pdf" target="_blank" class="pdf-btn">
+          PDF <span class="pfeil">→</span>
+        </a>
       </div>
-
     </div>
-  </main>
+
+    <!-- EINTRAG 2: Kompass Prävention und Früherkennung -->
+    <div class="kompass-eintrag">
+      <div class="kompass-cover">
+        <img src="Kompass_Praevention.jpg" alt="Politischer Kompass – Prävention und Früherkennung"
+             onerror="this.style.background='var(--blau)';this.style.height='300px';this.removeAttribute('src');" />
+      </div>
+      <div class="kompass-text">
+        <h2>Politischer Kompass – Prävention und Früherkennung</h2>
+        <p>Chronische Lungen- und Atemwegserkrankungen zählen zu den Volkskrankheiten in Deutschland. Betroffen sind Menschen aller Altersgruppen: vom Kindesalter an bis ins hohe Alter – und die Fallzahlen steigen<sup>1</sup>. Der vorliegende erste Teil des Politischen Kompass fokussiert auf den Bereich der Prävention sowie Früherkennung und zeigt konkrete politische Handlungsoptionen und Lösungswege auf. Mit diesem Dokument wollen wir die Bundesregierung und andere Akteure im Gesundheitswesen bei der Ausgestaltung von nachhaltigen und systematischen Maßnahmen im Bereich der chronischen Atemwegs- und Lungenerkrankungen unterstützen und wichtige Impulse liefern.</p>
+        <span class="download-label">„Politischer Kompass – Prävention und Früherkennung" herunterladen</span>
+        <a href="Jahrzehnt-der-Lunge-Politischer-Kompass-Praevention-und-Frueherkennung.pdf" target="_blank" class="pdf-btn">
+          PDF <span class="pfeil">→</span>
+        </a>
+        <div class="fussnoten">
+          <p><sup>1</sup> <a href="https://www.thieme-connect.com/products/ejournals/abstract/10.1055/s-0030-1255637" target="_blank">https://www.thieme-connect.com/products/ejournals/abstract/10.1055/s-0030-1255637</a></p>
+          <p>NOVEMBER 2022</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- EINTRAG 3: Kompass Strukturierte Versorgung -->
+    <div class="kompass-eintrag">
+      <div class="kompass-cover">
+        <img src="Kompass_Versorgung.jpg" alt="Politischer Kompass – Strukturierte Versorgung"
+             onerror="this.style.background='var(--blau)';this.style.height='300px';this.removeAttribute('src');" />
+      </div>
+      <div class="kompass-text">
+        <h2>„Politischer Kompass – Strukturierte Versorgung"</h2>
+        <p>Mittlerweile leiden über 14 Millionen Menschen in Deutschland an chronischen Lungen- und Atemwegserkrankungen. Die Neuauflage des Weißbuchs Lunge 2023<sup>1</sup>, herausgegeben von der Deutschen Gesellschaft für Pneumologie und Beatmungsmedizin (DGP) sowie der Deutschen Lungenstiftung, liefert aktuelle Daten und Fakten zu pneumologischen Erkrankungen und zeigt eine alarmierende Entwicklung auf. In der Zeit von 2010 bis 2019 stiegen die Fallzahlen massiv: allein bei Asthma und COPD um 17 bzw. 8 Prozent, bei respiratorischer Insuffizienz und Lungenhochdruck sogar um 64 bzw. 45 Prozent. Diese Entwicklung wurde jüngst durch das Zentralinstitut für die kassenärztliche Versorgung bestätigt: so stieg die Zahl der Asthma-Betroffenen von 2015 auf 2021 um 16,3 Prozent<sup>2</sup>.</p>
+        <span class="download-label">„Politischer Kompass – Strukturierte Versorgung" herunterladen</span>
+        <a href="Jahrzehnt-der-Lunge-Politischer-Kompass-Strukturierte-Versorgung.pdf" target="_blank" class="pdf-btn">
+          PDF <span class="pfeil">→</span>
+        </a>
+        <div class="fussnoten">
+          <p><sup>1</sup> <a href="https://pneumologie.de/storage/app/media/uploaded-files/20230320_Wei%C3%9Fbuch_Lunge_2023.pdf" target="_blank">https://pneumologie.de/storage/app/media/uploaded-files/20230320_Weißbuch_Lunge_2023.pdf</a></p>
+          <p><sup>2</sup> <a href="https://www.versorgungsatlas.de/dashboard/#/evaluation" target="_blank">https://www.versorgungsatlas.de/dashboard/#/evaluation</a></p>
+          <p>OKTOBER 2023</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
 
   <footer>
     <div class="footer-inner">
@@ -149,7 +297,7 @@
     </div>
     <div class="footer-bottom">
       <p>2026 © Jahrzehnt der Lunge</p>
-      <a href="#">Impressum</a>
+      <a href="impressum.html">Impressum</a>
     </div>
   </footer>
 
