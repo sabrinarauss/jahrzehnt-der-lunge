@@ -20,15 +20,15 @@
     nav ul li + li { margin-left: 0.3rem; }
     nav ul li.sep { color: rgba(255,255,255,0.4); padding: 0 0.2rem; pointer-events: none; }
     nav ul li { position: relative; }
-    nav ul li a { display: block; padding: 1.2rem 1rem; text-decoration: none; color: var(--weiss); font-weight: 500; font-size: 0.8rem; letter-spacing: 0.12em; text-transform: uppercase; transition: color 0.2s; white-space: nowrap; }
+    nav ul li a { display: block; padding: 1.2rem 1rem; text-decoration: none; color: var(--weiss); font-weight: 700; font-size: 0.9rem; letter-spacing: 0.1em; text-transform: uppercase; transition: color 0.2s; white-space: nowrap; }
     nav ul li a:hover, nav ul li a.aktiv { color: var(--tuerkis); }
     nav ul li .dropdown { display: none; position: absolute; top: 100%; left: 0; background: var(--blau); box-shadow: 0 6px 20px rgba(0,0,0,0.3); min-width: 220px; z-index: 300; }
     nav ul li:hover .dropdown { display: block; }
     nav ul li .dropdown a { padding: 0.7rem 1.2rem; font-weight: 400; font-size: 0.85rem; border-bottom: 1px solid rgba(255,255,255,0.1); color: var(--weiss); text-transform: none; letter-spacing: 0; }
     footer { background: var(--blau); border-top: 1px solid rgba(255,255,255,0.1); padding: 2rem; }
     .footer-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 2fr; gap: 3rem; margin-bottom: 2rem; }
-    .footer-nav ul { list-style: none; }
-    .footer-nav ul li a { color: var(--weiss); text-decoration: underline; font-size: 0.95rem; font-weight: 600; display: block; padding: 0.4rem 0; }
+    .footer-nav ul { list-style: none; display: flex; flex-wrap: wrap; gap: 0.2rem 0; }
+    .footer-nav ul li a { color: var(--weiss); text-decoration: underline; font-size: 0.8rem; font-weight: 600; display: inline-block; margin-right: 1.2rem; margin-bottom: 0.4rem; padding: 0.2rem 0; }
     .footer-nav ul li a:hover { color: var(--tuerkis); }
     .footer-kontakt h3 { color: var(--weiss); margin-bottom: 1rem; }
     .btn-kontakt { background: var(--tuerkis); color: var(--blau); border: none; padding: 0.7rem 2rem; font-size: 0.95rem; font-weight: 600; border-radius: 30px; cursor: pointer; font-family: var(--schrift); }
