@@ -3,11 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Jahrzehnt der Lunge | Initiative geht naechsten Schritt: Jahrzehnt der Lunge wird Verein</title>
-  <style>    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+  <title>Initiative geht nächsten Schritt: „Jahrzehnt der Lunge" wird Verein | Jahrzehnt der Lunge</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
-      --blau: #1535a8; --tuerkis: #68d2df; --gelb: #f7af10;
+      --blau: #1535a8; --tuerkis: #68d2df; --gelb: #f7af10; --gruen: #5a9e6f;
       --weiss: #ffffff; --hell: #f4f4f4; --text: #333333;
       --schrift: 'Poppins', sans-serif;
     }
@@ -19,21 +20,15 @@
     nav ul li + li { margin-left: 0.3rem; }
     nav ul li.sep { color: rgba(255,255,255,0.4); padding: 0 0.2rem; pointer-events: none; }
     nav ul li { position: relative; }
-    nav ul li a { display: block; padding: 1.2rem 1rem; text-decoration: none; color: var(--weiss); font-weight: 500; font-size: 0.8rem; letter-spacing: 0.12em; text-transform: uppercase; transition: color 0.2s; white-space: nowrap; }
+    nav ul li a { display: block; padding: 1.2rem 1rem; text-decoration: none; color: var(--weiss); font-weight: 700; font-size: 0.9rem; letter-spacing: 0.1em; text-transform: uppercase; transition: color 0.2s; white-space: nowrap; }
     nav ul li a:hover, nav ul li a.aktiv { color: var(--tuerkis); }
     nav ul li .dropdown { display: none; position: absolute; top: 100%; left: 0; background: var(--blau); box-shadow: 0 6px 20px rgba(0,0,0,0.3); min-width: 220px; z-index: 300; }
     nav ul li:hover .dropdown { display: block; }
     nav ul li .dropdown a { padding: 0.7rem 1.2rem; font-weight: 400; font-size: 0.85rem; border-bottom: 1px solid rgba(255,255,255,0.1); color: var(--weiss); text-transform: none; letter-spacing: 0; }
-    .seiten-hero { background: var(--blau); padding: 4rem 2rem 3rem; text-align: center; }
-    .seiten-hero h1 { font-size: 2.5rem; color: var(--weiss); font-weight: 300; margin-bottom: 1rem; }
-    .seiten-hero p { color: rgba(255,255,255,0.8); max-width: 650px; margin: 0 auto; font-size: 1rem; line-height: 1.7; }
-    main { max-width: 1100px; margin: 4rem auto; padding: 0 2rem; }
-    h2 { font-size: 1.6rem; color: #1a1a1a; font-weight: 400; margin-bottom: 1.5rem; padding-bottom: 0.6rem; border-bottom: 3px solid var(--blau); display: inline-block; }
-    p { font-size: 0.95rem; color: #555; line-height: 1.8; margin-bottom: 1rem; }
     footer { background: var(--blau); border-top: 1px solid rgba(255,255,255,0.1); padding: 2rem; margin-top: 4rem; }
     .footer-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 2fr; gap: 3rem; margin-bottom: 2rem; }
-    .footer-nav ul { list-style: none; }
-    .footer-nav ul li a { color: var(--weiss); text-decoration: underline; font-size: 0.95rem; font-weight: 600; display: block; padding: 0.4rem 0; }
+    .footer-nav ul { list-style: none; display: flex; flex-wrap: wrap; gap: 0.2rem 0; }
+    .footer-nav ul li a { color: var(--weiss); text-decoration: underline; font-size: 0.8rem; font-weight: 600; display: inline-block; margin-right: 1.2rem; margin-bottom: 0.4rem; padding: 0.2rem 0; }
     .footer-nav ul li a:hover { color: var(--tuerkis); }
     .footer-kontakt h3 { color: var(--weiss); margin-bottom: 1rem; }
     .btn-kontakt { background: var(--tuerkis); color: var(--blau); border: none; padding: 0.7rem 2rem; font-size: 0.95rem; font-weight: 600; border-radius: 30px; cursor: pointer; font-family: var(--schrift); }
@@ -43,46 +38,22 @@
     .footer-bottom a:hover { color: var(--weiss); }
     @media (max-width: 768px) { .footer-inner { grid-template-columns: 1fr; } nav ul { flex-wrap: wrap; justify-content: center; } }
 
-    .news-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2rem;
-      margin-top: 2rem;
-    }
-    .news-karte-neu {
-      background: #fff;
-      border-radius: 8px;
-      overflow: hidden;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
-      text-decoration: none;
-      display: block;
-      transition: box-shadow 0.2s, transform 0.2s;
-    }
-    .news-karte-neu:hover { box-shadow: 0 8px 24px rgba(0,0,0,0.15); transform: translateY(-3px); }
-    .news-karte-inhalt { padding: 1.2rem 1.5rem 1.5rem; }
-    .news-kat { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; display: block; margin-bottom: 0.2rem; }
-    .news-datum { font-size: 0.8rem; color: #aaa; display: block; margin-bottom: 0.6rem; }
-    .news-karte-neu h3 { font-size: 0.95rem; color: #1a1a1a; margin-bottom: 0.6rem; line-height: 1.4; font-weight: 600; }
-    .news-karte-neu p { font-size: 0.85rem; color: #666; line-height: 1.6; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; margin-bottom: 0.8rem; }
-    .mehr-link { font-size: 0.85rem; font-weight: 600; color: var(--blau); }
-    .filter-leiste { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1rem; }
-    .filter-btn { padding: 0.4rem 1rem; border: 2px solid #ccc; background: none; border-radius: 20px; cursor: pointer; font-size: 0.85rem; font-weight: 600; color: #555; transition: all 0.2s; font-family: var(--schrift); }
-    .filter-btn.aktiv, .filter-btn:hover { border-color: var(--blau); color: var(--blau); }
-    @media (max-width: 900px) { .news-grid { grid-template-columns: repeat(2,1fr); } }
-    @media (max-width: 600px) { .news-grid { grid-template-columns: 1fr; } }
-    .news-karte-neu.versteckt { display: none; }
-    .artikel-header img { width: 100%; max-height: 400px; object-fit: cover; border-radius: 8px; margin-bottom: 1.5rem; }
-    .artikel-meta { display: flex; gap: 1rem; align-items: center; margin-bottom: 1rem; }
-    .artikel-kat { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.3rem 0.8rem; border-radius: 20px; color: #fff; }
-    .artikel-datum { font-size: 0.85rem; color: #aaa; }
-    .artikel-titel { font-size: 2rem; color: #1a1a1a; font-weight: 600; line-height: 1.3; margin-bottom: 1.5rem; }
-    .artikel-body p { font-size: 0.95rem; color: #444; line-height: 1.9; margin-bottom: 1rem; }
-    .artikel-body h3 { font-size: 1.2rem; color: var(--blau); font-weight: 600; margin: 2rem 0 0.8rem; }
-    .zurueck { display: inline-block; margin-bottom: 2rem; color: var(--blau); text-decoration: none; font-size: 0.9rem; font-weight: 600; }
+    main { max-width: 860px; margin: 3rem auto; padding: 0 2rem 4rem; }
+    .zurueck { display: inline-flex; align-items: center; gap: 0.4rem; margin-bottom: 2rem; color: var(--blau); text-decoration: none; font-size: 0.9rem; font-weight: 600; }
     .zurueck:hover { text-decoration: underline; }
-</style>
+    .artikel-meta { display: flex; gap: 1rem; align-items: center; margin-bottom: 1.2rem; flex-wrap: wrap; }
+    .artikel-kat { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.3rem 0.9rem; border-radius: 20px; background: var(--tuerkis); color: var(--blau); }
+    .artikel-datum { font-size: 0.85rem; color: #aaa; }
+    .artikel-titel { font-size: 2rem; color: #1a1a1a; font-weight: 600; line-height: 1.3; margin-bottom: 1.8rem; }
+    .artikel-bild { width: 100%; max-height: 420px; object-fit: cover; border-radius: 8px; margin-bottom: 2rem; display: block; }
+    .artikel-body p { font-size: 0.95rem; color: #444; line-height: 1.9; margin-bottom: 1.2rem; }
+    .artikel-body h3 { font-size: 1.15rem; color: var(--blau); font-weight: 600; margin: 2rem 0 0.8rem; }
+    .artikel-body a { color: var(--blau); font-weight: 600; }
+    .artikel-body a:hover { text-decoration: underline; }
+  </style>
 </head>
 <body>
+
   <header>
     <div class="nav-inner">
       <nav>
@@ -113,37 +84,41 @@
       </nav>
     </div>
   </header>
+
   <main>
-    <a href="news.html" class="zurueck">&#8592; Zur&uuml;ck zu News</a>
-    <div class="artikel-header">
-      <img src="JdL_Gruendung.jpg" alt="Initiative geht n&#228;chsten Schritt: &#8222;Jahrzehnt der Lunge&#8220; wird Verein" />
-      <div class="artikel-meta">
-        <span class="artikel-kat" style="background:var(--tuerkis);">Neuigkeiten</span>
-        <span class="artikel-datum">10.04.2025</span>
-      </div>
-      <h1 class="artikel-titel">Initiative geht n&#228;chsten Schritt: &#8222;Jahrzehnt der Lunge&#8220; wird Verein</h1>
+    <a href="news.html" class="zurueck">← Zurück zur Übersicht</a>
+    <div class="artikel-meta">
+      <span class="artikel-kat">Neuigkeiten</span>
+      <span class="artikel-datum">10.04.2025</span>
     </div>
+    <h1 class="artikel-titel">Initiative geht nächsten Schritt: „Jahrzehnt der Lunge" wird Verein und fordert Weichenstellung für Lungengesundheit</h1>
+    <img class="artikel-bild" src="JdL_Gruendung.jpg" alt="Vereinsgründung Jahrzehnt der Lunge" />
+
     <div class="artikel-body">
-      <p style="font-size:0.85rem;color:#888;font-style:italic;margin-bottom:1.5rem;">Gruppenfoto des neu gegr&#252;ndeten Jahrzehnt der Lunge e. V.; hinten (von links nach rechts): Dr. Peter Kardos, Prof. Dr. Michael Pfeifer, Prof. Dr. Claus Franz Vogelmeier, Prof. Dr. Klaus F. Rabe (Vorstandsvorsitzender), Dr. Iris Koper (Vorstand), Dr. Leonie Dengler, Prof. Dr. Frederik Trinkmann (Vorstand); vorne (von links nach rechts): Dr. Stefanie Schattling, Dr. Jens C. Becker, Prof. Dr. Heinrich Worth. &#169; Jahrzehnt der Lunge e. V.</p>
-      <p>P&#252;nktlich mit dem Ende der Koalitionsverhandlungen zur Regierungsbildung institutionalisiert sich ein neuer gesundheitspolitischer Akteur: Aus der Initiative, die sich im Herbst 2021 formierte, geht nun der Verein &#8222;Jahrzehnt der Lunge e. V.&#8220; hervor. Das gemeinsame Ziel ist es, den &#252;ber 14 Millionen Menschen in Deutschland mit chronischen Lungen- und Atemwegserkrankungen mehr politische Pr&#228;senz zu verleihen.</p>
-      <p>Leipzig, 10. April 2025 &#8211; W&#228;hrend gestern in Berlin der neue Koalitionsvertrag zur Bildung einer neuen Bundesregierung vorgestellt wurde, nimmt ein neuer gesundheitspolitischer Verein seine Arbeit auf: &#8222;Jahrzehnt der Lunge e. V.&#8220; wurde am 10. April 2025 im Rahmen des Kongresses der Deutschen Gesellschaft f&#252;r Pneumologie (DGP) offiziell gegr&#252;ndet. Ziel ist es, den mehr als 14 Millionen Menschen mit chronischen Lungen- und Atemwegserkrankungen in Deutschland mehr politische Sichtbarkeit zu verschaffen &#8211; und zentrale Reformen f&#252;r Pr&#228;vention, Fr&#252;herkennung und Versorgung auf den Weg zu bringen.</p>
+      <p>Pünktlich mit dem Ende der Koalitionsverhandlungen zur Regierungsbildung institutionalisiert sich ein neuer gesundheitspolitischer Akteur: Aus der Initiative, die sich im Herbst 2021 formierte, geht nun der Verein „Jahrzehnt der Lunge e. V." hervor. Das gemeinsame Ziel ist es, den über 14 Millionen Menschen in Deutschland mit chronischen Lungen- und Atemwegserkrankungen mehr politische Präsenz zu verleihen.</p>
+
+      <p><strong>Leipzig, 10. April 2025</strong> – Während gestern in Berlin der neue Koalitionsvertrag zur Bildung einer neuen Bundesregierung vorgestellt wurde, nimmt ein neuer gesundheitspolitischer Verein seine Arbeit auf: „Jahrzehnt der Lunge e. V." wurde am 10. April 2025 im Rahmen des Kongresses der Deutschen Gesellschaft für Pneumologie (DGP) offiziell gegründet. Ziel ist es, den mehr als 14 Millionen Menschen mit chronischen Lungen- und Atemwegserkrankungen in Deutschland mehr politische Sichtbarkeit zu verschaffen – und zentrale Reformen für Prävention, Früherkennung und Versorgung auf den Weg zu bringen.</p>
 
       <h3>Chronische Lungenerkrankungen: die vergessenen Volkskrankheiten</h3>
-      <p>Chronische Lungen- und Atemwegserkrankungen wie Asthma oder COPD z&#228;hlen l&#228;ngst zu den Volkskrankheiten. &#220;ber 14 Millionen Menschen sind in Deutschland betroffen &#8211; Tendenz steigend. Viele bleiben lange unerkannt. So gehen Sch&#228;tzungen davon aus, dass jede:r zweite COPD-Betroffene nicht &#228;rztlich diagnostiziert ist. Die gesundheitlichen, sozialen und wirtschaftlichen Folgen sind gravierend. Doch politisch finden sie bisher kaum Beachtung.</p>
-      <p>&#8222;Trotz ihrer hohen Pr&#228;valenz f&#252;hren Erkrankungen der Lunge noch immer ein gesundheitspolitisches Schattendasein&#8220;, mahnt der Vorsitzende, Prof. Dr. Rabe des neu gegr&#252;ndeten Vereins. Die Folgen seien nicht nur individuell gravierend, sondern auch volkswirtschaftlich sp&#252;rbar: &#8222;Allein die chronischen Krankheiten der unteren Atemwege verursachen j&#228;hrlich Gesundheitskosten in H&#246;he von rund sieben Milliarden Euro. Die Betroffenen zahlen indes nicht nur mit Lebensqualit&#228;t, sondern h&#228;ufig auch mit eingeschr&#228;nkter gesellschaftlicher Teilhabe.&#8220;</p>
+      <p>Chronische Lungen- und Atemwegserkrankungen wie Asthma oder COPD zählen längst zu den Volkskrankheiten. Über 14 Millionen Menschen sind in Deutschland betroffen – Tendenz steigend. Viele bleiben lange unerkannt. So gehen Schätzungen davon aus, dass jede:r zweite COPD-Betroffene nicht ärztlich diagnostiziert ist. Die gesundheitlichen, sozialen und wirtschaftlichen Folgen sind gravierend. Doch politisch finden sie bisher kaum Beachtung.</p>
+
+      <p>„Trotz ihrer hohen Prävalenz führen Erkrankungen der Lunge noch immer ein gesundheitspolitisches Schattendasein", mahnt der Vorsitzende, Prof. Dr. Rabe des neu gegründeten Vereins. Die Folgen seien nicht nur individuell gravierend, sondern auch volkswirtschaftlich spürbar: „Allein die chronischen Krankheiten der unteren Atemwege verursachen jährlich Gesundheitskosten in Höhe von rund sieben Milliarden Euro. Die Betroffenen zahlen indes nicht nur mit Lebensqualität, sondern häufig auch mit eingeschränkter gesellschaftlicher Teilhabe."</p>
 
       <h3>Kernforderung: Ein Nationaler Aktionsplan Lunge</h3>
-      <p>Im Zentrum der Vereinsarbeit steht die Forderung nach einem Nationalen Aktionsplan Lunge. Dieser soll Ma&#223;nahmen zur strukturierten Versorgung, zur besseren Fr&#252;herkennung sowie zur gezielten Pr&#228;vention b&#252;ndeln &#8211; und endlich eine gesundheitspolitische Strategie schaffen, die der Dimension dieser Volkskrankheiten gerecht wird.</p>
-      <p>Der Verein versteht sich dabei als unabh&#228;ngige, interdisziplin&#228;re Plattform aus Wissenschaft, Medizin, Patient:innenvertretung und Industrie &#8211; mit dem Ziel, gemeinsam tragf&#228;hige, langfristige L&#246;sungen zu erarbeiten und in den politischen Prozess einzubringen.</p>
+      <p>Im Zentrum der Vereinsarbeit steht die Forderung nach einem Nationalen Aktionsplan Lunge. Dieser soll Maßnahmen zur strukturierten Versorgung, zur besseren Früherkennung sowie zur gezielten Prävention bündeln – und endlich eine gesundheitspolitische Strategie schaffen, die der Dimension dieser Volkskrankheiten gerecht wird.</p>
+
+      <p>Der Verein versteht sich dabei als unabhängige, interdisziplinäre Plattform aus Wissenschaft, Medizin, Patient:innenvertretung und Industrie – mit dem Ziel, gemeinsam tragfähige, langfristige Lösungen zu erarbeiten und in den politischen Prozess einzubringen.</p>
 
       <h3>Breite Allianz aus Fachwelt, Patient:innen und Industrie</h3>
-      <p>Zu den Gr&#252;ndungsmitgliedern des Vereins z&#228;hlen die Pneumolog:innen Prof. Dr. Claus Franz Vogelmeier, Prof. Dr. Klaus F. Rabe, Prof. Dr. Heinrich Worth, Prof. Dr. Michael Pfeifer, Dr. Jens C. Becker, Dr. Iris Koper, Dr. Peter Kardos und Prof. Dr. Frederik Trinkmann. Elke Alsdorf, Gesundheitspolitische Sprecherin im Deutschen Allergie- und Asthmabund e. V. (DAAB) st&#228;rkt als offizielles F&#246;rdermitglied die Patient:innenvertretung. Mit Dr. Stefanie Schattling (AstraZeneca) und Dr. Leonie Dengler (Sanofi) bringen sich zwei erfahrene Branchenvertreterinnen k&#252;nftig als Industriepartner im interdisziplin&#228;ren Verein &#8222;Jahrzehnt der Lunge&#8220; ein.</p>
-      <p>&#8222;Deutschland steht vor einer wachsenden Herausforderung durch chronische Lungen- und Atemwegserkrankungen&#8220;, betont Prof. Dr. Trinkmann (Vorstand). &#8222;Mit der Gr&#252;ndung des Vereins senden wir ein starkes Signal an Politik und Gesellschaft: Die n&#228;chste Bundesregierung muss Lungengesundheit als gesundheitspolitische Priorit&#228;t behandeln.&#8220;</p>
+      <p>Zu den Gründungsmitgliedern des Vereins zählen die Pneumolog:innen Prof. Dr. Claus Franz Vogelmeier, Prof. Dr. Klaus F. Rabe, Prof. Dr. Heinrich Worth, Prof. Dr. Michael Pfeifer, Dr. Jens C. Becker, Dr. Iris Koper, Dr. Peter Kardos und Prof. Dr. Frederik Trinkmann. Elke Alsdorf, Gesundheitspolitische Sprecherin im Deutschen Allergie- und Asthmabund e. V. (DAAB) stärkt als offizielles Fördermitglied die Patient:innenvertretung. Mit Dr. Stefanie Schattling (AstraZeneca) und Dr. Leonie Dengler (Sanofi) bringen sich zwei erfahrene Branchenvertreterinnen künftig als Industriepartner im interdisziplinären Verein „Jahrzehnt der Lunge" ein.</p>
 
-      <h3>Jetzt ist die Zeit f&#252;r politische Weichenstellungen</h3>
-      <p>Das Jahrzehnt der Lunge e. V. positioniert sich bewusst zu Beginn der neuen Legislaturperiode &#8211; mit klaren Forderungen an eine k&#252;nftige Regierung. Die kommenden Jahre entscheiden dar&#252;ber, ob die gesundheitspolitischen Vers&#228;umnisse der Vergangenheit korrigiert werden k&#246;nnen.</p>
+      <p>„Deutschland steht vor einer wachsenden Herausforderung durch chronische Lungen- und Atemwegserkrankungen", betont Prof. Dr. Trinkmann (Vorstand). „Mit der Gründung des Vereins senden wir ein starkes Signal an Politik und Gesellschaft: Die nächste Bundesregierung muss Lungengesundheit als gesundheitspolitische Priorität behandeln."</p>
+
+      <h3>Jetzt ist die Zeit für politische Weichenstellungen</h3>
+      <p>Das Jahrzehnt der Lunge e. V. positioniert sich bewusst zu Beginn der neuen Legislaturperiode – mit klaren Forderungen an eine künftige Regierung. Die kommenden Jahre entscheiden darüber, ob die gesundheitspolitischen Versäumnisse der Vergangenheit korrigiert werden können.</p>
     </div>
   </main>
+
   <footer>
     <div class="footer-inner">
       <nav class="footer-nav">
@@ -162,17 +137,23 @@
       </div>
     </div>
     <div class="kontakt-form-box" style="display:none;max-width:700px;margin:2rem auto;padding:0 2rem;">
-      <div style="display:flex;flex-direction:column;gap:1rem;">
-        <input type="text" placeholder="Name *" style="background:transparent;border:none;border-bottom:2px solid rgba(255,255,255,0.4);color:#fff;padding:0.8rem 0;font-size:1rem;outline:none;" />
-        <input type="email" placeholder="Email-Adresse *" style="background:transparent;border:none;border-bottom:2px solid rgba(255,255,255,0.4);color:#fff;padding:0.8rem 0;font-size:1rem;outline:none;" />
-        <textarea placeholder="Nachricht *" style="background:transparent;border:none;border-bottom:2px solid rgba(255,255,255,0.4);color:#fff;padding:0.8rem 0;font-size:1rem;outline:none;min-height:100px;resize:vertical;"></textarea>
-        <button style="background:var(--tuerkis);color:var(--blau);border:none;padding:0.8rem 2.5rem;font-size:1rem;font-weight:700;border-radius:3px;cursor:pointer;width:fit-content;">Senden</button>
-      </div>
+      <form action="https://formspree.io/f/mdajrjzl" method="POST">
+        <input type="hidden" name="_subject" value="Kontaktanfrage über jahrzehnt-der-lunge.de" />
+        <div style="display:flex;flex-direction:column;gap:1rem;">
+          <input type="text" name="name" placeholder="Name *" required style="background:transparent;border:none;border-bottom:2px solid rgba(255,255,255,0.4);color:#fff;padding:0.8rem 0;font-size:1rem;outline:none;font-family:inherit;" />
+          <input type="email" name="email" placeholder="Email-Adresse *" required style="background:transparent;border:none;border-bottom:2px solid rgba(255,255,255,0.4);color:#fff;padding:0.8rem 0;font-size:1rem;outline:none;font-family:inherit;" />
+          <input type="text" name="betreff" placeholder="Betreff" style="background:transparent;border:none;border-bottom:2px solid rgba(255,255,255,0.4);color:#fff;padding:0.8rem 0;font-size:1rem;outline:none;font-family:inherit;" />
+          <textarea name="nachricht" placeholder="Nachricht *" required style="background:transparent;border:none;border-bottom:2px solid rgba(255,255,255,0.4);color:#fff;padding:0.8rem 0;font-size:1rem;outline:none;min-height:100px;resize:vertical;font-family:inherit;"></textarea>
+          <button type="submit" style="background:var(--tuerkis);color:var(--blau);border:none;padding:0.8rem 2.5rem;font-size:1rem;font-weight:700;border-radius:3px;cursor:pointer;width:fit-content;font-family:inherit;">Senden</button>
+          <p style="color:rgba(255,255,255,0.4);font-size:0.8rem;">(*) PFLICHTANGABE</p>
+        </div>
+      </form>
     </div>
     <div class="footer-bottom">
-      <p>2026 &copy; Jahrzehnt der Lunge</p>
+      <p>2026 © Jahrzehnt der Lunge</p>
       <a href="impressum.html">Impressum</a>
     </div>
   </footer>
+
 </body>
 </html>
