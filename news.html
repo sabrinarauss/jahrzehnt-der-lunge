@@ -24,9 +24,10 @@
     nav ul li .dropdown { display: none; position: absolute; top: 100%; left: 0; background: var(--blau); box-shadow: 0 6px 20px rgba(0,0,0,0.3); min-width: 220px; z-index: 300; }
     nav ul li:hover .dropdown { display: block; }
     nav ul li .dropdown a { padding: 0.7rem 1.2rem; font-weight: 400; font-size: 0.85rem; border-bottom: 1px solid rgba(255,255,255,0.1); color: var(--weiss); text-transform: none; letter-spacing: 0; }
-    .seiten-hero { background: var(--blau); padding: 4rem 2rem 3rem; text-align: center; }
-    .seiten-hero h1 { font-size: 2.5rem; color: var(--weiss); font-weight: 300; margin-bottom: 1rem; }
-    .seiten-hero p { color: rgba(255,255,255,0.8); max-width: 650px; margin: 0 auto; font-size: 1rem; line-height: 1.7; }
+    .seiten-hero { background: var(--blau); padding: 3rem 4rem; display: flex; align-items: center; justify-content: space-between; min-height: 200px; }
+    .seiten-hero-text .strich { display: block; width: 2rem; height: 2px; background: var(--weiss); margin-bottom: 1rem; }
+    .seiten-hero-text h1 { font-size: 3rem; font-weight: 300; color: var(--weiss); line-height: 1.1; }
+    .seiten-hero-logo img { height: 140px; width: auto; }
     main { max-width: 1100px; margin: 4rem auto; padding: 0 2rem; }
     footer { background: var(--blau); border-top: 1px solid rgba(255,255,255,0.1); padding: 2rem; margin-top: 4rem; }
     .footer-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 2fr; gap: 3rem; margin-bottom: 2rem; }
@@ -90,8 +91,13 @@
   </header>
 
   <section class="seiten-hero">
-    <h1>Fakten &amp; Neuigkeiten</h1>
-    <p>Aktuelle Meldungen, Fakten und Veranstaltungen rund um Lungengesundheit.</p>
+    <div class="seiten-hero-text">
+      <span class="strich"></span>
+      <h1>Fakten &amp; Neuigkeiten</h1>
+    </div>
+    <div class="seiten-hero-logo">
+      <a href="index.html"><img src="Logo.png" alt="Jahrzehnt der Lunge" /></a>
+    </div>
   </section>
 
   <main>
