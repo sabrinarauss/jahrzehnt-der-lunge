@@ -508,6 +508,9 @@
           karte.classList.add('versteckt');
         }
       });
+      setTimeout(() => {
+        document.getElementById('newsliste').scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 100);
     }
   </script>
 
