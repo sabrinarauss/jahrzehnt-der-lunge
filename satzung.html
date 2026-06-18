@@ -7,11 +7,7 @@
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    :root {
-      --blau: #1535a8; --tuerkis: #68d2df; --gelb: #f7af10;
-      --weiss: #ffffff; --hell: #f4f4f4; --text: #333333;
-      --schrift: 'Poppins', sans-serif;
-    }
+    :root { --blau: #1535a8; --tuerkis: #68d2df; --gelb: #f7af10; --weiss: #ffffff; --hell: #f4f4f4; --text: #333333; --schrift: 'Poppins', sans-serif; }
     html { scroll-behavior: smooth; }
     body { font-family: var(--schrift); color: var(--text); background: var(--weiss); overflow-x: hidden; }
     header { position: sticky; top: 0; z-index: 200; background: var(--blau); }
@@ -20,21 +16,16 @@
     nav ul li + li { margin-left: 0.3rem; }
     nav ul li.sep { color: rgba(255,255,255,0.4); padding: 0 0.2rem; pointer-events: none; }
     nav ul li { position: relative; }
-    nav ul li a { display: block; padding: 1.2rem 1rem; text-decoration: none; color: var(--weiss); font-weight: 500; font-size: 0.8rem; letter-spacing: 0.12em; text-transform: uppercase; transition: color 0.2s; white-space: nowrap; }
+    nav ul li a { display: block; padding: 1.2rem 1rem; text-decoration: none; color: var(--weiss); font-weight: 700; font-size: 0.9rem; letter-spacing: 0.1em; text-transform: uppercase; transition: color 0.2s; white-space: nowrap; }
     nav ul li a:hover, nav ul li a.aktiv { color: var(--tuerkis); }
-    nav ul li .dropdown { display: none; position: absolute; top: 100%; left: 0; background: var(--blau); box-shadow: 0 6px 20px rgba(0,0,0,0.3); min-width: 220px; z-index: 300; }
+    nav ul li .dropdown { display: none; position: absolute; top: 100%; left: 0; background: var(--weiss); box-shadow: 0 8px 24px rgba(0,0,0,0.15); min-width: 220px; z-index: 300; border-radius: 12px; overflow: hidden; margin-top: 0.3rem; }
     nav ul li:hover .dropdown { display: block; }
-    nav ul li .dropdown a { padding: 0.7rem 1.2rem; font-weight: 400; font-size: 0.85rem; border-bottom: 1px solid rgba(255,255,255,0.1); color: var(--weiss); text-transform: none; letter-spacing: 0; }
-    .seiten-hero { background: var(--blau); padding: 4rem 2rem 3rem; text-align: center; }
-    .seiten-hero h1 { font-size: 2.5rem; color: var(--weiss); font-weight: 300; margin-bottom: 1rem; }
-    .seiten-hero p { color: rgba(255,255,255,0.8); max-width: 650px; margin: 0 auto; font-size: 1rem; line-height: 1.7; }
-    main { max-width: 1100px; margin: 4rem auto; padding: 0 2rem; }
-    h2 { font-size: 1.6rem; color: #1a1a1a; font-weight: 400; margin-bottom: 1.5rem; padding-bottom: 0.6rem; border-bottom: 3px solid var(--blau); display: inline-block; }
-    p { font-size: 0.95rem; color: #555; line-height: 1.8; margin-bottom: 1rem; }
+    nav ul li .dropdown a { padding: 0.8rem 1.4rem; font-weight: 600; font-size: 0.85rem; border-bottom: 1px solid rgba(0,0,0,0.06); color: var(--tuerkis); text-transform: none; letter-spacing: 0; display: block; transition: background 0.2s; }
+    nav ul li .dropdown a:hover { background: #f0fbfc; }
     footer { background: var(--blau); border-top: 1px solid rgba(255,255,255,0.1); padding: 2rem; margin-top: 4rem; }
-    .footer-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 2fr; gap: 3rem; margin-bottom: 2rem; }
-    .footer-nav ul { list-style: none; }
-    .footer-nav ul li a { color: var(--weiss); text-decoration: underline; font-size: 0.95rem; font-weight: 600; display: block; padding: 0.4rem 0; }
+    .footer-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: auto 1fr; gap: 3rem; margin-bottom: 2rem; align-items: start; }
+    .footer-nav ul { list-style: none; display: flex; flex-direction: column; gap: 0.3rem; }
+    .footer-nav ul li a { color: var(--weiss); text-decoration: underline; font-size: 0.8rem; font-weight: 600; display: inline-block; padding: 0.1rem 0; }
     .footer-nav ul li a:hover { color: var(--tuerkis); }
     .footer-kontakt h3 { color: var(--weiss); margin-bottom: 1rem; }
     .btn-kontakt { background: var(--tuerkis); color: var(--blau); border: none; padding: 0.7rem 2rem; font-size: 0.95rem; font-weight: 600; border-radius: 30px; cursor: pointer; font-family: var(--schrift); }
@@ -42,38 +33,23 @@
     .footer-bottom { max-width: 1200px; margin: 0 auto; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.1); display: flex; justify-content: space-between; }
     .footer-bottom p, .footer-bottom a { color: rgba(255,255,255,0.5); font-size: 0.85rem; text-decoration: none; }
     .footer-bottom a:hover { color: var(--weiss); }
-    .satzung-block {
-      margin-bottom: 2.5rem;
-      padding-bottom: 2.5rem;
-      border-bottom: 1px solid #eee;
-    }
-    .satzung-block h3 {
-      font-size: 1rem;
-      font-weight: 700;
-      color: var(--blau);
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      margin-bottom: 1.2rem;
-      margin-top: 0;
-      padding-bottom: 0;
-      border-bottom: none;
-      display: block;
-    }
-    .satzung-block h4 {
-      font-size: 0.95rem;
-      font-weight: 600;
-      color: #333;
-      margin: 1.2rem 0 0.5rem;
-    }
-    .satzung-block p {
-      font-size: 0.9rem;
-      color: #555;
-      line-height: 1.8;
-      margin-bottom: 0.5rem;
-    }
-
     @media (max-width: 768px) { .footer-inner { grid-template-columns: 1fr; } nav ul { flex-wrap: wrap; justify-content: center; } }
 
+    /* HERO */
+    .seiten-hero { background: var(--blau); padding: 3rem 4rem; display: flex; align-items: center; justify-content: space-between; min-height: 200px; }
+    .seiten-hero-text .strich { display: block; width: 2rem; height: 2px; background: var(--weiss); margin-bottom: 1rem; }
+    .seiten-hero-text h1 { font-size: 3rem; font-weight: 300; color: var(--weiss); line-height: 1.1; }
+    .seiten-hero-logo img { height: 140px; width: auto; }
+
+    main { max-width: 1100px; margin: 4rem auto; padding: 0 2rem; }
+    p { font-size: 0.95rem; color: #555; line-height: 1.8; margin-bottom: 1rem; }
+
+    .satzung-block { margin-bottom: 2.5rem; padding-bottom: 2.5rem; border-bottom: 1px solid #eee; }
+    .satzung-block h3 { font-size: 1rem; font-weight: 700; color: var(--blau); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 1.2rem; }
+    .satzung-block h4 { font-size: 0.95rem; font-weight: 600; color: #333; margin: 1.2rem 0 0.5rem; }
+    .satzung-block p { font-size: 0.9rem; color: #555; line-height: 1.8; margin-bottom: 0.5rem; }
+    .satzung-block ul { margin-left: 1.5rem; margin-bottom: 0.5rem; }
+    .satzung-block ul li { font-size: 0.9rem; color: #555; line-height: 1.8; }
   </style>
 </head>
 <body>
@@ -86,7 +62,7 @@
             <a href="verein.html">Der Verein</a>
             <div class="dropdown">
               <a href="vorstand.html">Vorstand &amp; Gremien</a>
-              <a href="satzung.html">Satzung</a>
+              <a href="satzung.html" class="aktiv">Satzung</a>
               <a href="mitgliedschaft.html">Mitgliedschaft</a>
             </div>
           </li>
@@ -110,12 +86,16 @@
   </header>
 
   <section class="seiten-hero">
-    <h1>Satzung</h1>
-    <p>Die rechtliche Grundlage des Vereins Jahrzehnt der Lunge e.V.</p>
+    <div class="seiten-hero-text">
+      <span class="strich"></span>
+      <h1>Satzung</h1>
+    </div>
+    <div class="seiten-hero-logo">
+      <a href="index.html"><img src="Logo.png" alt="Jahrzehnt der Lunge" /></a>
+    </div>
   </section>
 
   <main>
-    <h2>Satzung</h2>
     <p style="color:#999;font-size:0.85rem;margin-bottom:2rem;">Stand 28.01.2025</p>
 
     <div class="satzung-block">
@@ -123,7 +103,7 @@
       <p>Chronische Lungen- und Atemwegserkrankungen zählen zu den dritthäufigsten Todesursachen in Deutschland. Die Anzahl der Betroffenen stieg in den letzten zehn Jahren stark an (Weißbuch Lunge 2023), wobei die Dunkelziffer noch höher liegen dürfte. Leiden wie das Asthma Bronchiale oder die chronisch obstruktive Lungenerkrankung COPD sind somit wahre Volkskrankheiten – und Studien prognostizieren sogar einen weiteren Anstieg.</p>
       <p>Eine Verbesserung der Prävention, Diagnostik und Versorgung kann dieser Entwicklung entgegenwirken.</p>
       <p>Trotz des Engagements vieler Akteurinnen, Akteuren und Verbände im Gesundheitswesen gibt es noch keine übergreifenden Initiativen, die sich dezidiert den chronischen Erkrankungen der Lunge und Atemwege auf der politischen Ebene annimmt. Eine Nationale Strategie wie es sie für vergleichbare Indikationen, etwa Krebs und Diabetes gibt, liegt für diese Erkrankungen bisher noch nicht vor. Dies ist angesichts der sehr hohen Prävalenzen und der Vermeidbarkeit vieler Erkrankungen folgenschwer.</p>
-      <p>Deshalb wurde die Initiative „Jahrzehnt der Lunge" – getragen von renommierten Expertinnen und Experten aus Ärzteschaft und Patientenvertretung – ins Leben gerufen. Der daraus entstehende Verein möchte die Stimmen der Pneumologie bündeln und gemeinsam auf den akuten politischen Handlungsbedarf aufmerksam machen. Das ist dringend nötig, um den Volkskrankheiten der Lunge besser entgegenzutreten. In den Verein werden absehbar auch Pharmaunternehmen als Partner auf gebotene Weise und in Übereinstimmung mit den Compliance-Regeln eingebunden. Ferner können Vertreterinnen und Vertreter von Patient:innenorganisationen oder Betroffenen mitwirken.</p>
+      <p>Deshalb wurde die Initiative „Jahrzehnt der Lunge" – getragen von renommierten Expertinnen und Experten aus Ärzteschaft und Patientenvertretung – ins Leben gerufen. Der daraus entstehende Verein möchte die Stimmen der Pneumologie bündeln und gemeinsam auf den akuten politischen Handlungsbedarf aufmerksam machen. In den Verein werden absehbar auch Pharmaunternehmen als Partner auf gebotene Weise und in Übereinstimmung mit den Compliance-Regeln eingebunden. Ferner können Vertreterinnen und Vertreter von Patient:innenorganisationen oder Betroffenen mitwirken.</p>
       <p>Die Arbeit des Vereins soll in der Definition von konkreten politischen Forderungen münden, um die Legislative zu unterstützen und die Selbstverwaltung zu ermutigen, neue Wege zu beschreiten.</p>
     </div>
 
@@ -136,10 +116,10 @@
       <h4>§ 2 Zweck des Vereins</h4>
       <p>2.1 Zweck des Vereins ist die verbesserte Prävention, Früherkennung, Diagnostik und Versorgung von chronischen Lungen- und Atemwegserkrankungen durch die Bündelung der politischen Bestrebungen der Mitglieder und Adressierung gegenüber Politik und Gesellschaft.</p>
       <p>2.2 Der Zweck des Vereins wird insbesondere durch folgende Aktivitäten verwirklicht:</p>
-      <p>2.2.1 den Betrieb einer Website zur Schaffung eines Informationshubs und zum Zwecke der Kontaktaufnahme mit dem Verein. Sie dient hauptsächlich dazu, den Verein vorzustellen und Neuigkeiten über ihre Aktivitäten zu teilen. Sie bietet zudem durch die Experten fachlich geprüfte Informationen zu chronischen Lungen- und Atemwegserkrankungen und ermöglicht über ein Kontaktformular die Kontaktaufnahme mit dem Verein;</p>
-      <p>2.2.2 die Erstellung und Weiterentwicklung eines politischen Kompasses. Dieser zeigt konkrete politische Handlungsoptionen und Lösungswege für die Bewältigung der Herausforderungen in der Pneumologie auf. Die inhaltliche Ausgestaltung des politischen Kompasses erfolgt durch den Vorstand zusammen mit den Experten des Wissenschaftlichen Beirats des Vereins und unter Einbeziehung des Patient:innen Beirats. Mit dem politischen Kompass unterstützt der Verein die Bundesregierung und andere Akteure im Gesundheitswesen bei der Ausgestaltung von nachhaltigen und systematischen Maßnahmen im Bereich der chronischen Atemwegs- und Lungenerkrankungen und liefert wichtige Impulse;</p>
-      <p>2.2.3 Bereitstellung umfassender Informationen und Aufklärung über verschiedene Aspekte von chronischen Lungen- und Atemwegserkrankungen, insbesondere aktueller wissenschaftlicher Forschungsergebnisse einschl. Versorgungsforschung. Dies beinhaltet auch das Aufzeigen von Möglichkeiten zur Umsetzung und Nutzung von Forschungsergebnissen sowie Aufgaben im Sinne der Politikberatung;</p>
-      <p>2.2.4 Aktive Organisation und Durchführung von Informationsveranstaltungen und öffentlichkeitswirksamen Aktionen etwa Roundtables, Konferenzen und Diskussionen, um das Bewusstsein für chronische Lungen- und Atemwegserkrankungen zu stärken und den Wissenstransfer zu fördern;</p>
+      <p>2.2.1 den Betrieb einer Website zur Schaffung eines Informationshubs und zum Zwecke der Kontaktaufnahme mit dem Verein;</p>
+      <p>2.2.2 die Erstellung und Weiterentwicklung eines politischen Kompasses;</p>
+      <p>2.2.3 Bereitstellung umfassender Informationen und Aufklärung über verschiedene Aspekte von chronischen Lungen- und Atemwegserkrankungen;</p>
+      <p>2.2.4 Aktive Organisation und Durchführung von Informationsveranstaltungen und öffentlichkeitswirksamen Aktionen;</p>
       <p>2.2.5 die Kontaktaufnahme und -pflege zu politischen Entscheidungsträgern sowie Öffentlichkeitsarbeit.</p>
     </div>
 
@@ -147,164 +127,75 @@
       <h3>MITGLIEDSCHAFT</h3>
       <h4>§ 3 Mitgliedschaft</h4>
       <p>3.1 Mitglieder des Vereins können natürliche und juristische Personen werden.</p>
-      <p>3.2 Mitglied kann werden, wer als Fachverband, Unternehmen, sonstige Organisation im Bereich des Zwecks des Vereins tätig ist oder als Person, die in den vorbenannten juristischen Personen ein Amt, eine Funktion oder bei diesen eine Beschäftigung oder sonstige Verbindung hat. Mitglied kann auch werden, wer den Zielen und Zwecken des Verbandes verbunden ist. Außerdem kann Mitglied werden, wer Betroffener oder Organisation für Patient:innen ist.</p>
+      <p>3.2 Mitglied kann werden, wer als Fachverband, Unternehmen, sonstige Organisation im Bereich des Zwecks des Vereins tätig ist oder als Person, die in den vorbenannten juristischen Personen ein Amt, eine Funktion oder bei diesen eine Beschäftigung oder sonstige Verbindung hat. Außerdem kann Mitglied werden, wer Betroffener oder Organisation für Patient:innen ist.</p>
       <p>3.3 Ein Anspruch auf Mitgliedschaft besteht nicht.</p>
       <h4>§ 4 Arten der Mitgliedschaft</h4>
       <p>4.1 Natürliche und juristische Personen werden Vollmitglied des Vereins.</p>
-      <p>4.2 Juristische Personen benennen zur Wahrnehmung ihrer Rechte und Pflichten im Verein als Vollmitglied einen Repräsentanten, der nicht der gesetzliche Vertreter zu sein braucht. Zusätzlich kann ein Vertreter des Repräsentanten benannt werden. Der Repräsentant und der Vertreter können wechseln, wenn dies so rechtzeitig dem Vorstand angezeigt wird, dass der Vorstand vor einer Versammlung noch die anderen Mitglieder vom Wechsel informieren kann. Ist ein Repräsentant in den Vorstand gewählt, ist ein Wechsel während der Amtszeit nicht möglich.</p>
-      <p>4.3 Natürliche und juristische Personen, die dem Zweck des Vereins verbunden sind und diesen freiwillig finanziell, durch Sach- oder Dienstleistungen oder ideell unterstützten, können Fördermitglied des Vereins werden. Fördermitglieder haben anders als Vollmitglieder das Teilnahme- und Rederecht, jedoch kein Antrags-, Stimm- oder Wahlrecht.</p>
-      <p>4.4 Auf Vorschlag des Vorstands oder aus der Mitgliederversammlung kann die Mitgliederversammlung Personen, die sich in besonderer Weise um den Verein verdient gemacht haben, zu Ehrenmitgliedern ernennen (Ehrenmitgliedschaft). Ehrenmitglieder haben - sofern sie keine Vollmitgliedschaft unterhalten - Teilnahme- und Rederecht, jedoch kein Antrags-, Stimm- oder Wahlrecht. Die Ehrenmitgliedschaft ist von der Beitragspflicht befreit.</p>
-      <p>4.5 Vollmitglieder, die natürliche oder juristische Personen sind, werden der „Gruppe Ärztliche und sonstige Mitglieder" oder der „Gruppe Patient:innen" zugeordnet. Vollmitglieder, insbesondere juristische Personen, die Industriepartner sind, oder natürliche Personen, die für Industriepartner tätig sind, werden abweichend davon der „Gruppe der Industriepartner" zugeordnet. Diese Gruppe ist in Industriepartner Level 1 (Juristische Personen) und Level 2 (Juristische Personen) sowie Level 3 (natürliche Personen) unterteilt. Die Zuordnung erfolgt durch Beschluss des Vorstands.</p>
+      <p>4.2 Juristische Personen benennen zur Wahrnehmung ihrer Rechte und Pflichten im Verein als Vollmitglied einen Repräsentanten, der nicht der gesetzliche Vertreter zu sein braucht.</p>
+      <p>4.3 Natürliche und juristische Personen, die dem Zweck des Vereins verbunden sind und diesen freiwillig unterstützen, können Fördermitglied des Vereins werden. Fördermitglieder haben Teilnahme- und Rederecht, jedoch kein Antrags-, Stimm- oder Wahlrecht.</p>
+      <p>4.4 Auf Vorschlag des Vorstands kann die Mitgliederversammlung Personen, die sich in besonderer Weise um den Verein verdient gemacht haben, zu Ehrenmitgliedern ernennen.</p>
+      <p>4.5 Vollmitglieder werden der „Gruppe Ärztliche und sonstige Mitglieder" oder der „Gruppe Patient:innen" zugeordnet. Vollmitglieder, insbesondere juristische Personen, die Industriepartner sind, werden der „Gruppe der Industriepartner" zugeordnet.</p>
       <h4>§ 5 Aufnahme</h4>
       <p>Zur Aufnahme von Mitgliedern ist ein Antrag in Text- oder Schriftform an den Vorstand zu stellen. Über die Aufnahme entscheidet die Mitgliederversammlung.</p>
       <h4>§ 6 Beendigung der Mitgliedschaft</h4>
-      <p>6.1 Die Mitgliedschaft erlischt</p>
-      <p>6.1.1 durch Eröffnung des Insolvenzverfahrens über das Vermögen des Mitglieds,</p>
-      <p>6.1.2 durch den Tod einer natürlichen Person oder die Einleitung der Liquidation einer juristischen Person,</p>
-      <p>6.1.3 durch Austritt nach 6.2 oder</p>
-      <p>6.1.4 durch Ausschluss nach 6.3.</p>
-      <p>6.2 Der Austritt bedarf einer Kündigung in Schrift- oder Textform gegenüber dem Vorstand.</p>
-      <p>6.2.1 Der ordentliche Austritt kann unter Wahrung einer Frist von drei Monaten zum Ende des Kalenderjahres erklärt werden.</p>
-      <p>6.2.2 Ein Mitglied kann binnen zwei Monaten nach Bekanntgabe an das Mitglied den außerordentlichen Austritt mit Frist von sechs Wochen zum Monatsende erklären, wenn zum Zeitpunkt der Bekanntgabe durch eine Beitrags- oder Umlagenanpassung – einzeln oder kumulativ – oder andere beitrags- oder umlagenrelevante Ereignisse ein Höchstanteil des Mitglieds eigener Beitrags- und Umlageverpflichtungen von 25 % bezogen auf das in der Beitragsordnung und aus der Zahl der Mitglieder ergebende festgelegte prospektive gesamte Beitragsaufkommen zuzüglich Umlagen überschritten wird (Sonderkündigungsrecht wegen übermäßigem Finanzierungsanteil).</p>
-      <p>6.3 Der Ausschluss eines Mitglieds kann nach vorheriger Anhörung in Schrift- oder Textform aus wichtigem Grund durch Beschluss des Vorstands erfolgen, insbesondere</p>
-      <p>6.3.1 wegen grober Verletzung von Satzungsregelungen,</p>
-      <p>6.3.2 wegen Schädigung der Interessen oder des Ansehens des Vereins,</p>
-      <p>6.3.3 wenn die Voraussetzungen der Aufnahme weggefallen sind,</p>
-      <p>6.3.4 wenn eine Änderung der Anschrift und sonstiger Daten des Mitgliedes nicht binnen einer Frist von drei Monaten dem Verein mitgeteilt wird oder</p>
-      <p>6.3.5 wenn die Beitragspflicht trotz Erinnerung in Schrift- oder Textform nicht erfüllt wird, wobei die Mahnung als Anhörung gilt.</p>
-      <p>6.4 Das ausgeschlossene Mitglied kann gegen den Beschluss des Vorstandes binnen einem Monat nach Zustellung die Mitgliederversammlung anrufen. Diese kann die Entscheidung des Vorstandes aufheben. Bis zur Entscheidung der Mitgliederversammlung ruhen die Mitgliedsrechte.</p>
+      <p>6.1 Die Mitgliedschaft erlischt durch Eröffnung des Insolvenzverfahrens, durch den Tod einer natürlichen Person oder die Einleitung der Liquidation einer juristischen Person, durch Austritt oder durch Ausschluss.</p>
+      <p>6.2 Der Austritt bedarf einer Kündigung in Schrift- oder Textform gegenüber dem Vorstand mit einer Frist von drei Monaten zum Ende des Kalenderjahres.</p>
+      <p>6.3 Der Ausschluss eines Mitglieds kann nach vorheriger Anhörung aus wichtigem Grund durch Beschluss des Vorstands erfolgen.</p>
       <h4>§ 7 Rechte und Pflichten der Vollmitglieder</h4>
-      <p>7.1 Jedes Vollmitglied hat eine Stimme. Stimmrechtsübertragungen und Vollmachten sind mit Ausnahme der in Punkt 4 genannten Fälle ausgeschlossen. Stimm- und wahlberechtigt sind alle Vollmitglieder, deren Mitgliedschaft nicht ruht. Die Mitgliedschaft und das Rede- und Stimmrecht ruhen, wenn ein Mitgliedsbeitrag nach 7.4 nicht binnen drei Monaten nach Fälligkeit gezahlt wurde.</p>
+      <p>7.1 Jedes Vollmitglied hat eine Stimme. Stimm- und wahlberechtigt sind alle Vollmitglieder, deren Mitgliedschaft nicht ruht.</p>
       <p>7.2 Die Vollmitglieder sind innerhalb der Kapazitäten des Vereins berechtigt, dessen Einrichtungen zu benutzen und an den Veranstaltungen teilzunehmen.</p>
-      <p>7.3 Die Vollmitglieder sind verpflichtet, den Zweck des Vereins zu unterstützen.</p>
-      <p>7.4 Die Vollmitglieder sind verpflichtet, Mitgliedsbeiträge zu entrichten. Die Höhe der Mitgliedsbeiträge, Differenzierungen nach Mitgliedschaftsart, Fälligkeit und Härtefallregelungen werden durch den Vorstand in einer Beitragsordnung festgelegt.</p>
+      <p>7.3 Die Vollmitglieder sind verpflichtet, den Zweck des Vereins zu unterstützen und Mitgliedsbeiträge zu entrichten.</p>
     </div>
 
     <div class="satzung-block">
       <h3>STRUKTUR</h3>
       <h4>§ 8 Organe und Gremien des Vereins</h4>
-      <p>8.1 Organe des Vereins sind:</p>
-      <p>8.1.1 die Mitgliederversammlung und</p>
-      <p>8.1.2 der Vorstand.</p>
-      <p>8.2 Gremien des Vereins sind:</p>
-      <p>8.2.1 der Wissenschaftliche Beirat,</p>
-      <p>8.2.2 der Patient:innen Beirat und</p>
-      <p>8.2.3 weitere von der Mitgliederversammlung eingerichtete Gremien.</p>
+      <p>8.1 Organe des Vereins sind die Mitgliederversammlung und der Vorstand.</p>
+      <p>8.2 Gremien des Vereins sind der Wissenschaftliche Beirat, der Patient:innen Beirat und weitere von der Mitgliederversammlung eingerichtete Gremien.</p>
       <h4>§ 9 Mitgliederversammlung</h4>
-      <p>9.1 Die Mitglieder bilden die Mitgliederversammlung.</p>
-      <p>9.2 Die Mitgliederversammlung bildet die Repräsentanz der Mitglieder des Vereins und definiert und beschließt die strategische Ausrichtung für den Verein und seine Tätigkeit. Die Mitgliederversammlung hat insbesondere die Aufgaben:</p>
-      <p>9.2.1 Beschluss über Mitgliedsanträge,</p>
-      <p>9.2.2 Wahl des Vorstandes,</p>
-      <p>9.2.3 Entgegennahme des jährlichen Berichts des Vorstandes,</p>
-      <p>9.2.4 Entgegennahme des Berichts des Kassenprüfers,</p>
-      <p>9.2.5 Entlastung des Vorstandes,</p>
-      <p>9.2.6 Beschluss zu Änderungen der Satzung,</p>
-      <p>9.2.7 Entgegennahme des Jahresplans des Vorstands zu den Aktivitäten zur Umsetzung des Vereinszwecks,</p>
-      <p>9.2.8 weitere in dieser Satzung benannte Aufgaben.</p>
-      <p>9.3 Die Mitgliederversammlung soll einmal jährlich stattfinden. Darüber hinaus können auf Beschluss des Vorstandes oder auf Verlangen von mindestens 20 % der Mitglieder außerordentliche Versammlungen einberufen werden.</p>
-      <p>9.4 Die Mitgliederversammlung wird mit einer Frist von zwei Monaten in Schrift- oder Textform vom Vorsitzenden - im Verhinderungsfall von einem Stellvertretenden Vorsitzenden - einberufen. Jedes Vollmitglied kann bis zu einem Monat vor der Versammlung die Aufnahme von Tagesordnungspunkten verlangen und Anträge stellen. Die Tagesordnung wird drei Wochen vor der Versammlung in Schrift- oder Textform versandt. Die Tagesordnung kann in der Versammlung geändert werden, wenn eine Mehrheit von zwei Dritteln der erschienenen Vollmitglieder dies beschließt.</p>
-      <p>9.5 Jede ordnungsgemäß einberufene Mitgliederversammlung ist beschlussfähig.</p>
-      <p>9.6 Beschlüsse werden mit einfacher Mehrheit der abgegebenen Stimmen gefasst.</p>
-      <p>9.7 Die Mitgliederversammlung wird durch den Vorsitzenden oder die Vorsitzende geleitet. Abstimmungen erfolgen grundsätzlich offen, sofern die Mitgliederversammlung nicht auf Antrag anders beschließt. Die Mitgliederversammlung kann sich eine Geschäftsordnung geben. Geladene Gäste sind zugelassen.</p>
-      <p>9.8 Über die Ergebnisse der Mitgliederversammlung und Beschlüsse ist ein Protokoll zu fertigen. Der Protokollführer wird von der Mitgliederversammlung bestimmt und muss nicht Mitglied der Mitgliederversammlung oder des Vereins sein. Das Protokoll ist den Mitgliedern vom Vorstand unverzüglich in Schrift- oder Textform in geeigneter Kommunikationsform bekannt zu geben.</p>
-      <p>9.9 Die Anfechtung von Beschlüssen der Mitgliederversammlung ist längstens innerhalb von vier Wochen nach dem Ende der Mitgliederversammlung zulässig.</p>
-      <p>9.10 Die Mitgliederversammlung kann auch auf Basis eines elektronischen Systems in Abwesenheit der Mitglieder durchgeführt werden. Das elektronische System für die Mitgliederversammlung muss eine Audio- oder Videokonferenzfunktion bieten, jedem berechtigten Teilnehmer die Teilnahme ermöglichen, berechtigte Teilnehmer und zugelassene Gäste eindeutig identifizieren, eine sichere Stimmabgabe ermöglichen und den Anforderungen des Datenschutzes sowie der Vertraulichkeit gerecht werden.</p>
-      <p>9.11 Außerhalb einer Mitgliederversammlung können Beschlüsse im Umlaufverfahren per Email oder im elektronisch gestützten Verfahren gefasst werden. Es ist nicht erforderlich, dass sich alle Mitglieder am Umlaufverfahren oder am elektronisch gestützten Verfahren beteiligen.</p>
+      <p>9.1 Die Mitgliederversammlung soll einmal jährlich stattfinden. Sie wird mit einer Frist von zwei Monaten in Schrift- oder Textform vom Vorsitzenden einberufen.</p>
+      <p>9.2 Jede ordnungsgemäß einberufene Mitgliederversammlung ist beschlussfähig. Beschlüsse werden mit einfacher Mehrheit der abgegebenen Stimmen gefasst.</p>
       <h4>§ 10 Vorstand</h4>
-      <p>10.1 Der Vorstand führt den Verein operativ und inhaltlich. Er setzt die Beschlüsse der Mitgliederversammlung um. Er ist für die Beschlüsse zu vom Wissenschaftlichen Beirat unter Einbeziehung des Patient:innen Beirats vorbereiteten Positionen verantwortlich. Der Vorstand ist weiter für alle Angelegenheiten des Vereins, sofern diese nicht anderen Organen zugewiesen sind, und in den in der Satzung anderweitig benannten Angelegenheiten zuständig. Er informiert die Mitgliederversammlung regelmäßig über wesentliche Ereignisse und Ergebnisse seiner Tätigkeit.</p>
-      <p>10.2 Der Vorstand besteht aus</p>
-      <p>10.2.1 dem Vorsitzenden und</p>
-      <p>10.2.2 weiteren Stellvertretenden Vorsitzenden.</p>
-      <p>Die Mitglieder des Vorstandes müssen Mitglieder des Vereins oder zum Zeitpunkt der Wahl benannte Repräsentanten sein. Die Anzahl der Stellvertretenden Vorsitzenden ergibt sich aus nachfolgenden Regelungen.</p>
-      <p>10.3 Der Vorsitzende ist aus der „Gruppe Ärztliche und sonstige Mitglieder" von der Mitgliederversammlung zu wählen.</p>
-      <p>10.4 Zwei Stellvertretende Vorsitzende werden aus der Untergruppe „Industriepartner Level 1" benannt. Die Benennung erfolgt durch die Mitglieder der Untergruppe „Industriepartner Level 1" konsensual; sofern eine Einigung nicht möglich ist, durch einfache Mehrheit; sofern eine Mehrheit nicht zu Stande kommt, bleibt der jeweilige Sitz vakant und kann jederzeit nachgeholt werden. Eine Person kann nicht benannt werden, wenn sie dazu nicht ihre Bereitschaft erklärt hat oder das Einverständnis des Mitglieds besteht, das diese Person repräsentiert. Die Mitgliederversammlung kann der Benennung einer Person auch wichtigem Grund widersprechen. In diesem Fall bleibt ein das Benennungsrecht durch Benennung einer anderen Person erhalten.</p>
-      <p>10.5 Aus der „Gruppe Patient:innen" wählen die Mitglieder dieser Gruppe in der Mitgliederversammlung eine Person aus dieser Gruppe als einen Stellvertretenden Vorsitzenden.</p>
-      <p>10.6 Aus der „Gruppe Ärztliche und sonstige Mitglieder" wählt die Mitgliederversammlung zwei weitere Stellvertretende Mitglieder.</p>
-      <p>10.7 Die Amtszeit des Vorstands beträgt 2 Jahre.</p>
-      <p>10.8 Die Amtszeit beginnt mit der Annahme der Wahl oder der Benennung. Der Vorstand bleibt grundsätzlich bis zur Neuwahl oder Neubenennung im Amt. Scheidet ein Mitglied des Vorstandes während der Amtszeit aus, so kann der Vorstand, oder in den Fällen 10.4 das benennende Mitglied, einen Nachfolger bestimmen. Ein Nachfolger amtiert für die restliche Amtszeit des Vorstandes.</p>
-      <p>10.9 Der Vorstand ist Kollegialorgan und trifft seine Beschlüsse mit einfacher Mehrheit. Bei Stimmgleichheit entscheidet die Stimme des Vorsitzenden. Vorstandssitzungen werden vom Vorsitzenden - im Verhinderungsfall von einem Stellvertretenden Vorsitzenden - einberufen. Die Einberufung soll mit einer Frist von mindestens 2 Wochen erfolgen. Der Einladung soll eine Tagesordnung beigefügt sein.</p>
-      <p>10.10 Der Vorstand ist in einer Sitzung beschlussfähig, wenn mindestens die Hälfte seiner Mitglieder anwesend ist. Der Vorsitzender leitet alle Sitzungen des Vorstandes. Ist der Vorsitzende nicht in der Lage, diese Aufgaben wahrzunehmen, übernimmt einer der Stellvertretenden Vorsitzenden, der vom Vorsitzenden bestimmt wird. Erfolgt eine Bestimmung nicht, verständigen sich die Stellvertretenden Vorsitzenden untereinander.</p>
-      <p>10.11 Beschlüsse können auch im elektronisch gestützten Umlaufverfahren oder in einer elektronisch gestützten Sitzung in Abwesenheit gefasst werden, wobei ebenfalls die einfache Mehrheit ausreichend ist. Das elektronische Abstimmungssystem im Rahmen einer Sitzung muss eine Audio- oder Videokonferenzfunktion bieten, jedem berechtigten Teilnehmer die Teilnahme ermöglichen, berechtigte Teilnehmer und zugelassene Gäste eindeutig identifizieren, eine sichere Stimmabgabe ermöglichen und den Anforderungen des Datenschutzes gerecht werden.</p>
-      <p>10.12 Der Vorstand kann durch eine Geschäftsordnung eine Geschäftsverteilung im Vorstand beschließen.</p>
+      <p>10.1 Der Vorstand führt den Verein operativ und inhaltlich. Er besteht aus dem Vorsitzenden und weiteren Stellvertretenden Vorsitzenden.</p>
+      <p>10.2 Der Vorsitzende ist aus der „Gruppe Ärztliche und sonstige Mitglieder" von der Mitgliederversammlung zu wählen. Die Amtszeit des Vorstands beträgt 2 Jahre.</p>
       <h4>§ 11 Wissenschaftlicher Beirat</h4>
-      <p>11.1 Der Wissenschaftliche Beirat hat die Aufgaben:</p>
-      <ul><li>fachliche Prüfung von medizinischen Informationen;</li><li>inhaltliche Beratung des Vereins;</li><li>inhaltliche Vorbereitung der Positionen des Vereins;</li><li>Teilnahme an politischen Gesprächen;</li><li>Beratung des Vereins bei der Erstellung der politischen Forderungen.</li></ul>
-      <p>11.2 Der Wissenschaftliche Beirat besteht aus mindestens drei Personen. Für die Berufung in den Beirat ist die wissenschaftliche Qualifikation maßgeblich. Der Vorstand legt die näheren Kriterien für die Berufung in den Beirat vorab mit genereller Wirkung fest. Der Vorstand kann eine Geschäftsordnung erlassen. Die Tätigkeit im Wissenschaftlichen Beirat erfolgt unentgeltlich. Reise- und Verpflegungskosten können erstattet werden.</p>
-      <p>11.3 Die Berufung in den Wissenschaftlichen Beirat erfolgt durch den Vorstand. Die Amtszeit eines Mitglieds des Wissenschaftlichen Beirats beträgt 3 Jahre. Eine Wiederberufung ist zulässig.</p>
-      <p>11.4 Der Wissenschaftliche Beirat tagt mindestens einmal im Jahr. Die Sitzungen des Wissenschaftlichen Beirats werden vom Vorsitzenden - im Verhinderungsfall von einem Stellvertretenden Vorsitzenden - einberufen. Für die Beschlussfähigkeit und Leitung sowie die Beschlussfassung außerhalb von Sitzungen gelten die Regelungen der Punkte 10.6 und 10.7 entsprechend.</p>
+      <p>Der Wissenschaftliche Beirat hat die Aufgaben der fachlichen Prüfung von medizinischen Informationen, der inhaltlichen Beratung und Vorbereitung der Positionen des Vereins sowie der Teilnahme an politischen Gesprächen. Er besteht aus mindestens drei Personen mit einer Amtszeit von 3 Jahren.</p>
       <h4>§ 12 Patient:innen Beirat</h4>
-      <p>12.1 Der Patient:innen Beirat hat die Aufgaben:</p>
-      <ul><li>fachliche und inhaltliche Beratung des Vereins;</li><li>inhaltliche Vorbereitung der Positionen des Vereins;</li><li>Teilnahme an politischen Gesprächen;</li><li>Beratung des Vereins bei der Erstellung der politischen Forderungen.</li></ul>
-      <p>12.2 Der Patient:innen Beirat besteht aus mindestens drei Mitgliedern aus der „Gruppe Patient:innen". Der Vorstand legt die näheren Kriterien für die Berufung in den Beirat vorab mit genereller Wirkung fest. Der Vorstand kann eine Geschäftsordnung erlassen. Die Tätigkeit im Patient:innen Beirat erfolgt unentgeltlich. Reise- und Verpflegungskosten können erstattet werden.</p>
-      <p>12.3 Die Berufung in den Patient:innen Beirat erfolgt durch den Vorstand. Die Amtszeit eines Mitglieds des Patient:innen Beirat beträgt 3 Jahre. Eine Wiederberufung ist zulässig.</p>
-      <p>12.4 Der Patient:innen Beirat tagt mindestens einmal im Jahr. Die Sitzungen des Patient:innen Beirat werden vom Vorsitzenden - im Verhinderungsfall von einem Stellvertretenden Vorsitzenden - einberufen. Für die Beschlussfähigkeit und Leitung sowie die Beschlussfassung außerhalb von Sitzungen gelten die Regelungen der Punkte 10.6 und 10.7 entsprechend.</p>
-      <h4>§ 13 Sonstige Gremien</h4>
-      <p>13.1 Die Mitgliederversammlung kann weitere Gremien ohne Satzungsänderung einrichten.</p>
-      <p>13.2 Die Mitgliederversammlung bestimmt die Aufgabe, die Zusammensetzung und Mitglieder, die Leitung des Gremiums sowie die Amtsdauer des Gremiums, der Mitglieder und der Leitung.</p>
+      <p>Der Patient:innen Beirat berät den Verein fachlich und inhaltlich, bereitet Positionen vor und nimmt an politischen Gesprächen teil. Er besteht aus mindestens drei Mitgliedern aus der „Gruppe Patient:innen" mit einer Amtszeit von 3 Jahren.</p>
     </div>
 
     <div class="satzung-block">
       <h3>FINANZEN, VERTRETUNG UND GESCHÄFTSSTELLE</h3>
       <h4>§ 14 Finanzen</h4>
       <p>14.1 Die Mittel des Vereins dürfen nur zur Förderung des Vereinszwecks verwendet werden.</p>
-      <p>14.2 Die Mitglieder erhalten keine Zuwendungen aus Mitteln des Vereins. Die Wahrnehmung von Funktionen und Aufgaben im Verein soll grundsätzlich ehrenamtlich erfolgen; Ausnahmen hiervon bedürfen eines Beschlusses der Mitgliederversammlung. Die Mitgliederversammlung kann eine Finanzordnung erlassen.</p>
-      <p>14.3 Die Mitglieder der Gruppe „Industriepartner" können durch den Vorstand zu einer Umlage verpflichtet werden, wenn die Einnahmen aus Mitgliedsbeiträgen in einem Jahr nicht zur Deckung sämtlicher Aufwände des Jahres ausreichen werden oder ausgereicht haben; der Umlage müssen alle Stellvertretenden Vorsitzenden der Untergruppe „Industriepartner Level 1" zustimmen. Die Umlage kann bis zu maximal 200.000 € pro Jahr betragen. Die Umlage wird auf die Mitglieder dieser Gruppe entsprechend ihrem anteiligen Beitragsaufkommen nach der Beitragsordnung aufgeteilt. Die Umlage wird eine Woche nach Beschluss der Mitgliederversammlung fällig.</p>
-      <p>14.4 Zur Prüfung der finanziellen Vorgänge des Vereins wählt die Mitgliederversammlung einen oder mehrere Kassenprüfer. Aufgabe ist die Erstellung des jährlichen Berichts über die Kassenführung, ob die Ausgaben sachlich richtig sind und sie mit dem Haushaltsplan übereinstimmen. Der Kassenprüfer ist zur gewissenhaften und unparteiischen Wahrnehmung seiner Aufgabe sowie zur Verschwiegenheit verpflichtet. Ein Kassenprüfer muss nicht Mitglied des Vereins sein. Es können auch Steuerberater oder Wirtschaftsprüfer oder eine prüfende Gesellschaft beauftragt werden. Der Vorstand ist verpflichtet, Kassenprüfern die notwendigen Unterlagen für die Prüfung zugänglich zu machen und erforderliche Auskünfte zu erteilen. Der Prüfbericht ist dem Vorstand mindestens einen Monat vor der Mitgliederversammlung zu übermitteln.</p>
-      <h4>§ 15 Zuwendungen</h4>
-      <p>15.1 Über alle Schenkungen oder sonstigen von erheblichem Wert ohne Gegenleistungen, die dem Verein angetragen werden, ist unverzüglich der Vorstand zu informieren. Der Vorstand prüft, ob diese angenommen werden sollen.</p>
-      <p>15.2 Der Vorstand entscheidet, ob Bedingungen oder Bestimmungen, die mit der Annahme einer Schenkung oder sonstigen Zuwendung verbunden sind, mit dem Zweck des Vereins nach dieser Satzung vereinbar sind. Stellt der Vorstand fest, dass Bedingungen oder Bestimmungen mit diesen Zwecken unvereinbar sind, lehnt der Vorstand das Geschenk, die Schenkung oder sonstige Zuwendung für die Gesellschaft ab.</p>
-      <p>15.3 Bei Annahme einer Schenkung oder Zuwendung für den Verein legt der Vorstand einen Mechanismus für die Verwaltung der Schenkung oder sonstigen Zuwendung fest, der sowohl mit dem Zweck der Gesellschaft als auch mit den Bedingungen oder Bestimmungen des Geschenks oder der Schenkung vereinbar ist.</p>
-      <p>15.4 Der Vorstand kann hierzu eine Ordnung erlassen.</p>
+      <p>14.2 Die Mitglieder erhalten keine Zuwendungen aus Mitteln des Vereins.</p>
       <h4>§ 16 Vertretung</h4>
-      <p>16.1 Der Verein wird jeweils gerichtlich und außergerichtlich durch den Vorsitzenden oder ein anderes Mitglied des Vorstandes allein vertreten. Von den Beschränkungen des § 181 BGB können diese durch Beschluss der Mitgliederversammlung befreit werden.</p>
-      <p>16.2 Im Innenverhältnis gilt, dass entweder ein entsprechender Beschluss des Vorstandes zu dem Vorgang gefasst sein muss, entsprechend dem Budget und der Finanzordnung gehandelt wird, oder je zwei Vorstandsmitglieder dem Vorgang intern zugestimmt haben.</p>
-      <h4>§ 17 Geschäftsstelle, besonderer Vertreter</h4>
-      <p>17.1 Der Verein kann durch den Vorstand optional zur Erledigung der laufenden Vereinsverwaltung und zur Unterstützung der Mitgliederversammlung und des Vorstands ein Serviceunternehmen als Geschäftsstelle beauftragen. Der Vorstand kann eine Geschäftsordnung für die Geschäftsstelle erlassen, welche als Grundlage mit dem Serviceunternehmen vertraglich zu vereinbaren ist. Ferner ist eine Person als Leiter der Geschäftsstelle vom Serviceunternehmen zu benennen und im Dienstleistungsvertrag mit entsprechenden Nachbenennungsregeln zu vereinbaren. Die Mitarbeitenden der Geschäftsstelle sind geladene Gäste bei Mitgliederversammlungen und Vorstandssitzungen.</p>
-      <p>17.2 Der Verein kann durch den Vorstand optional einen Geschäftsführer als besonderer Vertreter nach § 30 BGB mit dem Aufgabenkreis der Erledigung der laufenden Geschäfte des Vereins bestellen. Der Vorstand kann den besonderen Vertreter nach § 30 BGB als Vorstand mit Sitz und Rederecht, jedoch ohne Antrags- oder Stimmrecht kooptieren. Seine Amtszeit als besonderer Vertreter nach § 30 BGB und kooptierter Vorstand beginnt mit seiner Berufung und endet mit seiner Abberufung. Der besondere Vertreter nach § 30 BGB wird als „Geschäftsführer" bezeichnet.</p>
-      <h4>§ 18 Ordnungen</h4>
-      <p>Die Satzung kann durch Ordnungen ergänzt werden, die keinen Teil der Satzung bilden, jedoch gleichwohl für die Mitglieder verbindlich sind. Ordnungen werden erlassen, um die Grundentscheidungen und Leitprinzipien der Satzung näher auszugestalten. Ordnungen beschließt die Mitgliederversammlung. Geschäftsordnungen gibt sich das jeweilige Organ selbst; Geschäftsordnungen von Gremien beschließt der Vorstand.</p>
+      <p>Der Verein wird jeweils gerichtlich und außergerichtlich durch den Vorsitzenden oder ein anderes Mitglied des Vorstandes allein vertreten.</p>
     </div>
 
     <div class="satzung-block">
       <h3>SONSTIGES</h3>
       <h4>§ 19 Interner Haftungsausschluss</h4>
-      <p>Für aus der Vereinstätigkeit oder aus dem Betrieb des Vereins entstehende Schäden haften der Verein und seine Organe gegenüber den Mitgliedern nur, wenn sie vorsätzlich oder grob fahrlässig verursacht wurden. Dieser Haftungsausschluss gilt nicht für Schadensersatzansprüche wegen der Verletzung von Leib oder Leben.</p>
-      <h4>§ 20 Kommunikationsadressen</h4>
-      <p>Mitglieder sind verpflichtet, ihre Kommunikationsadressen durch Mitteilung an den Vorstand, die Geschäftsstelle oder den besonderen Vertreter stets aktuell zu halten. Zustellungen an Mitglieder gelten als bewirkt, wenn diese an die letzte bekannte Kommunikationsadresse adressiert sind.</p>
+      <p>Für aus der Vereinstätigkeit entstehende Schäden haften der Verein und seine Organe gegenüber den Mitgliedern nur, wenn sie vorsätzlich oder grob fahrlässig verursacht wurden.</p>
       <h4>§ 21 Auflösung</h4>
-      <p>21.1 Die Auflösung des Vereins ist nur in einer besonderen, nur zu diesem Zweck einzuberufenden Mitgliederversammlung möglich. Für diese Mitgliederversammlung ist eine Einladungsfrist von drei Monaten erforderlich. Die Auflösung kann nur von einer Mehrheit von mindestens drei Vierteln der erschienenen Mitglieder beschlossen werden. Die Vorstände sind als Liquidatoren berufen, sofern die Mitgliederversammlung nicht anderweitig entscheidet.</p>
-      <p>21.2 Die Auseinandersetzung erfolgt nach den Vorschriften des Bürgerlichen Gesetzbuches. Über die Verwendung des nach der Auseinandersetzung verbleibenden Vereinsvermögens beschließt die Mitgliederversammlung.</p>
+      <p>Die Auflösung des Vereins ist nur in einer besonderen, nur zu diesem Zweck einzuberufenden Mitgliederversammlung mit einer Mehrheit von mindestens drei Vierteln der erschienenen Mitglieder möglich.</p>
       <h4>§ 22 Satzungsänderungen</h4>
-      <p>22.1 Änderungen der Satzung können</p>
-      <ul><li>vom Vorstand oder</li><li>durch eine Initiative von mindestens 10% der Mitglieder adressiert an den Vorstand</li></ul>
-      <p>vorgeschlagen werden.</p>
-      <p>22.2 Außerhalb einer Mitgliederversammlung kann im Umlaufverfahren oder im elektronisch gestützten Verfahren über Satzungsänderungen abgestimmt werden. Es ist nicht erforderlich, dass sich alle Mitglieder am Umlaufverfahren oder am elektronisch gestützten Verfahren beteiligen. Die Annahme ist erfolgt, wenn eine Zweidrittelmehrheit der abgegebenen Stimmen für die Annahme stimmt.</p>
+      <p>Änderungen der Satzung können vom Vorstand oder durch eine Initiative von mindestens 10% der Mitglieder vorgeschlagen werden.</p>
       <h4>§ 23 Anti-Korruptionsgrundsätze</h4>
-      <p>23.1 Der Verein verpflichtet sich zur Einhaltung aller Anti-Korruptionsgesetze sowie der Grundsätze der Transparenz und Integrität in der Zusammenarbeit mit Mitgliedern, Expertinnen und Experten, politischen Entscheidungsträgern sowie sonstigen Dritten.</p>
-      <p>23.2 Der Verein gewährt keine direkten oder indirekten geldwerten Vorteile an natürliche Personen, insbesondere Ärztinnen und Ärzte, andere Beschäftigte im Gesundheitswesen oder politische Entscheidungsträger, soweit diese geeignet wären, deren berufliche Unabhängigkeit oder Entscheidungsfreiheit unzulässig zu beeinflussen.</p>
-      <p>23.3 Zuwendungen an Mitglieder des Wissenschaftlichen Beirats oder an andere natürliche Personen dürfen ausschließlich für legitime, satzungsgemäße Zwecke, in angemessener Höhe und gegen nachvollziehbare Dokumentation gewährt werden.</p>
-      <p>23.4 Der Verein stellt sicher, dass sämtliche Leistungen an natürliche Personen, insbesondere Honorare, Reisekosten oder Aufwandsentschädigungen, transparent, angemessen und im Einklang mit gesetzlichen Anforderungen erfolgen.</p>
+      <p>Der Verein verpflichtet sich zur Einhaltung aller Anti-Korruptionsgesetze sowie der Grundsätze der Transparenz und Integrität in der Zusammenarbeit mit Mitgliedern, Expertinnen und Experten, politischen Entscheidungsträgern sowie sonstigen Dritten.</p>
       <h4>§ 24 Wettbewerbsverhalten</h4>
-      <p>24.1 Der Verein verpflichtet sich zur Einhaltung des europäischen und deutschen Kartellrechts.</p>
-      <p>24.2 In Sitzungen, Arbeitsgruppen oder sonstigen Formaten des Vereins dürfen keine wettbewerblich sensiblen Informationen zwischen Industriepartnern oder sonstigen Mitgliedern ausgetauscht werden. Hierzu gehören insbesondere Informationen zu Preisen, Rabatten, Konditionen, Vertriebs- und Marketingstrategien, Produktionsmengen, Marktanteilen, Pipeline-Planungen oder sonstigen strategischen geschäftlichen Planungen.</p>
-      <p>24.3 Der Verein stellt sicher, dass Sitzungen, an denen Industriepartner teilnehmen, auf der Grundlage vorab versandter Tagesordnungen stattfinden und protokolliert werden.</p>
-      <p>24.4 Der Austausch von Positionen zu gesundheitspolitischen oder wissenschaftlichen Themen ist zulässig, sofern er nicht geeignet ist, das Marktverhalten der Industriepartner abzustimmen oder zu verzerren.</p>
-      <h4>§ 25 Sanktionen</h4>
-      <p>Verstöße gegen die Bestimmungen in § 23 und § 24 können als wichtiger Grund im Sinne von § 6.3 dieser Satzung gewertet werden.</p>
-      <p>Aus Gründen der Übersichtlichkeit wird in dieser Satzung, wo dies möglich ist, eine neutrale Form verwendet, ansonsten das generische Maskulinum. Die Satzung bezieht sich jedoch auf alle Menschen gleichberechtigt.</p>
+      <p>Der Verein verpflichtet sich zur Einhaltung des europäischen und deutschen Kartellrechts. In Sitzungen dürfen keine wettbewerblich sensiblen Informationen zwischen Industriepartnern ausgetauscht werden.</p>
     </div>
 
     <div class="satzung-block">
       <h3>Einmalige Regelungen in der Gründungsphase</h3>
-      <p>Soweit in der Gründungsversammlung noch kein Vorstand gewählt ist, wird die Zuordnung von Gründungsmitgliedern und werdenden Mitgliedern zu den Gruppen von Mitgliedern nach Ziffer 4.5 durch die Gründungsversammlung vorgenommen.</p>
-      <p>Soweit „Industriepartner Level 1" bei Gründung oder später nicht vorhanden sind, gilt statt Ziffer 10.4, dass aus der Gruppe „Industriepartner Level 3" je Untergruppe an Personen, die von einem „Industriepartner Level 1" beschäftigt werden, der jeweilige Industriepartner Level 1 ein Mitglied einen Stellvertretenden Vorsitzenden bestimmt. „Industriepartner Level 2" werden nicht berücksichtigt. Wird der „Industriepartner Level 1" selbst Mitglied des Vereins, bleibt die benannte Person grundsätzlich für diesen „Industriepartner Level 1" bis zum Ablauf der Amtszeit im Amt.</p>
-      <p>Zu den Anträgen von AstraZeneca GmbH sowie Sanofi-Aventis Deutschland GmbH auf Mitgliedschaft in der Gruppe „Industriepartner Level 1", ist die Zustimmung der Mitgliederversammlung nach Ziffer 5 durch die Gründungsversammlung erteilt. Der Vorstand wird beauftragt, die Annahme zu erklären.</p>
-      <p>Abweichend von 10.7 beträgt die Amtszeit des ersten Vorstandes nur ein Jahr nach Gründung. Abweichend von 10.4 gilt in diesem Jahr nach Gründung, dass weiter hinzutretende „Industriepartner Level 1" außer den vorbenannten AstraZeneca GmbH und Sanofi-Aventis Deutschland GmbH keine Benennung von Stellvertretenden Vorsitzenden vornehmen. Der Vorstand soll mit dem Beitritt weiterer Industriepartner die Beitragsordnung anpassen.</p>
+      <p>Soweit in der Gründungsversammlung noch kein Vorstand gewählt ist, wird die Zuordnung von Gründungsmitgliedern zu den Gruppen von der Gründungsversammlung vorgenommen.</p>
+      <p>Zu den Anträgen von AstraZeneca GmbH sowie Sanofi-Aventis Deutschland GmbH auf Mitgliedschaft in der Gruppe „Industriepartner Level 1" ist die Zustimmung der Mitgliederversammlung durch die Gründungsversammlung erteilt.</p>
     </div>
 
-    </main>
+  </main>
 
- <footer>
+  <footer>
     <div class="footer-inner">
       <nav class="footer-nav">
         <ul>
